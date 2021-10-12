@@ -13,12 +13,74 @@
     
     
         <item>
-        <title>Ros安装</title>
+        <title>Ubuntu18-Ros安装</title>
         <link>https://peitianyu.github.io/pty_blog.github.io/ros/ros%E5%AE%89%E8%A3%85/</link>
         <pubDate>Tue, 12 Oct 2021 16:20:39 +0800</pubDate>
         
         <guid>https://peitianyu.github.io/pty_blog.github.io/ros/ros%E5%AE%89%E8%A3%85/</guid>
-        <description>武装带你 https://peitianyu.github.io/pty_blog.github.io/ros/ros%E5%AE%89%E8%A3%85/ -- https://peitianyu.github.io/pty_blog.github.io/ros/ros%E5%AE%89%E8%A3%85/ - This is a customized copyright.</description>
+        <description>武装带你 https://peitianyu.github.io/pty_blog.github.io/ros/ros%E5%AE%89%E8%A3%85/ -&lt;h3 id=&#34;安装环境&#34;&gt;安装环境&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;Ubuntu18.04
+ros-melodic-desktop-full
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;安装&#34;&gt;安装&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;vim /etc/apt/sources.list.d/ros-latest.list
+deb https://mirrors.tuna.tsinghua.edu.cn/ros/ubuntu/ bionic main
+sudo apt-key adv --keyserver &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#39;hkp://keyserver.ubuntu.com:80&amp;#39;&lt;/span&gt; --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+sudo apt update
+sudo apt-get install ros-melodic-desktop-full
+&lt;span style=&#34;color:#228b22&#34;&gt;# 初始化&lt;/span&gt;
+sudo rosdep init
+rosdep update
+sudo apt install python-rosinstall python-rosinstall-generator python-wstool build-essential
+sudo &lt;span style=&#34;color:#658b00&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;source /opt/ros/melodic/setup.bash&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; ~/.bashrc
+&lt;span style=&#34;color:#658b00&#34;&gt;source&lt;/span&gt; ~/.bashrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;安装问题&#34;&gt;安装问题&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;rosdep init&lt;/code&gt;不成功&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;ros%E5%AE%89%E8%A3%85.assets%5CF35T1IRK7GMOWQDIHN_L8.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd /etc
+sudo mkdir ros
+cd ros
+sudo mkdir rosdep
+cd rosdep
+sudo mkdir source.list.d
+cd source.list.d
+sudo touch 20-default.list
+sudo vim 20-default.list
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;输入&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#os-specific listings first
+yaml https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/osx-homebrew.yaml osx
+ 
+#generic
+yaml https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/base.yaml
+yaml https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/python.yaml
+yaml https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/ruby.yaml
+gbpdistro https://raw.githubusercontent.com/ros/rosdistro/master/releases/fuerte.yaml fuerte
+ 
+#newer distributions (Groovy, Hydro, …) must not be listed anymore, they are being 
+#fetched from the rosdistro index.yaml instead
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;rosdep update&lt;/code&gt;问题&lt;/p&gt;
+&lt;p&gt;首先调大执行时间，更改 &lt;code&gt;/usr/lib/python2.7/dist-packages/rosdep2/&lt;/code&gt;下的三个文件&lt;code&gt;sources_list.py&lt;/code&gt;、&lt;code&gt;gbpdistro_support.py&lt;/code&gt;、&lt;code&gt;rep3.py&lt;/code&gt;中的&lt;code&gt;DOWNLOAD_TIMEOUT = 15.0&lt;/code&gt;值，我一般直接改成999。  终端输入：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo nano /usr/lib/python2.7/dist-packages/rosdep2/gbpdistro_support.py
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;修改&lt;code&gt;DOWNLOAD_TIMEOUT&lt;/code&gt;后，输入&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo nano /etc/hosts
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在最后一行加入&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;151.101.84.133  raw.githubusercontent.com
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;连上&lt;strong&gt;手机热点&lt;/strong&gt;，重新&lt;code&gt;rosdep update&lt;/code&gt;多次后，成功。&lt;/p&gt;
+&lt;h3 id=&#34;卸载&#34;&gt;卸载&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo apt-get autoremove --purge ros-melodic
+&lt;span style=&#34;color:#228b22&#34;&gt;# 先卸载包&lt;/span&gt;
+sudo apt-get purge ros-*
+&lt;span style=&#34;color:#228b22&#34;&gt;# 然后删除依赖，配置&lt;/span&gt;
+sudo apt-get autoremove
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;测试&#34;&gt;测试&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;mkdir -p ~/catkin_ws/src
+&lt;span style=&#34;color:#658b00&#34;&gt;cd&lt;/span&gt; ~/catkin_ws/
+catkin_make
+&lt;span style=&#34;color:#658b00&#34;&gt;source&lt;/span&gt; devel/setup.bash
+roscore
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;打开新窗口执行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;rosrun turtlesim turtlesim_node
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;出现小乌龟则安装完成。&lt;/p&gt;
+- https://peitianyu.github.io/pty_blog.github.io/ros/ros%E5%AE%89%E8%A3%85/ - This is a customized copyright.</description>
         </item>
     
     
