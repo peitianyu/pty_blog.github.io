@@ -35,7 +35,7 @@ sudo &lt;span style=&#34;color:#658b00&#34;&gt;echo&lt;/span&gt; &lt;span style=
 &lt;span style=&#34;color:#658b00&#34;&gt;source&lt;/span&gt; ~/.bashrc
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;安装问题&#34;&gt;安装问题&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;rosdep init&lt;/code&gt;不成功&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;ros%E5%AE%89%E8%A3%85.assets%5CF35T1IRK7GMOWQDIHN_L8.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;ros%E5%AE%89%E8%A3%85%5CF35T1IRK7GMOWQDIHN_L8.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;cd /etc
 sudo mkdir ros
 cd ros
