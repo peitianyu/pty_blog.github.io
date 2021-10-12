@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on Pty&#39;Site</title>
+    <link>https://peitianyu.github.io/pty_blog.github.io/blog/</link>
+    <description>Recent content in Blogs on Pty&#39;Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-hant</language>
+    <copyright>This is a customized copyright.</copyright>
+    
+	<atom:link href="https://peitianyu.github.io/pty_blog.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://peitianyu.github.io/pty_blog.github.io/blog/hugo_blog%E6%95%99%E7%A8%8B/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peitianyu.github.io/pty_blog.github.io/blog/hugo_blog%E6%95%99%E7%A8%8B/</guid>
+      <description>Ubuntu制作hugo个人网页 # git安装sudo apt updatesudo apt install git #git配置git config --global user.name &amp;#34;zoey&amp;#34;git config --global user.email &amp;#34;zoey686@163.com&amp;#34;#查看设置用户名与密码git config --listhugo安装 # 安装sudo apt install hugo# 查看hugo --helphugo version建立博客 新建git文件夹用以git模板等，并在文件夹下新建myblog，用来存放博客页面
+# 新建git文件夹并git初始化mkdir gitFile git init# 新建myblog文件夹用来存放博客页面hugo new site myblogmyblog下面就会有以下几个文件夹自动生成
+   文件夹名 作用     archetypes 文章开头形式   content 内容   data 自定义模板   layouts 网页模板文件   static 存储图片一些其他的资源   themes 主题    设置主题，在（https://themes.</description>
+    </item>
+    
+  </channel>
+</rss>
