@@ -159,17 +159,12 @@ hugo new site myblog
 git submodule add https://github.com/AmazingRise/hugo-theme-diary.git themes/diary
 &lt;span style=&#34;color:#228b22&#34;&gt;# 配置config.toml文件&lt;/span&gt;
 nano config.toml
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;#你的网址
-baseURL = &amp;quot;https://peitianyu.github.io/pty_blog.github.io&amp;quot;
-#中文
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;baseURL = &amp;quot;https://peitianyu.github.io/pty_blog.github.io&amp;quot;
 DefaultContentLanguage = &amp;quot;zh&amp;quot; # Theme&#39;s display language, supports: en, fr, zh, zh-hant
 languageCode = &amp;quot;zh-hant&amp;quot;
-# 博客名
 title = &amp;quot;武装带你&amp;quot;
 copyright = &amp;quot;This is a customized copyright.&amp;quot;
-# 根据自己的选择的主题，实际就是我们下载的tnemes下文件夹名
 theme = &amp;quot;diary&amp;quot;
-# googleAnalytics = &amp;quot;UA-123-45&amp;quot;
 
 [markup]
   [markup.highlight]
@@ -182,33 +177,25 @@ theme = &amp;quot;diary&amp;quot;
     noClasses = true
     style = &amp;quot;perldoc&amp;quot;
     tabWidth = 4
-    
-# Twitter Card and Open Graph settings
+
+
 enableOpenGraph = true
 enableTwitterCards = true
-title = &amp;quot;My Blog&amp;quot; # will set &#39;og:site_name&#39;
-description = &amp;quot;My HomePage Description&amp;quot;  # will set &#39;og:description&#39;
+title = &amp;quot;My Blog&amp;quot; 
+description = &amp;quot;My HomePage Description&amp;quot;  
 
 [taxonomies]
-   tag = &amp;quot;tags&amp;quot;
-   category = &amp;quot;categories&amp;quot;
+   ros = &amp;quot;Ros&amp;quot;
+   blog = &amp;quot;Blog&amp;quot;
 
 [[menu.main]]
-url = &amp;quot;/categories&amp;quot;
-name = &amp;quot;Categories&amp;quot;
+url = &amp;quot;/blog&amp;quot;
+name = &amp;quot;Blog&amp;quot;
 weight = 1
 [[menu.main]]
-url = &amp;quot;/tags&amp;quot;
-name = &amp;quot;Tags&amp;quot;
+url = &amp;quot;/ros&amp;quot;
+name = &amp;quot;Ros&amp;quot;
 weight = 2
-[[menu.main]]
-url = &amp;quot;/posts&amp;quot;
-name = &amp;quot;Archive&amp;quot;
-weight = 3
-[[menu.main]]
-url = &amp;quot;/index.xml&amp;quot;
-name = &amp;quot;RSS Feed&amp;quot;
-weight = 4
 &lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;创建文章&#34;&gt;创建文章&lt;/h4&gt;
 &lt;p&gt;默认主目录文章在content/post下&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;# 创建文章

@@ -591,17 +591,12 @@ hugo new site myblog
 git submodule add https://github.com/AmazingRise/hugo-theme-diary.git themes/diary
 <span style="color:#228b22"># 配置config.toml文件</span>
 nano config.toml
-</code></pre></div><pre><code>#你的网址
-baseURL = &quot;https://peitianyu.github.io/pty_blog.github.io&quot;
-#中文
+</code></pre></div><pre><code>baseURL = &quot;https://peitianyu.github.io/pty_blog.github.io&quot;
 DefaultContentLanguage = &quot;zh&quot; # Theme's display language, supports: en, fr, zh, zh-hant
 languageCode = &quot;zh-hant&quot;
-# 博客名
 title = &quot;武装带你&quot;
 copyright = &quot;This is a customized copyright.&quot;
-# 根据自己的选择的主题，实际就是我们下载的tnemes下文件夹名
 theme = &quot;diary&quot;
-# googleAnalytics = &quot;UA-123-45&quot;
 
 [markup]
   [markup.highlight]
@@ -614,33 +609,25 @@ theme = &quot;diary&quot;
     noClasses = true
     style = &quot;perldoc&quot;
     tabWidth = 4
-    
-# Twitter Card and Open Graph settings
+
+
 enableOpenGraph = true
 enableTwitterCards = true
-title = &quot;My Blog&quot; # will set 'og:site_name'
-description = &quot;My HomePage Description&quot;  # will set 'og:description'
+title = &quot;My Blog&quot; 
+description = &quot;My HomePage Description&quot;  
 
 [taxonomies]
-   tag = &quot;tags&quot;
-   category = &quot;categories&quot;
+   ros = &quot;Ros&quot;
+   blog = &quot;Blog&quot;
 
 [[menu.main]]
-url = &quot;/categories&quot;
-name = &quot;Categories&quot;
+url = &quot;/blog&quot;
+name = &quot;Blog&quot;
 weight = 1
 [[menu.main]]
-url = &quot;/tags&quot;
-name = &quot;Tags&quot;
+url = &quot;/ros&quot;
+name = &quot;Ros&quot;
 weight = 2
-[[menu.main]]
-url = &quot;/posts&quot;
-name = &quot;Archive&quot;
-weight = 3
-[[menu.main]]
-url = &quot;/index.xml&quot;
-name = &quot;RSS Feed&quot;
-weight = 4
 </code></pre><h4 id="创建文章">创建文章</h4>
 <p>默认主目录文章在content/post下</p>
 <pre><code># 创建文章
