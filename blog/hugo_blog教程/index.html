@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-<title></title>
+<title>hugo_blog教程</title>
 
 
 
@@ -16,23 +16,7 @@
 
 
 
-<meta property="og:title" content="" />
-<meta property="og:description" content="Ubuntu制作hugo个人网页 # git安装sudo apt updatesudo apt install git #git配置git config --global user.name &#34;zoey&#34;git config --global user.email &#34;zoey686@163.com&#34;#查看设置用户名与密码git config --listhugo安装 # 安装sudo apt install hugo# 查看hugo --helphugo version建立博客 新建git文件夹用以git模板等，并在文件夹下新建myblog，用来存放博客页面
-# 新建git文件夹并git初始化mkdir gitFile git init# 新建myblog文件夹用来存放博客页面hugo new site myblogmyblog下面就会有以下几个文件夹自动生成
-   文件夹名 作用     archetypes 文章开头形式   content 内容   data 自定义模板   layouts 网页模板文件   static 存储图片一些其他的资源   themes 主题    设置主题，在（https://themes." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://peitianyu.github.io/pty_blog.github.io/blog/hugo_blog%E6%95%99%E7%A8%8B/" />
-<meta property="og:site_name" content="My Blog" />
 
-
-
-
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content=""/>
-<meta name="twitter:description" content="Ubuntu制作hugo个人网页 # git安装sudo apt updatesudo apt install git #git配置git config --global user.name &#34;zoey&#34;git config --global user.email &#34;zoey686@163.com&#34;#查看设置用户名与密码git config --listhugo安装 # 安装sudo apt install hugo# 查看hugo --helphugo version建立博客 新建git文件夹用以git模板等，并在文件夹下新建myblog，用来存放博客页面
-# 新建git文件夹并git初始化mkdir gitFile git init# 新建myblog文件夹用来存放博客页面hugo new site myblogmyblog下面就会有以下几个文件夹自动生成
-   文件夹名 作用     archetypes 文章开头形式   content 内容   data 自定义模板   layouts 网页模板文件   static 存储图片一些其他的资源   themes 主题    设置主题，在（https://themes."/>
 
 
 
@@ -100,10 +84,12 @@
             
             
             
+                
             
             
-            <a class="a-block nav-link-item false" href="/pty_blog.github.io/posts">
-                Archive
+            
+            <a class="a-block nav-link-item active" href="/pty_blog.github.io/blog">
+                Blog
             </a>
             
         
@@ -112,28 +98,8 @@
             
             
             
-            <a class="a-block nav-link-item false" href="/pty_blog.github.io/categories">
-                Categories
-            </a>
-            
-        
-            
-            
-            
-            
-            
-            <a class="a-block nav-link-item false" href="/pty_blog.github.io/tags">
-                Tags
-            </a>
-            
-        
-            
-            
-            
-            
-            
-            <a class="a-block nav-link-item false" href="/pty_blog.github.io/index.xml">
-                RSS Feed
+            <a class="a-block nav-link-item false" href="/pty_blog.github.io/ros">
+                Ros
             </a>
             
         
@@ -190,8 +156,8 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#ubuntu%e5%88%b6%e4%bd%9chugo%e4%b8%aa%e4%ba%ba%e7%bd%91%e9%a1%b5" onclick="onNavClick(`#ubuntu制作hugo个人网页-nav`)" id="ubuntu制作hugo个人网页-nav">
-									Ubuntu制作hugo个人网页
+								<a href="#git%e5%ae%89%e8%a3%85%e4%b8%8e%e9%85%8d%e7%bd%ae" onclick="onNavClick(`#git安装与配置-nav`)" id="git安装与配置-nav">
+									git安装与配置
 								</a>
 							</li>
 						
@@ -224,10 +190,70 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 						
+							
+								
+									<ul>
+								
+							
+						
 						
 							<li>
 								<a href="#%e5%bb%ba%e7%ab%8b%e5%8d%9a%e5%ae%a2" onclick="onNavClick(`#建立博客-nav`)" id="建立博客-nav">
 									建立博客
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%ae%be%e7%bd%ae%e4%b8%bb%e9%a2%98" onclick="onNavClick(`#设置主题-nav`)" id="设置主题-nav">
+									设置主题
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%88%9b%e5%bb%ba%e6%96%87%e7%ab%a0" onclick="onNavClick(`#创建文章-nav`)" id="创建文章-nav">
+									创建文章
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%83%a8%e7%bd%b2%e5%88%b0github" onclick="onNavClick(`#部署到github-nav`)" id="部署到github-nav">
+									部署到github
 								</a>
 							</li>
 						
@@ -266,10 +292,12 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 
                 
                 
+                    
                 
                 
-                <a class="a-block drawer-menu-item false" href="/pty_blog.github.io/posts">
-                    Archive
+                
+                <a class="a-block drawer-menu-item active" href="/pty_blog.github.io/blog">
+                    Blog
                 </a>
                 
             
@@ -278,28 +306,8 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 
                 
                 
-                <a class="a-block drawer-menu-item false" href="/pty_blog.github.io/categories">
-                    Categories
-                </a>
-                
-            
-                
-                
-                
-                
-                
-                <a class="a-block drawer-menu-item false" href="/pty_blog.github.io/tags">
-                    Tags
-                </a>
-                
-            
-                
-                
-                
-                
-                
-                <a class="a-block drawer-menu-item false" href="/pty_blog.github.io/index.xml">
-                    RSS Feed
+                <a class="a-block drawer-menu-item false" href="/pty_blog.github.io/ros">
+                    Ros
                 </a>
                 
             
@@ -336,8 +344,8 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#ubuntu%e5%88%b6%e4%bd%9chugo%e4%b8%aa%e4%ba%ba%e7%bd%91%e9%a1%b5" onclick="onNavClick(`#ubuntu制作hugo个人网页-nav`)" id="ubuntu制作hugo个人网页-nav">
-									Ubuntu制作hugo个人网页
+								<a href="#git%e5%ae%89%e8%a3%85%e4%b8%8e%e9%85%8d%e7%bd%ae" onclick="onNavClick(`#git安装与配置-nav`)" id="git安装与配置-nav">
+									git安装与配置
 								</a>
 							</li>
 						
@@ -370,10 +378,70 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 						
+							
+								
+									<ul>
+								
+							
+						
 						
 							<li>
 								<a href="#%e5%bb%ba%e7%ab%8b%e5%8d%9a%e5%ae%a2" onclick="onNavClick(`#建立博客-nav`)" id="建立博客-nav">
 									建立博客
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%ae%be%e7%bd%ae%e4%b8%bb%e9%a2%98" onclick="onNavClick(`#设置主题-nav`)" id="设置主题-nav">
+									设置主题
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%88%9b%e5%bb%ba%e6%96%87%e7%ab%a0" onclick="onNavClick(`#创建文章-nav`)" id="创建文章-nav">
+									创建文章
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%83%a8%e7%bd%b2%e5%88%b0github" onclick="onNavClick(`#部署到github-nav`)" id="部署到github-nav">
+									部署到github
 								</a>
 							</li>
 						
@@ -434,9 +502,13 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 
             >
                 <div class="post-title">
-                    
+                    hugo_blog教程
                     
                     <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2021-10-12 10:49
+                        </time>
                         
 
                         
@@ -451,7 +523,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 
                 <div class="post-body" v-pre>
                 
-                    <h3 id="ubuntu制作hugo个人网页">Ubuntu制作hugo个人网页</h3>
+                    <h3 id="git安装与配置">git安装与配置</h3>
 <div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#228b22"># git安装</span>
 sudo apt update
 sudo apt install git 
@@ -466,7 +538,7 @@ sudo apt install hugo
 <span style="color:#228b22"># 查看</span>
 hugo --help
 hugo version
-</code></pre></div><h3 id="建立博客">建立博客</h3>
+</code></pre></div><h4 id="建立博客">建立博客</h4>
 <p>新建git文件夹用以git模板等，并在文件夹下新建myblog，用来存放博客页面</p>
 <div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#228b22"># 新建git文件夹并git初始化</span>
 mkdir gitFile  
@@ -506,14 +578,116 @@ hugo new site myblog
 <td align="center">themes</td>
 <td align="center">主题</td>
 </tr>
+<tr>
+<td align="center">config.toml</td>
+<td align="center">配置文件</td>
+</tr>
 </tbody>
 </table>
-<p>设置主题，在（https://themes.gohugo.io/）中挑选主题,这里选择的是diary主题（<a href="https://themes.gohugo.io/themes/hugo-theme-diary/">Diary | Hugo Themes (gohugo.io)</a>）</p>
+<h4 id="设置主题">设置主题</h4>
+<p>在（https://themes.gohugo.io/）中挑选主题,这里选择的是diary主题（<a href="https://themes.gohugo.io/themes/hugo-theme-diary/">Diary | Hugo Themes (gohugo.io)</a>）</p>
 <p>例子：（<a href="https://sunua.gitee.io/simonblog/">浅蓝色 (gitee.io)</a>）</p>
 <div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#228b22"># 下载diary主题到themes文件夹下并重命名为diary</span>
 git submodule add https://github.com/AmazingRise/hugo-theme-diary.git themes/diary
+<span style="color:#228b22"># 配置config.toml文件</span>
+nano config.toml
+</code></pre></div><pre><code>#你的网址
+baseURL = &quot;https://peitianyu.github.io/pty_blog.github.io&quot;
+#中文
+DefaultContentLanguage = &quot;zh&quot; # Theme's display language, supports: en, fr, zh, zh-hant
+languageCode = &quot;zh-hant&quot;
+# 博客名
+title = &quot;武装带你&quot;
+copyright = &quot;This is a customized copyright.&quot;
+# 根据自己的选择的主题，实际就是我们下载的tnemes下文件夹名
+theme = &quot;diary&quot;
+# googleAnalytics = &quot;UA-123-45&quot;
 
-</code></pre></div>
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = &quot;&quot;
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = &quot;perldoc&quot;
+    tabWidth = 4
+    
+# Twitter Card and Open Graph settings
+enableOpenGraph = true
+enableTwitterCards = true
+title = &quot;My Blog&quot; # will set 'og:site_name'
+description = &quot;My HomePage Description&quot;  # will set 'og:description'
+
+[taxonomies]
+   tag = &quot;tags&quot;
+   category = &quot;categories&quot;
+
+[[menu.main]]
+url = &quot;/categories&quot;
+name = &quot;Categories&quot;
+weight = 1
+[[menu.main]]
+url = &quot;/tags&quot;
+name = &quot;Tags&quot;
+weight = 2
+[[menu.main]]
+url = &quot;/posts&quot;
+name = &quot;Archive&quot;
+weight = 3
+[[menu.main]]
+url = &quot;/index.xml&quot;
+name = &quot;RSS Feed&quot;
+weight = 4
+</code></pre><h4 id="创建文章">创建文章</h4>
+<p>默认主目录文章在content/post下</p>
+<pre><code># 创建文章
+hugo new post/my_first_blog.md
+#创建文章在需要目录(Archive)下
+hugo new posts/my_first_blog.md
+cd content/post
+nano my_first_blog.md
+# 注意将draft参数改为false，否则跳过草稿文件，无法预览
+</code></pre><pre><code>---
+title: &quot;my_first_blog&quot;
+date: 2021-10-12T10:49:31+08:00
+draft : false
+---
+文本内容
+</code></pre><p>本地调试</p>
+<pre><code>hugo server --theme=blackburn --buildDrafts
+</code></pre><p>其中 &ndash;theme 选项可以指定主题，–buildDrafts 包括标记为草稿
+然后在浏览器里打开： <a href="http://localhost:1313/">http://localhost:1313</a> 即可访问到你的博客</p>
+<h4 id="部署到github">部署到github</h4>
+<p>如果你需要部署在 GitHub Pages 上，首先在GitHub上创建一个Repository，命名为：<code>pty_blog.github.io</code> （<strong>pty_blog替换为你的github用户名的小写</strong>）</p>
+<p>进入仓库，点击<strong>Settings</strong>进入，找到<strong>GitHub Pages</strong>并点击<strong>Check it out here!</strong>，配置<strong>Source</strong>并<strong>save</strong>，会发现绿色框中显现 <code>Your site is published at https://peitianyu.github.io/pty_blog.github.io/</code></p>
+<p>此处https://peitianyu.github.io/pty_blog.github.io/就是我们的网址，也是config.toml文件中设置的网址，设置hugo登陆网址</p>
+<pre><code>hugo --theme=diary --buildDrafts --baseUrl=&quot;https://peitianyu.github.io/pty_blog.github.io/&quot;
+</code></pre><p><strong>注意</strong>：这里的 &ndash;baseUrl 一定是https://（Hugo中文文档里为http://），不然你部署后的博客会没有样式！</p>
+<p>可看到根目录下多出 /public文件夹出来，该文件夹的内容即Hugo生成的整个静态网站。然后继续在你的站点根目录执行git 命令，添加远程仓库。</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#658b00">cd</span> public
+git init
+git remote add origin git@github.com:peitianyu/pty_blog.github.io.git
+git add -A
+git commit -m “first commit”
+git push -u origin master
+</code></pre></div><p>然后浏览器里访问：https://peitianyu.github.io/pty_blog.github.io/即可看到刚刚搭建的博客。</p>
+<p>发布博客并更新：</p>
+<pre><code># 新建博客markdown文件，并编辑博客内容(文件名为 **.md )
+hugo new post/newBlog.md
+# 生成静态页面
+hugo --theme=diary --buildDrafts --baseUrl=&quot;https://peitianyu.github.io/pty_blog.github.io/&quot;
+# 发布
+cd public
+git add .
+git commit -m &quot;new blog added&quot;
+git push origin master
+</code></pre>
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2021-10-12</p>
                     
                 </div>
             </div>
@@ -522,8 +696,8 @@ git submodule add https://github.com/AmazingRise/hugo-theme-diary.git themes/dia
             <nav class="post-pagination">
 
                 
-                <a class="newer-posts" href="https://peitianyu.github.io/pty_blog.github.io/tags/my_first_blog/">
-			下回<br>My_first_blog
+                <a class="newer-posts">
+			下回<br>已经到头啦。
                 </a>
                 
                 
