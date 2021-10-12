@@ -3,17 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://peitianyu.github.io/pty_blog.github.io/ros/</loc>
+    <lastmod>2021-10-12T16:20:39+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://peitianyu.github.io/pty_blog.github.io/ros/ros%E5%AE%89%E8%A3%85/</loc>
+    <lastmod>2021-10-12T16:20:39+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://peitianyu.github.io/pty_blog.github.io/</loc>
+    <lastmod>2021-10-12T16:20:39+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://peitianyu.github.io/pty_blog.github.io/blog/</loc>
     <lastmod>2021-10-12T10:49:31+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://peitianyu.github.io/pty_blog.github.io/blog/hugo_blog%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2021-10-12T10:49:31+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://peitianyu.github.io/pty_blog.github.io/</loc>
     <lastmod>2021-10-12T10:49:31+08:00</lastmod>
   </url>
   
