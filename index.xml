@@ -6,9 +6,89 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
     <copyright>This is a customized copyright.</copyright>
-    <lastBuildDate>Tue, 12 Oct 2021 16:20:39 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 15 Oct 2021 16:20:39 +0800</lastBuildDate>
     
         <atom:link href="https://peitianyu.github.io/pty_blog.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>make实用模板</title>
+        <link>https://peitianyu.github.io/pty_blog.github.io/templete/%E5%AE%9E%E7%94%A8make%E6%A8%A1%E6%9D%BF/</link>
+        <pubDate>Fri, 15 Oct 2021 16:20:39 +0800</pubDate>
+        
+        <guid>https://peitianyu.github.io/pty_blog.github.io/templete/%E5%AE%9E%E7%94%A8make%E6%A8%A1%E6%9D%BF/</guid>
+        <description>武装带你 https://peitianyu.github.io/pty_blog.github.io/templete/%E5%AE%9E%E7%94%A8make%E6%A8%A1%E6%9D%BF/ -&lt;h3 id=&#34;make文件目录&#34;&gt;make文件目录&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;root@LAPTOP-49LFJ4NT:/root/make# tree
+.
+├── Makefile
+├── conf.sh
+├── main.cpp
+└── shell.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这里使用了shell脚本来实现对于make的编译，由于使用的是&lt;code&gt;wsl&lt;/code&gt;在windows下操作导致编码格式含有&lt;code&gt;\r\n&lt;/code&gt;，以此有两个shell脚本。&lt;/p&gt;
+&lt;h4 id=&#34;confsh-实现对于make的编译与运行&#34;&gt;conf.sh 实现对于make的编译与运行&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;if&lt;/span&gt; [[ &lt;span style=&#34;color:#00688b&#34;&gt;$1&lt;/span&gt; == clean ]]; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;then&lt;/span&gt;
+        make clean
+&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;elif&lt;/span&gt; [[ &lt;span style=&#34;color:#00688b&#34;&gt;$1&lt;/span&gt; == all ]]; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;then&lt;/span&gt;
+        make clean &amp;amp;&amp;amp; make -j8 &amp;amp;&amp;amp; ./main
+&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;else&lt;/span&gt;
+        make -j8 &amp;amp;&amp;amp; ./main
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;shellsh-实现将confsh的dos编码转化为unix编码并执行&#34;&gt;shell.sh 实现将conf.sh的dos编码转化为unix编码，并执行&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;&lt;/span&gt;dos2unix  conf.sh &amp;amp;&amp;amp; ./conf.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;makefile回自动捕捉符合cc编译&#34;&gt;Makefile回自动捕捉符合c/c++编译&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-makefile&#34; data-lang=&#34;makefile&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#指定编译工具
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#00688b&#34;&gt;CC&lt;/span&gt; = gcc
+&lt;span style=&#34;color:#00688b&#34;&gt;CPP&lt;/span&gt; = g++
+&lt;span style=&#34;color:#00688b&#34;&gt;LINK&lt;/span&gt; = g++
+
+&lt;span style=&#34;color:#00688b&#34;&gt;LIBS&lt;/span&gt; = -lsqlite3 -lpthread
+&lt;span style=&#34;color:#228b22&#34;&gt;#编译.so 必须添加 -fPIC 和 -shared 选项
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#00688b&#34;&gt;CCFLAGS&lt;/span&gt; = -c -g -fPIC
+&lt;span style=&#34;color:#00688b&#34;&gt;CPPFLAGS&lt;/span&gt; = -c -g -fPIC
+
+&lt;span style=&#34;color:#228b22&#34;&gt;#期望得到的执行文件或动态库.so
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#TARGET=libxx.so
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#00688b&#34;&gt;TARGET&lt;/span&gt;=main
+
+&lt;span style=&#34;color:#00688b&#34;&gt;INCLUDES&lt;/span&gt; = -I. &lt;span style=&#34;color:#228b22&#34;&gt;#-I../../&lt;/span&gt;
+
+&lt;span style=&#34;color:#00688b&#34;&gt;CPPFILES&lt;/span&gt; = &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;wildcard *.cpp &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#遍历得到当前目录及上层目录中的所有.cpp文件&lt;/span&gt;
+&lt;span style=&#34;color:#00688b&#34;&gt;CFILES&lt;/span&gt; = &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;wildcard *.c &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#遍历得到当前目录及上层目录中的所有.c文件&lt;/span&gt;
+
+&lt;span style=&#34;color:#00688b&#34;&gt;OBJFILE&lt;/span&gt; = &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;CFILES:.c=.o&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;CPPFILES:.cpp=.o&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt;
+
+&lt;span style=&#34;color:#008b45&#34;&gt;all&lt;/span&gt;:&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;&lt;span style=&#34;color:#00688b&#34;&gt;TARGET&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt;
+
+&lt;span style=&#34;color:#008b45&#34;&gt;$(TARGET)&lt;/span&gt;:&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;&lt;span style=&#34;color:#00688b&#34;&gt;OBJFILE&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color:#228b22&#34;&gt;# 编译得到 .so 文件用下面的代码
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#   $(LINK) $^ $(LIBS) -Wall -fPIC -shared -o $@
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 编译得到可执行文件用下面的代码
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;LINK&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt; $^ &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;LIBS&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt; -Wall -O2 -o &lt;span style=&#34;color:#00688b&#34;&gt;$@&lt;/span&gt;
+
+&lt;span style=&#34;color:#008b45&#34;&gt;%.o&lt;/span&gt;:%.c
+        &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;CC&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt; -o &lt;span style=&#34;color:#00688b&#34;&gt;$@&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;CCFLAGS&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt; $&amp;lt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;INCLUDES&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt;
+
+&lt;span style=&#34;color:#008b45&#34;&gt;%.o&lt;/span&gt;:%.cpp
+        &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;CPP&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt; -o &lt;span style=&#34;color:#00688b&#34;&gt;$@&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;CPPFLAGS&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt; $&amp;lt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;INCLUDES&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt;
+
+&lt;span style=&#34;color:#008b45&#34;&gt;clean&lt;/span&gt;:
+        rm -rf &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;TARGET&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt;
+        rm -rf &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;OBJFILE&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;mainc&#34;&gt;main.c&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#1e889b&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;&lt;/span&gt; 
+&lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;main&lt;/span&gt;()
+{
+    printf(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;Hello, World! &lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;&lt;/span&gt;);
+ 
+    &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#b452cd&#34;&gt;0&lt;/span&gt;;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;运行&#34;&gt;运行&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;./shell
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;- https://peitianyu.github.io/pty_blog.github.io/templete/%E5%AE%9E%E7%94%A8make%E6%A8%A1%E6%9D%BF/ - This is a customized copyright.</description>
+        </item>
     
     
     

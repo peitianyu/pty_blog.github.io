@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Templetes on 武装带你</title>
+    <link>https://peitianyu.github.io/pty_blog.github.io/templete/</link>
+    <description>Recent content in Templetes on 武装带你</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-hant</language>
+    <copyright>This is a customized copyright.</copyright>
+    <lastBuildDate>Fri, 15 Oct 2021 16:20:39 +0800</lastBuildDate>
+    
+	<atom:link href="https://peitianyu.github.io/pty_blog.github.io/templete/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>make实用模板</title>
+      <link>https://peitianyu.github.io/pty_blog.github.io/templete/%E5%AE%9E%E7%94%A8make%E6%A8%A1%E6%9D%BF/</link>
+      <pubDate>Fri, 15 Oct 2021 16:20:39 +0800</pubDate>
+      
+      <guid>https://peitianyu.github.io/pty_blog.github.io/templete/%E5%AE%9E%E7%94%A8make%E6%A8%A1%E6%9D%BF/</guid>
+      <description>make文件目录 root@LAPTOP-49LFJ4NT:/root/make# tree.├── Makefile├── conf.sh├── main.cpp└── shell.sh这里使用了shell脚本来实现对于make的编译，由于使用的是wsl在windows下操作导致编码格式含有\r\n，以此有两个shell脚本。
+conf.sh 实现对于make的编译与运行 #!/bin/bashif [[ $1 == clean ]]; thenmake cleanelif [[ $1 == all ]]; thenmake clean &amp;amp;&amp;amp; make -j8 &amp;amp;&amp;amp; ./mainelsemake -j8 &amp;amp;&amp;amp; ./mainshell.sh 实现将conf.sh的dos编码转化为unix编码，并执行 #!/bin/bashdos2unix conf.sh &amp;amp;&amp;amp; ./conf.shMakefile回自动捕捉符合c/c++编译 #指定编译工具CC = gccCPP = g++LINK = g++LIBS = -lsqlite3 -lpthread#编译.so 必须添加 -fPIC 和 -shared 选项CCFLAGS = -c -g -fPICCPPFLAGS = -c -g -fPIC#期望得到的执行文件或动态库.</description>
+    </item>
+    
+  </channel>
+</rss>
