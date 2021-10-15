@@ -1,0 +1,41 @@
+echo "-------------------------------------------------------------------------------"
+echo "欢迎使用机器人开箱工具，该工具旨在为您快速安装配置机器人开发环境"
+echo "欢迎关注公众号《鱼香ROS》获取机器学习资料并加入交流群"
+echo "-------------------------------------------------------------------------------"
+echo "为了接下来能够正常使用,小鱼将为你检查apt工具和软件源..."
+wget http://fishros.com/tools/citool/apt-kill -O /tmp/apt-kill 2>>/dev/null 
+sudo python3 /tmp/apt-kill
+sudo rm -r /tmp/apt-kill
+echo "----------------------------------"
+echo "---------      主菜单   -----------"
+echo "小鱼为你准备了下面几个方便好用的工具:"
+echo "(0) 一键安装ROS/ROS2并配置环境"
+echo "(1) 一键搞定rosdep相关问题"
+echo "(2) 一键安装Docker"
+echo "(3) 多版本ROS环境配置"
+echo "(9) 关注了小鱼，来看看，下次再装..."
+echo "(n) 更多功能待开发......."
+echo "----------------------------------"
+read input
+case $input in
+    0)
+        echo "-------------------------------------------------------------------------------"
+        wget http://fishros.com/tools/install/ros -O /tmp/fishros 2>>/dev/null && . /tmp/fishros
+        rm -r /tmp/fishros;;
+    2)
+        echo "-------------------------------------------------------------------------------"
+        wget http://fishros.com/tools/install/docker -O /tmp/fishros-docker 2>>/dev/null && . /tmp/fishros-docker
+        rm -r /tmp/fishros-docker
+        echo "该工具目前存在bug，如出现错误清尝试第二次运行即可解决，如找到原因欢迎通知小鱼修复.....";;
+    1)
+        echo "-------------------------------------------------------------------------------"
+        wget http://fishros.com/tools/install/rosdepc -O /tmp/fishros-rosdepc 2>>/dev/null && . /tmp/fishros-rosdepc
+        rm -r /tmp/fishros-rosdepc;;
+    3)
+        echo "-------------------------------------------------------------------------------"
+        wget http://fishros.com/tools/install/ros-source -O /tmp/fishros-source 2>>/dev/null && python3 /tmp/fishros-source
+        rm -r /tmp/fishros-source;;
+    9)
+    exit;;
+esac
+echo "-------------------------------------------------------------------------------"

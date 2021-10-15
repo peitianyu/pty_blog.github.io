@@ -1,0 +1,363 @@
+import os
+import time
+
+info = os.uname()
+fishros_name = info.nodename
+
+def print_delay(data,delay=0.03,end="\n"):
+  # print(data,end=end)
+  for d in data:
+    print(d,end="",flush=True)
+    time.sleep(delay)
+  print(end=end)
+
+def print_book():
+    print_delay("""
+                .-~~~~~~~~~-._       _.-~~~~~~~~~-.
+            __.'              ~.   .~              `.__
+          .'//     开卷有益        \./     书山有路     \\ `.
+        .'// 可以多看看小鱼的文章   |    关注公众号鱼香ROS  \\ `.
+      .'// .-~"""""""~~~~-._     |     _,-~~~~"""""""~-. \\`.
+    .'//.-"                 `-.  |  .-'                 "-.\\`.
+  .'//______.============-..   \ | /   ..-============.______\\`.
+.'______________________________\|/______________________________`
+-----------------------------------""",delay=0.01)
+
+ros_mirror_dic = {
+  "tsinghua":{"ROS1":"https://mirrors.tuna.tsinghua.edu.cn/ros/ubuntu/","ROS2":"https://mirrors.tuna.tsinghua.edu.cn/ros2/ubuntu/"},
+  "tsinghua_http":{"ROS1":"http://mirrors.tuna.tsinghua.edu.cn/ros/ubuntu/","ROS2":"http://mirrors.tuna.tsinghua.edu.cn/ros2/ubuntu/"}
+}
+
+
+version_code_dic = {
+  16:{'name':'xtenial','ros1':['kinetic'],'ros2':[]},
+  18:{'name':'bionic','ros1':['melodic'],'ros2':['crystal','eloquent']},
+  20:{'name':'focal','ros1':['noetic'],'ros2':['foxy','galactic','rolling']},
+}
+
+
+def run_command(commond):
+  result = os.popen(commond).readlines()
+  #print("debug:",commond,result)
+  return result
+
+def check(result,data):
+  if len(result)>0:
+    for line in result:
+      if line.lower().find(data.lower()) > -1:
+        return True
+  return False
+
+def find_replace(file,old,new):
+  """
+  查找和删除文件
+  """
+  is_file = True
+  for root, dirs, files in os.walk(file):
+      for f in files:
+          is_file = False
+          file_path = os.path.join(root, f)
+          print(file_path)
+          with open(file_path) as f:
+              data = f.read()
+          if data.find(old) > -2:
+            print("替换%s" % file_path)
+            data = data.replace(old,new)
+            with open(file_path,"w") as f:
+              f.write(data)
+      # 遍历所有的文件夹
+      for d in dirs:
+          print(os.path.join(root, d))
+  if is_file:
+    with open(file) as f:
+      data = f.read()
+    if data.find(old) > 0:
+      print("替换%s" % file)
+      data = data.replace(old,new)
+      with open(file,"w") as f:
+        f.write(data)
+
+
+def find_delete(file,key):
+  """
+  查找和删除文件
+  """
+  for root, dirs, files in os.walk(file):
+      for f in files:
+          file_path = os.path.join(root, f)
+          print(file_path)
+          with open(file_path) as f:
+              data = f.read()
+          if data.find(key) > -1:
+              os.system("sudo rm %s" % file_path)
+      # 遍历所有的文件夹
+      for d in dirs:
+          print(os.path.join(root, d))
+
+def del_import_error(code,version,source):
+  print_delay("尝试导入https源失败，接下来将为您尝试http源....")
+  source += '_http'
+  if version['version']=='ROS2':
+      # 导入密钥
+      run_command("sudo rm -r /usr/share/keyrings/ros-archive-keyring.gpg")
+      run_command('sudo curl -sSL https://gitee.com/ohhuo/rosdistro/raw/master/ros.key  -o /usr/share/keyrings/ros-archive-keyring.gpg')
+      run_command('echo "deb [arch=$(dpkg --print-architecture) '
+                + 'signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] '
+                + ros_mirror_dic[source][version['version']]+' $(lsb_release -cs) main" '
+                + '| sudo tee /etc/apt/sources.list.d/ros-fish.list > /dev/null')
+  elif version['version'] == 'ROS1':
+    run_command("sudo rm -r /usr/share/keyrings/ros-archive-keyring.gpg")
+    run_command('sudo curl -sSL https://gitee.com/ohhuo/rosdistro/raw/master/ros.key  -o /usr/share/keyrings/ros-archive-keyring.gpg')
+    run_command('echo "deb [arch=$(dpkg --print-architecture) '
+        + 'signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] '
+        + ros_mirror_dic[source][version['version']]+' $(lsb_release -cs) main" '
+        + '| sudo tee /etc/apt/sources.list.d/ros-fish.list > /dev/null')
+    result = run_command("sudo apt update 2>/dev/null")
+    if check(result,"Certificate"):
+      print_delay("导入源失败....")
+
+
+def import_key(code,version):
+    source = "tsinghua"
+
+    if version['version']=='ROS2':
+      # 导入密钥
+      run_command("sudo rm -r /usr/share/keyrings/ros-archive-keyring.gpg 2>>/dev/null")
+      run_command('sudo curl -sSL https://gitee.com/ohhuo/rosdistro/raw/master/ros.key  -o /usr/share/keyrings/ros-archive-keyring.gpg')
+      run_command('echo "deb [arch=$(dpkg --print-architecture) '
+                + 'signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] '
+                + ros_mirror_dic[source][version['version']]+' $(lsb_release -cs) main" '
+                + '| sudo tee /etc/apt/sources.list.d/ros-fish.list > /dev/null')
+
+    elif version['version'] == 'ROS1':
+      run_command("sudo rm -r /usr/share/keyrings/ros-archive-keyring.gpg 2>>/dev/null")
+      run_command('sudo curl -sSL https://gitee.com/ohhuo/rosdistro/raw/master/ros.key  -o /usr/share/keyrings/ros-archive-keyring.gpg')
+      run_command('echo "deb [arch=$(dpkg --print-architecture) '
+          + 'signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] '
+          + ros_mirror_dic[source][version['version']]+' $(lsb_release -cs) main" '
+          + '| sudo tee /etc/apt/sources.list.d/ros-fish.list > /dev/null')
+
+      
+    print_delay("接下来进行源的更新...")
+    result = run_command("sudo apt update 2>>/dev/null")
+    if check(result,"Certificate verification failed"):
+      del_import_error(code,version,source)
+    
+    # check pkg 
+    if code == 20 or code == 18 or code==16:
+      result = None
+      if version['version']=='ROS2':
+        result = run_command("sudo apt search ros-%s-desktop" % version['name'])
+        return check(result,version['name'])
+      elif version['version']=='ROS1':
+        result = run_command("sudo apt search ros-%s-desktop-full" % version['name'])
+        return check(result,version['name'])
+    return None
+
+def source(version):
+    print_delay("%s,你好，我是小鱼，欢迎使用ROS环境配置工具，更多学习教程请关注微信公众号《鱼香ROS》" % fishros_name)
+    result = run_command("ls /opt/ros/*/setup.bash")
+    ros_version = result
+    if len(result)>0 and len(result)!=1:
+        print("你当前系统中一共有下面几个版本的ROS：")
+        for index in range(len(result)):
+            print("[%d] %s" % (index,result[index][9:result[index].rfind("/")]))
+        print_delay("系统中默认应该只配置一个ROS环境...请输入你默认使用的ros编号:",end="")
+        while True:
+            num = input()
+            if num.isdecimal() and len(result)>=int(num)>=0:
+                ros_version = result[int(num)]
+                break
+            print_delay("系统中默认应该只配置一个ROS环境...请输入你默认使用的ros编号:",end="")
+    elif len(result)==1:
+      ros_version = result[0]
+    else:
+        print("未发现你系统中的ROS，请先安装，呜呜呜.......")
+        return
+    
+
+    bashrc = run_command("ls /home/*/.bashrc")
+    if len(bashrc)==1:
+        source_ros = None
+        lines = []
+        with open(bashrc[0][:-1]) as f:
+            bashrc_data = f.readlines()
+        for index,line in enumerate(bashrc_data):
+            if  not( line.find("/opt/ros/")>-1 and line.find("setup.bash")>-1):
+                lines.append(line)
+        lines.append("source %s" % ros_version)
+        with open(bashrc[0][:-1],"w") as f:
+            f.writelines(lines)
+        print_delay("已为您完成环境替换...")
+        # print_delay("已为您完成环境替换，接下来将打开一个新的窗口运行ROS指令...")
+        # if version['version']=='ROS2':
+        #   run_command('gnome-terminal -- bash -c "source ~/.bashrc; ros2;echo \"测试完 成，按任意按键退出...\"; read" ')
+        # elif version['version']=='ROS1':
+        #   run_command('gnome-terminal -- bash -c "source ~/.bashrc;roscore"')
+    else:
+        print("本工具当前仅仅支持单用户环境...")
+    
+
+def install(code,version):
+
+  if check(run_command("whereis bastet"),"games"):
+    print_delay("接下来的安装过程可能有些枯燥，小鱼为你准备好了俄罗斯方块小游戏，您可以边玩边装..")
+    run_command('gnome-terminal -- "/usr/games/bastet"')
+
+  
+  
+  print_delay("该安装目前默认使用的源是清华大学镜像源,接着将为你导入源和密钥...")
+  if not import_key(code,version):
+    print_delay("导入密钥失败...,程序退出，请联系小鱼...")
+    return False
+
+  print("开始安装....")
+  result = None
+  if code == 20 or code == 18 or code==16:
+      if version['version']=='ROS2':
+        result = os.system("sudo apt install ros-%s-desktop -y" % version['name'])
+      elif version['version']=='ROS1':
+        result = os.system("sudo apt install ros-%s-desktop-full -y" % version['name'])
+      if result==0:
+        print_delay("小鱼：恭喜你安装成功...")
+        print_delay("接下来检查一下环境变量...")
+      else:
+        print_delay("有可能安装失败了...，进一步检查中...")
+      result = run_command('ls /opt/ros/%s' % version['name'] )
+      if check(result,'setup.bash'):
+        print_delay("确认您已经安装成功了...")
+        print_delay("接下来为你配置环境...")
+        source(version)
+        return True
+      else:
+        print_delay("确认您已经安装失败了...")
+        return False
+
+
+def get_ros_version():
+    ubuntu_version = 0 
+    # 根据系统名字和版本获取对应可安装的ROS名字
+    if info.sysname=="Linux" and info.version.find("Ubuntu") > -1:
+        if info.version.find("20.04") > -1:
+            print_delay("检测到你的系统为Linux-Ubuntu-%s,符合安装要求" % "20.04",end="\n\n")
+            ubuntu_version = 20
+        elif info.version.find("18.04") > -1:
+            print_delay("检测到你的系统为Linux-Ubuntu-%s" % "18.04",end="\n\n")
+            ubuntu_version = 18
+        elif info.version.find("16.04") > -1:
+            print_delay("检测到你的系统为Linux-Ubuntu-%s" % "16.04",end="\n\n")
+            ubuntu_version = 16
+
+    if ubuntu_version not in version_code_dic.keys():
+        print_delay("呜呜呜，好可怜，你的系统并不支持小鱼的一键安装程序，关注公众号鱼香ROS，联系小鱼让小鱼快快更新....")
+        print_delay("如果你使用的是Ubunut可以手动选择系统版本，继续使用一键安装，请手动选择版本....")
+        print_delay("[16] Ubuntu16.04")
+        print_delay("[18] Ubuntu18.04")
+        print_delay("[20] Ubuntu20.04")
+        print_delay("[0] 退出安装....")
+        version = input("请选择你的Ubuntu版本:")
+        if version.isdecimal() and int(version) != 0:
+          ubuntu_version = int(version)
+        else:
+          return ubuntu_version
+    print_delay("恭喜，经过检查你的系统支持安装的ROS版本有：%s,ROS2版本有：%s" % (version_code_dic[ubuntu_version]['ros1'],version_code_dic[ubuntu_version]['ros2']))
+    return ubuntu_version
+
+
+def choose_ros(code):
+  print_delay("接下来请选择你要安装的ROS版本:")
+  ros_dic = {}
+  count = 0
+
+  for name in version_code_dic[code]['ros1']:
+    ros_dic[count] =   {'name':name,'version':"ROS1",'code':code}
+    count += 1
+
+  for name in version_code_dic[code]['ros2']:
+    ros_dic[count] =  {'name':name,'version':"ROS2",'code':code}
+    count += 1
+  count -= 1
+  print_delay("可安装的ROS版本有：")
+  print_delay("编号\tROS版本\t版本名称")
+  for id in ros_dic.keys():
+    print_delay("[%d]\t%s\t%s" % (id,ros_dic[id]['version'],ros_dic[id]['name']))
+
+  print_delay("请输入0～%d之间的数字点击回车选择你要安装的ROS版本(q退出):" % count,end="")
+  num = input()
+  while  True:
+    if num.isdecimal() and 0<=int(num)<=count:
+      break
+    elif num == 'q':
+      return None
+    else:
+      print_delay("请输入0～%d之间的数字点击回车选择你要安装的ROS版本(q退出):" % count,end="")
+      num = input()
+  num = int(num)
+  print_delay("是否确认要安装：[%d]-%s-%s,[y/n]?：" % (num,ros_dic[num]['version'],ros_dic[num]['name']),end="")
+  yn = input("")
+  while True:
+    if yn.isalpha() and (yn=='y' or yn =="Y"):
+      return ros_dic[num]
+    elif yn.isalpha() and (yn == "n" or yn =="N"):
+      print_delay("小鱼：那我们下次再见哦～")
+      return None
+    else:
+      yn = input("[y/n]?:")
+
+def apt_check():
+  print_delay("接下来对安装工具APT进行检查,请稍等....")
+  result = run_command("sudo apt update 2>>/dev/null")
+  if check(result,'Certificate verification failed'):
+      print("发现APT源有错误,准备替换修复.....")
+      find_replace("/etc/apt/sources.list.d","https://","http://")
+      find_replace("/etc/apt/sources.list","https://","http://")
+      print_delay("修复完成，再次检查,请稍等....")
+      result = run_command("sudo apt update 2>>/dev/null")
+      if check(result,'Certificate verification failed'):
+        print_delay("对不起，实在是无法搞定这个错误，请联系小鱼微信处理....")
+        print("请将此部分日志反馈给小鱼以完善工具:",result)
+        return False
+      else:
+        print_delay("小鱼已为你搞定证书校验错误~")
+        return True
+  else:
+    print_delay("未发现APT问题....")
+    return True
+
+def main():
+    print_delay("%s,你好，我是小鱼，欢迎使用ROS开箱子工具，小鱼将伴你一起走过接下来的安装时光，更多学习教程请关注微信公众号《鱼香ROS》" % fishros_name)
+    print_book()
+
+    print_delay("我已经关注了小鱼，按任意按键继续安装～",delay=0.01)
+    input()
+    print_delay("接下来小鱼将对你的系统进行检查，请稍等.....",end="\n\n")
+
+    if not apt_check():
+      print_delay("apt工具check不通过，请使用上面的日志联系小鱼...")
+
+    # 获取系统信息
+    code = get_ros_version()
+
+
+    if code==0: 
+        print_delay("小鱼：装不了装不了，走了走了....记得关注公众号哦")
+        return
+    
+    # 获取ROS版本
+    ros_info = choose_ros(code)
+    if ros_info==None:
+       print_delay("小鱼：走了走了....记得关注公众号哦")
+       return 
+    
+    #安装ROS
+    result = install(code,ros_info)
+    if result:
+        print_delay("安装成功,进一步学习ROS可以关注小鱼的微信公众号和访问fishros.com哦！...")
+        print_delay("最后的最后再送您一个常用的rosdepc,如果不需要请在3s中内使用Ctrl+C打断小鱼...")
+        from time import sleep
+        sleep(3)
+        run_command('gnome-terminal -- bash -c "curl http://fishros.com/tools/install/rosdepc | bash;exec bash"')
+if __name__=='__main__':
+  main()
+    
+      

@@ -1,0 +1,168 @@
+import os
+import time
+from typing import cast
+
+info = os.uname()
+fishros_name = info.nodename
+
+def print_delay(data,delay=0.03,end="\n"):
+  for d in data:
+    print(d,end="",flush=True)
+    time.sleep(delay)
+  print(end=end)
+
+
+def print_book():
+    print_delay("""
+                       _oo0oo_
+                      o8888888o
+                      88" . "88
+                      (| -_- |)
+                      0\  =  /0
+                    ___/`---'\___
+                  .' \\|     | '.
+                 / \\|||  :  ||| \  
+                / _||||| -:- |||||- \   
+               |   | \\\  -  / |   |
+               | \_|  ''\---/''  |_/ |  
+               \  .-\__  '-'  ___/-. /  
+             ___'. .'  /--.--\  `. .'___
+          ."" '<  `.___\_<|>_/___.' >' "".  
+         | | :  `- \`.;`\ _ /`;.`/ - ` : | |  
+         \  \ `_.   \_ __\ /__ _/   .-` /  /  
+     =====`-.____`.___ \_____/___.-`___.-'=====
+                       `=---='
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+              佛祖保佑    关注小鱼    永无BUG
+-----------------------------------""",delay=0.006)
+
+def run_commond(commond,log_file=False):
+  if log_file:
+    run_commond("rm -r /tmp/run_command.log")
+  result = os.popen(commond).readlines()
+  if log_file:
+    with open("/tmp/run_command.log") as f:
+      result.append(str(f.read()))
+  # print("debug:",commond,result)
+  return result
+
+def check(result,data):
+  if len(result)>0:
+    for line in result:
+      if line.find(data)>-1:
+        return True
+  return False
+
+
+def find_delete(file,key):
+  """
+  查找和删除文件
+  """
+  for root, dirs, files in os.walk(file):
+      for f in files:
+          file_path = os.path.join(root, f)
+          print(file_path)
+          with open(file_path) as f:
+              data = f.read()
+          if data.find(key) > 0:
+              os.system("sudo rm %s" % file_path)
+      # 遍历所有的文件夹
+      for d in dirs:
+          print(os.path.join(root, d))
+
+def find_replace(file,old,new):
+  """
+  查找和删除文件
+  """
+  is_file = True
+  for root, dirs, files in os.walk(file):
+      for f in files:
+          is_file = False
+          file_path = os.path.join(root, f)
+          print(file_path)
+          with open(file_path) as f:
+              data = f.read()
+          if data.find(old) > 0:
+            print("替换%s" % file_path)
+            data = data.replace(old,new)
+            with open(file_path,"w") as f:
+              f.write(data)
+      # 遍历所有的文件夹
+      for d in dirs:
+          print(os.path.join(root, d))
+  if is_file:
+    with open(file) as f:
+      data = f.read()
+    if data.find(old) > 0:
+      print("替换%s" % file)
+      data = data.replace(old,new)
+      with open(file,"w") as f:
+        f.write(data)
+
+def find_kill(name):
+  pass
+
+def main():
+  def lock_error(result):
+    result = str(result)
+    try:
+      pid = result[result.find("锁正由进程")+6:result.find("（")]
+      # have pid
+      if len(pid)>0 and pid.isdecimal():
+        print_delay("发现有进程占用pid,进程编号为%s,10s后会再次进行检查，如依然占用,将对其杀死" % pid,end='')
+        print_delay("..........",1)
+        print_delay("小鱼准备杀死进程%s" % pid)
+        result = run_commond("sudo kill -9 %s" % pid)
+        result = run_commond("sudo kill -9 %s" % pid)
+        result = run_commond(" ps -e | grep  %s" % pid)
+        if not check(result,pid):
+          print_delay("进程已被杀死.....")
+        else:
+          print_delay("查杀进程失败，如稍后继续失败请重启计算机...")
+      # no pid
+      else:
+        print_delay("没有发现占用APT的pid，将通过删除文件进行处理,10s后将删除锁文件")
+        print_delay("..........",1)
+        print_delay("准备移除锁文件%s" % pid)
+        result = run_commond("sudo rm /var/lib/dpkg/lock")
+        result = run_commond("sudo rm  /var/lib/apt/lists/lock")
+        result = run_commond("sudo rm /var/lib/dpkg/lock-frontend")
+        result = run_commond("sudo rm /var/cahe/apt/archives/lock")
+        print_delay("除锁文件完成，接下来将进行二次尝试....")
+    except:
+      print("发生未知异常....请联系小鱼处理....")
+    result = run_commond("sudo apt update 2>>/tmp/run_command.log",log_file=True)
+    if check(result,'lock') or check(result,'锁'):
+      print("还搞锁不定这个错误，请拿下面的日志告诉小鱼\n------------------------------------------------------------------",result,'\n------------------------------------------------------------------')
+      return False
+    else:
+      print_delay("小鱼已为你搞定APT锁占用错误~")
+      return True
+      
+
+  def certificate_error(result):
+    find_replace("/etc/apt/sources.list.d","https:","http:")
+    find_replace("/etc/apt/sources.list","https:","http:")
+    result = run_commond("sudo apt update 2>>/tmp/run_command.log",log_file=True)
+    if check(result,'Certificate verification failed') or check(result,'证书'):
+      print("还搞不定这个错误，请拿下面的日志告诉小鱼\n------------------------------------------------------------------",result,'\n------------------------------------------------------------------')
+      return False
+    else:
+      print_delay("小鱼已为你搞定证书校验错误~")
+      return True
+
+  print_delay("开始校验APT是否存在证书错误,请稍等...")
+  while True:
+    result = run_commond("sudo apt update 2>>/tmp/run_command.log",log_file=True)
+    if check(result,'Certificate verification failed'):
+      certificate_error(result)
+    elif check(result,'lock'):
+      lock_error(result)
+    else:
+      print("恭喜你，没有发现已知APT问题哦.....")
+      break
+      
+if __name__=='__main__':
+  print_delay("欢迎使用APT证书错误检测解决工具,我是作者小鱼-公众号-鱼香ROS")
+  print_book()
+  main()

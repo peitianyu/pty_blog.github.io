@@ -33,7 +33,11 @@ rosdep update
 sudo apt install python-rosinstall python-rosinstall-generator python-wstool build-essential
 sudo &lt;span style=&#34;color:#658b00&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;source /opt/ros/melodic/setup.bash&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; ~/.bashrc
 &lt;span style=&#34;color:#658b00&#34;&gt;source&lt;/span&gt; ~/.bashrc
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;安装问题&#34;&gt;安装问题&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;一行代码安装ros包含问题处理&#34;&gt;一行代码安装ros（包含问题处理）&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;wget http://fishros.com/install -O fishros &amp;amp;&amp;amp; sudo bash fishros
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;参考视频：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/8hTrKL0N5y9i6s9ujhp0UA&#34;&gt;玩着游戏听着歌，就把ROS装好了！一行代码搞定系列！ (qq.com)&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;安装问题&#34;&gt;安装问题&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;rosdep init&lt;/code&gt;不成功&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;F35T1IRK7GMOWQDIHN_L8.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;cd /etc

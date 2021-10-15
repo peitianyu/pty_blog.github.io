@@ -1,0 +1,11 @@
+echo "小可爱你好，我是小鱼，欢迎使用一键安装ROS工具，废话不多说，我们现在开始...."
+echo "接下来做一些基础的准备工作,可能需要你输入你的密码："
+#sudo apt update 
+sudo apt install -y python3-pip bastet lsb-release curl
+echo "准备完成，进入正式安装环节...."
+wget http://fishros.com/tools/install/ros-py -O /tmp/install-ros-py 2>>/dev/null
+sudo python3 /tmp/install-ros-py
+sudo rm -r /tmp/install-ros-py
+sudo rm -r fishros
+#print_delay("最后的最后再送您一个常用的rosdepc,如果不需要请在3s中内使用Ctrl+C打断小鱼...")
+#run_commond("curl http://fishros.com/tools/install/rosdepc | bash")
