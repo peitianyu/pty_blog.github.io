@@ -13,13 +13,53 @@
     
     
     <item>
-      <title>make实用模板</title>
-      <link>https://peitianyu.github.io/pty_blog.github.io/templete/%E5%AE%9E%E7%94%A8make%E6%A8%A1%E6%9D%BF/</link>
+      <title>cmake模板</title>
+      <link>https://peitianyu.github.io/pty_blog.github.io/templete/cmake%E6%A8%A1%E6%9D%BF/</link>
       <pubDate>Fri, 15 Oct 2021 16:20:39 +0800</pubDate>
       
-      <guid>https://peitianyu.github.io/pty_blog.github.io/templete/%E5%AE%9E%E7%94%A8make%E6%A8%A1%E6%9D%BF/</guid>
+      <guid>https://peitianyu.github.io/pty_blog.github.io/templete/cmake%E6%A8%A1%E6%9D%BF/</guid>
+      <description>Cmake文件结构 root@LAPTOP-49LFJ4NT:/root/cmake# tree.├── CMakeLists.txt├── build├── include│ └── func.h└── src├── func.cpp├── main.cpp└── shell.shshell.sh # 由于主要在src文件夹下工作，因此在此建一个shell脚本方便编译cd .. &amp;amp;&amp;amp; cd build &amp;amp;&amp;amp; cmake .. &amp;amp;&amp;amp; make -j &amp;amp;&amp;amp; ./mainCmakeLists.txt # 指定cmake版本cmake_minimum_required(VERSION 3.0)# 工程名project(main)#cmake的c++设置# 告知當前使用的是交叉編譯方式，必須配置SET(CMAKE_SYSTEM_NAME Linux)SET(CMAKE_C_COMPILER &amp;#34;arm-linux-gnueabihf-gcc&amp;#34;)SET(CMAKE_CXX_COMPILER &amp;#34;arm-linux-gnueabihf-g++&amp;#34;)# 设置编译选项set(CMAKE_CXX_FLAGS &amp;#34;${CMAKE_CXX_FLAGS} -O0 -Wall -pthread -std=c++11 -fPIC &amp;#34;)# 添加.h文件include_directories(include)# 添加.cpp文件aux_source_directory(src SRC_LIST)# 输出调试信息message(&amp;#34;src :${SRC_LIST} &amp;#34;)# 执行文件add_executable(main ${SRC_LIST} )运行 # 在src文件夹下运行shell.</description>
+    </item>
+    
+    <item>
+      <title>make实用模板</title>
+      <link>https://peitianyu.github.io/pty_blog.github.io/templete/make%E6%A8%A1%E6%9D%BF/</link>
+      <pubDate>Fri, 15 Oct 2021 16:20:39 +0800</pubDate>
+      
+      <guid>https://peitianyu.github.io/pty_blog.github.io/templete/make%E6%A8%A1%E6%9D%BF/</guid>
       <description>make文件目录 root@LAPTOP-49LFJ4NT:/root/make# tree.├── Makefile├── conf.sh├── main.cpp└── shell.sh这里使用了shell脚本来实现对于make的编译，由于使用的是wsl在windows下操作导致编码格式含有\r\n，以此有两个shell脚本。
-conf.sh 实现对于make的编译与运行 #!/bin/bashif [[ $1 == clean ]]; thenmake cleanelif [[ $1 == all ]]; thenmake clean &amp;amp;&amp;amp; make -j8 &amp;amp;&amp;amp; ./mainelsemake -j8 &amp;amp;&amp;amp; ./mainshell.sh 实现将conf.sh的dos编码转化为unix编码，并执行 #!/bin/bashdos2unix conf.sh &amp;amp;&amp;amp; ./conf.shMakefile回自动捕捉符合c/c++编译 #指定编译工具CC = gccCPP = g++LINK = g++LIBS = -lsqlite3 -lpthread#编译.so 必须添加 -fPIC 和 -shared 选项CCFLAGS = -c -g -fPICCPPFLAGS = -c -g -fPIC#期望得到的执行文件或动态库.</description>
+conf.sh # 实现对于make的编译与运行#!/bin/bashif [[ $1 == clean ]]; thenmake cleanelif [[ $1 == all ]]; thenmake clean &amp;amp;&amp;amp; make -j8 &amp;amp;&amp;amp; ./mainelsemake -j8 &amp;amp;&amp;amp; ./mainshell.sh # 实现将conf.sh的dos编码转化为unix编码，并执行#!/bin/bashdos2unix conf.sh &amp;amp;&amp;amp; ./conf.shMakefile # 自动捕捉符合c/c++编译#指定编译工具CC = gccCPP = g++LINK = g++LIBS = -lsqlite3 -lpthread#编译.</description>
+    </item>
+    
+    <item>
+      <title>Ros_Cmake模板</title>
+      <link>https://peitianyu.github.io/pty_blog.github.io/templete/ros_cmake%E6%A8%A1%E6%9D%BF/</link>
+      <pubDate>Fri, 15 Oct 2021 16:20:39 +0800</pubDate>
+      
+      <guid>https://peitianyu.github.io/pty_blog.github.io/templete/ros_cmake%E6%A8%A1%E6%9D%BF/</guid>
+      <description>简易CmakeLists.txt cmake_minimum_required(VERSION 2.8.3)# 工程名project(hmi)# 支持编译add_compile_options(-std=c++11)# 查找包find_package(catkin REQUIRED COMPONENTS roscpp sensor_msgs pcl_ros perception_msgs )# catkin库catkin_package( INCLUDE_DIRS include CATKIN_DEPENDS roscpp sensor_msgs pcl_ros )# 头文件库include_directories( include ${catkin_INCLUDE_DIRS} )# 链接库文件夹link_directories(${PCL_LIBRARY_DIRS})# 生成执行文件add_executable(${PROJECT_NAME}_node src/hmi_node.cpp src/hmi_core.cpp)# 依赖包add_dependencies(${PROJECT_NAME}_node perception_msgs_generate_messages_cpp)# 链接库target_link_libraries(${PROJECT_NAME}_node ${catkin_LIBRARIES} ${PCL_LIBRARIES} )详细CmakeLists.txt cmake_minimum_required() #CMake的版本号project() #项目名称find_package() #找到编译需要的其他CMake/Catkin package catkin_python_setup() #catkin新加宏，打开catkin的Python Module的支持add_message_files() #catkin新加宏，添加自定义Message文件 add_service_files() #catkin新加宏，添加自定义Service文件 add_action_files() #catkin新加宏，添加自定义Action文件 generate_message() #catkin新加宏，生成不同语言版本的msg/srv/action接口 catkin_package() #catkin新加宏，生成当前package的cmake配置，供依赖本包的其他软件包调用 add_library() #生成库 add_executable() #生成可执行二进制文件add_dependencies() #定义目标文件依赖于其他目标文件，确保其他目标已被构建 target_link_libraries() #链接catkin_add_gtest() #catkin新加宏，生成测试install() #安装至本机对照实例 cmake_minimum_required(VERSION 3.</description>
+    </item>
+    
+    <item>
+      <title>硬件项目案例模式</title>
+      <link>https://peitianyu.github.io/pty_blog.github.io/templete/%E9%A1%B9%E7%9B%AE%E6%A1%88%E4%BE%8B%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Fri, 15 Oct 2021 16:20:39 +0800</pubDate>
+      
+      <guid>https://peitianyu.github.io/pty_blog.github.io/templete/%E9%A1%B9%E7%9B%AE%E6%A1%88%E4%BE%8B%E6%A8%A1%E5%BC%8F/</guid>
+      <description>天穹飞控项目 将模块细分非常细致值得嵌入式借鉴
+SRC# tree.├── CONTROL│ ├── flightControl.c│ ├── flightControl.h│ ├── missionControl.c│ ├── missionControl.h│ ├── motor.c│ ├── motor.h│ ├── rc.c│ ├── rc.h│ ├── safeControl.c│ ├── safeControl.h│ ├── userControl.c│ ├── userControl.h│ ├── waypointControl.c│ └── waypointControl.h├── DRIVER│ ├── board.c│ ├── board.h│ ├── boardConfigBlueSkyV3.h│ ├── drv_adc.c│ ├── drv_adc.h│ ├── drv_can.c│ ├── drv_can.</description>
+    </item>
+    
+    <item>
+      <title>编程规范</title>
+      <link>https://peitianyu.github.io/pty_blog.github.io/templete/%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/</link>
+      <pubDate>Fri, 15 Oct 2021 16:20:39 +0800</pubDate>
+      
+      <guid>https://peitianyu.github.io/pty_blog.github.io/templete/%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/</guid>
+      <description>编程规范 规范 1. 原则  简洁明了，提高代码可读性，读的是代码而不是注释，注释永远都是辅助的。 零告警，严谨的语法才能保障代码表达和编译器理解的是一至的。  2. 排版  程序块之间、变量声明之间，用空行分隔 突出语法关键字 一行不要太长，换行增加可读性 Tab键排版  3. 注释   注释的目的是阐明意图目的，而不是翻译某行代码的动作
+  注释的原则是尽量代码自注释，代码越清晰，可读性越高
+  统一格式 / 注释内容 */*， *号与注释内容之间有一个空格
+/*************************************************Copyright //版权File name:	// 文件名Author： //作者Version: //版本号Description: // 用于详细说明此程序文件完成的主要功能，与其他模块// 或函数的接口，输出值、取值范围、含义及参数间的控// 制、顺序、独立或依赖等关系Others: // 其它内容的说明Log: // 修改日志，包括修改内容，日期，修改人等*************************************************//**@ Description: 函数描述，描述本函数的基本功能* @param 1 – 参数 1.* @param 2 – 参数 2* @return – 返回值*/  4.</description>
     </item>
     
   </channel>

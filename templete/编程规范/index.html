@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html><head>
+<title>编程规范</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+
+
+
+
+
+
+
+<link type="text/css" rel="stylesheet" href="/pty_blog.github.io/vendor/css/bootstrap.min.css">
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="https://peitianyu.github.io/pty_blog.github.io/scss/journal.min.4dabc90cf94657415a747e8400223bb3c4d11654d1279feff37fd6a11089fe77.css" integrity="sha256-TavJDPlGV0FadH6EACI7s8TRFlTRJ5/v83/WoRCJ/nc=" media="screen">
+
+
+
+<link rel="stylesheet" href="https://peitianyu.github.io/pty_blog.github.io/scss/dark-mode.min.cc330561b348e87bbc3f5a915a6c95ba359296799218461f2848ad4a30d3eca4.css" integrity="sha256-zDMFYbNI6Hu8P1qRWmyVujWSlnmSGEYfKEitSjDT7KQ=" media="screen">
+
+
+<script src="/pty_blog.github.io/vendor/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Fira+Mono|Material+Icons");
+</script>
+
+
+
+
+
+
+  <script src="/pty_blog.github.io/js/toc.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    	<div id="app"><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://peitianyu.github.io/pty_blog.github.io/">
+    
+        <div class="nav-title">
+            武装带你
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/pty_blog.github.io/blog">
+                Blog
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/pty_blog.github.io/ros">
+                Ros
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/pty_blog.github.io/tool">
+                工具
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/pty_blog.github.io/program_language">
+                编程语言
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/pty_blog.github.io/templete">
+                模板
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/pty_blog.github.io/system">
+                操作系统
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/pty_blog.github.io/arithmetic">
+                算法
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/pty_blog.github.io/embedded">
+                嵌入式
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/pty_blog.github.io/literature">
+                文学
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	This is a customized copyright.
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e7%bc%96%e7%a8%8b%e8%a7%84%e8%8c%83" onclick="onNavClick(`#编程规范-nav`)" id="编程规范-nav">
+									编程规范
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e8%a7%84%e8%8c%83" onclick="onNavClick(`#规范-nav`)" id="规范-nav">
+									规范
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#1-%e5%8e%9f%e5%88%99" onclick="onNavClick(`#1-原则-nav`)" id="1-原则-nav">
+									1. 原则
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#2-%e6%8e%92%e7%89%88" onclick="onNavClick(`#2-排版-nav`)" id="2-排版-nav">
+									2. 排版
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#3-%e6%b3%a8%e9%87%8a" onclick="onNavClick(`#3-注释-nav`)" id="3-注释-nav">
+									3. 注释
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#4-%e5%ae%9a%e4%b9%89" onclick="onNavClick(`#4-定义-nav`)" id="4-定义-nav">
+									4. 定义
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#5-%e5%8f%98%e9%87%8f" onclick="onNavClick(`#5-变量-nav`)" id="5-变量-nav">
+									5. 变量
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#6-%e5%87%bd%e6%95%b0" onclick="onNavClick(`#6-函数-nav`)" id="6-函数-nav">
+									6. 函数
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#7-%e6%96%87%e4%bb%b6" onclick="onNavClick(`#7-文件-nav`)" id="7-文件-nav">
+									7. 文件
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#8%e7%ba%a6%e5%ae%9a%e4%bf%97%e6%88%90%e7%ae%80%e5%86%99" onclick="onNavClick(`#8约定俗成简写-nav`)" id="8约定俗成简写-nav">
+									8.约定俗成简写
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#9-%e6%a8%a1%e5%9d%97" onclick="onNavClick(`#9-模块-nav`)" id="9-模块-nav">
+									9. 模块
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+<div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/pty_blog.github.io/blog">
+                    Blog
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/pty_blog.github.io/ros">
+                    Ros
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/pty_blog.github.io/tool">
+                    工具
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/pty_blog.github.io/program_language">
+                    编程语言
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/pty_blog.github.io/templete">
+                    模板
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/pty_blog.github.io/system">
+                    操作系统
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/pty_blog.github.io/arithmetic">
+                    算法
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/pty_blog.github.io/embedded">
+                    嵌入式
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/pty_blog.github.io/literature">
+                    文学
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e7%bc%96%e7%a8%8b%e8%a7%84%e8%8c%83" onclick="onNavClick(`#编程规范-nav`)" id="编程规范-nav">
+									编程规范
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e8%a7%84%e8%8c%83" onclick="onNavClick(`#规范-nav`)" id="规范-nav">
+									规范
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#1-%e5%8e%9f%e5%88%99" onclick="onNavClick(`#1-原则-nav`)" id="1-原则-nav">
+									1. 原则
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#2-%e6%8e%92%e7%89%88" onclick="onNavClick(`#2-排版-nav`)" id="2-排版-nav">
+									2. 排版
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#3-%e6%b3%a8%e9%87%8a" onclick="onNavClick(`#3-注释-nav`)" id="3-注释-nav">
+									3. 注释
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#4-%e5%ae%9a%e4%b9%89" onclick="onNavClick(`#4-定义-nav`)" id="4-定义-nav">
+									4. 定义
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#5-%e5%8f%98%e9%87%8f" onclick="onNavClick(`#5-变量-nav`)" id="5-变量-nav">
+									5. 变量
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#6-%e5%87%bd%e6%95%b0" onclick="onNavClick(`#6-函数-nav`)" id="6-函数-nav">
+									6. 函数
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#7-%e6%96%87%e4%bb%b6" onclick="onNavClick(`#7-文件-nav`)" id="7-文件-nav">
+									7. 文件
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#8%e7%ba%a6%e5%ae%9a%e4%bf%97%e6%88%90%e7%ae%80%e5%86%99" onclick="onNavClick(`#8约定俗成简写-nav`)" id="8约定俗成简写-nav">
+									8.约定俗成简写
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#9-%e6%a8%a1%e5%9d%97" onclick="onNavClick(`#9-模块-nav`)" id="9-模块-nav">
+									9. 模块
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://peitianyu.github.io/pty_blog.github.io/">
+            武装带你
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://peitianyu.github.io/pty_blog.github.io/">
+        <div class="single-column-header-title">武装带你</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    编程规范
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2021-10-15 16:20
+                        </time>
+                        
+
+                        
+
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h1 id="编程规范">编程规范</h1>
+<h3 id="规范">规范</h3>
+<h4 id="1-原则">1. 原则</h4>
+<ol>
+<li>简洁明了，提高代码可读性，读的是代码而不是注释，注释永远都是辅助的。</li>
+<li>零告警，严谨的语法才能保障代码表达和编译器理解的是一至的。</li>
+</ol>
+<h4 id="2-排版">2. 排版</h4>
+<ol>
+<li>程序块之间、变量声明之间，用空行分隔</li>
+<li>突出语法关键字</li>
+<li>一行不要太长，换行增加可读性</li>
+<li>Tab键排版</li>
+</ol>
+<h4 id="3-注释">3. 注释</h4>
+<ol>
+<li>
+<p>注释的目的是阐明意图目的，而不是翻译某行代码的动作</p>
+</li>
+<li>
+<p>注释的原则是尽量代码自注释，代码越清晰，可读性越高</p>
+</li>
+<li>
+<p>统一格式 <em><em>/</em> 注释内容 */</em>*， *号与注释内容之间有一个空格</p>
+<pre><code>/*************************************************
+Copyright 	 //版权
+File name:	 // 文件名
+Author： 	//作者
+Version: 	 //版本号
+Description: // 用于详细说明此程序文件完成的主要功能，与其他模块
+         // 或函数的接口，输出值、取值范围、含义及参数间的控
+         // 制、顺序、独立或依赖等关系
+Others: 	// 其它内容的说明
+Log: 		// 修改日志，包括修改内容，日期，修改人等
+*************************************************/
+</code></pre><pre><code>/*
+*@ Description: 函数描述，描述本函数的基本功能
+* @param 1 – 参数 1.
+* @param 2 – 参数 2
+* @return – 返回值
+*/
+</code></pre></li>
+</ol>
+<h4 id="4-定义">4. 定义</h4>
+<ol>
+<li>
+<p>命名风格</p>
+<ol>
+<li>模块名+文件名+功能描述，之间采用短下划线分隔</li>
+<li>功能描述部分，采用驼峰风格</li>
+</ol>
+<p>例如，</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">SAFE_LASER_setLaserShield</span>(uint8_t _EN);
+</code></pre></div></li>
+<li>
+<p>宏定义</p>
+<ol>
+<li>define 必须大写</li>
+<li>typedef 可以小写</li>
+</ol>
+<p>例如，</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#1e889b">#define OS_TASK_R200RXID1 		0x198 	</span><span style="color:#228b22">/* HEX格式 */</span><span style="color:#1e889b">
+</span><span style="color:#1e889b"></span><span style="color:#8b008b;font-weight:bold">typedef</span> uint32_t StackSize_t<span style="color:#a61717;background-color:#e3d2d2">；</span>   		<span style="color:#228b22">/* 仅用于堆栈 */</span>
+</code></pre></div></li>
+<li>
+<p>类型定义</p>
+<p>使用linux自带类型定义规则</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#1e889b">#define uint8_t  	unsigned char
+</span><span style="color:#1e889b">#define int8_t   	char
+</span><span style="color:#1e889b">#define uint16_t 	unsigned short
+</span><span style="color:#1e889b">#define int16_t  	short
+</span><span style="color:#1e889b">#define uint32_t 	unsigned int
+</span><span style="color:#1e889b">#define int32_t  	int
+</span><span style="color:#1e889b">#define uint64_t 	unsigned long long
+</span><span style="color:#1e889b">#define int64_t  	long long
+</span><span style="color:#1e889b"></span>   
+<span style="color:#1e889b">#define TRUE  		1
+</span><span style="color:#1e889b">#define FALSE 		0
+</span><span style="color:#1e889b">#define NULL  		0
+</span></code></pre></div></li>
+</ol>
+<h4 id="5-变量">5. 变量</h4>
+<ol>
+<li>变量通用规则
+<ol>
+<li>采用驼峰风格,首字母大写</li>
+<li>在函数开始是全部定义，不允许在函数中间定义</li>
+<li>变量命名必须可以表示其含义</li>
+<li>必须初始化</li>
+</ol>
+</li>
+<li>局部变量
+<ol>
+<li>本地局部变量必须用static关键字修饰</li>
+</ol>
+</li>
+<li>全局变量
+<ol>
+<li>全局变量必须以g开头</li>
+</ol>
+</li>
+<li>函数变量
+<ol>
+<li>变量必须以_开头</li>
+</ol>
+</li>
+</ol>
+<pre><code>static uint8_t SafeLaserSet = 0;
+uint8_t gSafeLaserSet = 0;
+static uint8_t _SafeLaserSet = 0;
+</code></pre><h4 id="6-函数">6. 函数</h4>
+<ol>
+<li>函数名必须能够自注释，必要是需要增加注释写明意图</li>
+<li>内部函数必须使用static定义，命名可以不加模块名</li>
+<li>外部函数
+<ol>
+<li>必须在头文件中声明，</li>
+<li>命名时必须带模块名，</li>
+<li>必须给出带注释，并写明函数意图，参数说明，返回值</li>
+</ol>
+</li>
+</ol>
+<pre><code>static uint_t SAFE_LASER_setLaseShield(uint8_t _EN);
+void SAFE_LASER_setLaseShield(uint8_t _EN);
+</code></pre><h4 id="7-文件">7. 文件</h4>
+<ol>
+<li>
+<p>头文件</p>
+<ol>
+<li>
+<p>命名规则模块名+功能，小写，例如os_task.h</p>
+</li>
+<li>
+<p>格式如下</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#1e889b">#ifndef __OS_TASK_H__
+</span><span style="color:#1e889b">#define __OS_TASK_H__
+</span><span style="color:#1e889b"></span>      
+....<span style="color:#228b22">/* 开放的宏定义 */</span>
+....<span style="color:#228b22">/* 开放的全局变量声明 */</span>
+....<span style="color:#228b22">/* 开放的函数声明 */</span>
+      
+<span style="color:#1e889b">#endif
+</span></code></pre></div></li>
+</ol>
+</li>
+<li>
+<p>源文件</p>
+<ol>
+<li>
+<p>命名规则模块名+功能，小写，例如os_task.c</p>
+</li>
+<li>
+<p>格式如下，举例只为说明源文件中，各元素的顺序</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">&lt;- <span style="color:#b452cd">1</span> - <span style="color:#a61717;background-color:#e3d2d2">引用头文件</span> -&gt;
+<span style="color:#1e889b">#include</span> <span style="color:#1e889b">&#34;os_task.h&#34;</span><span style="color:#1e889b">
+</span><span style="color:#1e889b"></span>      
+&lt;- <span style="color:#b452cd">2</span> - <span style="color:#a61717;background-color:#e3d2d2">定义本文件用到的宏</span> -&gt;
+<span style="color:#1e889b">#define OS_TASK_SWITCH_INTERVAL 10 	</span><span style="color:#228b22">/* 单位ms */</span><span style="color:#1e889b">
+</span><span style="color:#1e889b"></span><span style="color:#8b008b;font-weight:bold">typedef</span> uint32_t StackSize_t <span style="color:#a61717;background-color:#e3d2d2">；</span> 	 	<span style="color:#228b22">/* 仅用于堆栈 */</span>
+<span style="color:#8b008b;font-weight:bold">typedef</span> <span style="color:#8b008b;font-weight:bold">enum</span>{};
+<span style="color:#8b008b;font-weight:bold">typedef</span> <span style="color:#8b008b;font-weight:bold">union</span>{};
+<span style="color:#8b008b;font-weight:bold">typedef</span> <span style="color:#8b008b;font-weight:bold">struct</span>{};
+      
+&lt;- <span style="color:#b452cd">3</span> - <span style="color:#a61717;background-color:#e3d2d2">本地变量</span> -&gt;
+<span style="color:#8b008b;font-weight:bold">static</span> StackSize_t *TopStack = <span style="color:#658b00">NULL</span><span style="color:#a61717;background-color:#e3d2d2">；</span>
+      
+&lt;- <span style="color:#b452cd">4</span> - <span style="color:#a61717;background-color:#e3d2d2">开放的全局变量</span> -&gt;
+uint32_t gOsTaskEventBitMap = <span style="color:#b452cd">0</span>; 
+      
+&lt;- <span style="color:#b452cd">5</span> - <span style="color:#a61717;background-color:#e3d2d2">本地函数，仅在本文件使用</span> -&gt;
+<span style="color:#8b008b;font-weight:bold">static</span> <span style="color:#00688b;font-weight:bold">void</span> TASK_TaskSwitch(<span style="color:#00688b;font-weight:bold">void</span>)
+{
+    <span style="color:#8b008b;font-weight:bold">return</span><span style="color:#a61717;background-color:#e3d2d2">；</span>
+}
+      
+&lt;- <span style="color:#b452cd">6</span> - <span style="color:#a61717;background-color:#e3d2d2">开放的函数</span> -&gt;
+<span style="color:#00688b;font-weight:bold">void</span> OS_TASK_TaskDelay(uint16_t _ms)
+{
+  <span style="color:#8b008b;font-weight:bold">return</span><span style="color:#a61717;background-color:#e3d2d2">；</span>   
+}
+</code></pre></div></li>
+</ol>
+</li>
+</ol>
+<h4 id="8约定俗成简写">8.约定俗成简写</h4>
+<pre><code>addition           	add           		加
+subtraction 		sub              	减
+multiplication 		mul           		乘法
+division          	div             	除法
+answer            	ans           		响应、回答
+array               arr             	数组、集合
+average          	avg            		平均
+buffer              buf或buff   			缓冲区
+capture           	cap或capt  			捕获
+check              	chk            		检查
+count              	cnt            		计数器
+column            	col            		列
+control            	ctrl            	控制
+decode           	dec           		解码、译码
+define             	def           		定义
+delete             	del           		删除
+destination     	dst或dest 			目的
+display           	disp          		显示
+encode          	enc            		编码
+environment  		env           		环境
+error              	err             	错误
+float               flt              	浮动、浮点
+frequency      		freq           		频率
+header          	hdr            		开始、开头
+index             	idx            		索引、指示、
+image            	img           		影像、镜像
+increment      		inc            		增加、增量
+initalize         	init            	初始化
+iteration        	itr             	循环、迭代
+length           	len            		长度
+memory        		mem          		内存
+middle           	mid           		中值
+make             	mk            		制造、形成
+message       		msg          		消息
+number         		num         	 	数量、编号
+operand        		opnd        		操作数
+optimization  		opt           		最优
+operator       		optr          		操作
+packet          	pkt            		消息包
+positon         	pos           		位置
+previous       		pre或prev  			以前的
+pointer         	ptr             	指针
+record          	rcd             	记录
+receive         	recv           		收到、接收
+result           	res             	结果
+return          	ret              	返回
+source         		src              	源头
+stack           	stk              	栈
+string          	str               	字符串
+table           	tab              	表
+temporary   		tmp或temp  			临时
+total            	tot               	全部的
+time stamp  		ts                	时间戳
+value           	val              	值
+</code></pre><p>有互斥意义的变量或者动作相反的函数应该是用互斥词组命名</p>
+<pre><code>add/remove  	begin/end 		create/destroy 		insert/delete 
+first/last 		get/release 	increment/decrement put/get 		add/delete
+lock/unlock 	open/close 		min/max 			old/new 
+start/stop 		next/previous 	source/target 		show/hide 
+send/receive 	source/destination 					copy/paste 		up/down
+</code></pre><h4 id="9-模块">9. 模块</h4>
+<ol>
+<li>
+<p>模块必须具有封装性，且对外提供尽量少的必要接口，接口必须提供详细的注释描述</p>
+</li>
+<li>
+<p>模块的组织形式可以是文件夹形式，也可以是文件形式</p>
+</li>
+<li>
+<p>文件都以小写命名</p>
+<p>例如：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">.
+    <span style="color:#a61717;background-color:#e3d2d2">├──</span> src <span style="color:#228b22">/* 应用层代码 */</span>
+    <span style="color:#a61717;background-color:#e3d2d2">│</span>   <span style="color:#a61717;background-color:#e3d2d2">├──</span> main.c <span style="color:#228b22">/* 应用入口 */</span>
+    <span style="color:#a61717;background-color:#e3d2d2">│</span>   <span style="color:#a61717;background-color:#e3d2d2">├──</span> test.c
+    <span style="color:#a61717;background-color:#e3d2d2">│</span>   <span style="color:#a61717;background-color:#e3d2d2">├──</span> test1.c  
+    <span style="color:#a61717;background-color:#e3d2d2">├──</span> include <span style="color:#228b22">/* 设备驱动代码 */</span>
+    <span style="color:#a61717;background-color:#e3d2d2">│</span>   <span style="color:#a61717;background-color:#e3d2d2">├──</span> test.h
+    <span style="color:#a61717;background-color:#e3d2d2">│</span>   <span style="color:#a61717;background-color:#e3d2d2">├──</span> test1.h 
+    <span style="color:#a61717;background-color:#e3d2d2">├──</span> debug <span style="color:#228b22">/* 芯片厂家提供的库代码 */</span>
+    <span style="color:#a61717;background-color:#e3d2d2">│</span>   <span style="color:#a61717;background-color:#e3d2d2">├──</span> MakeFile
+    <span style="color:#a61717;background-color:#e3d2d2">│</span>   <span style="color:#a61717;background-color:#e3d2d2">├──</span> CMake
+    <span style="color:#a61717;background-color:#e3d2d2">│</span>   <span style="color:#a61717;background-color:#e3d2d2">└──</span> main
+</code></pre></div></li>
+</ol>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2021-10-15</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="https://peitianyu.github.io/pty_blog.github.io/templete/%E9%A1%B9%E7%9B%AE%E6%A1%88%E4%BE%8B%E6%A8%A1%E5%BC%8F/">
+			下回<br>硬件项目案例模式
+                </a>
+                
+                
+                
+                <a class="older-posts" href="https://peitianyu.github.io/pty_blog.github.io/ros/ros%E5%AE%89%E8%A3%85/">
+			上回<br>Ros安装
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	This is a customized copyright.
+	
+</div>
+            </div>
+    
+    <script src="/pty_blog.github.io/js/journal.js"></script>
+    </body>
+</html>
