@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Systems on 武装带你</title>
+    <link>https://peitianyu.github.io/pty_blog.github.io/system/</link>
+    <description>Recent content in Systems on 武装带你</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-hant</language>
+    <copyright>This is a customized copyright.</copyright>
+    <lastBuildDate>Sat, 16 Oct 2021 16:20:39 +0800</lastBuildDate>
+    
+	<atom:link href="https://peitianyu.github.io/pty_blog.github.io/system/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ubuntu更新源</title>
+      <link>https://peitianyu.github.io/pty_blog.github.io/system/linux/ubuntu/</link>
+      <pubDate>Sat, 16 Oct 2021 16:20:39 +0800</pubDate>
+      
+      <guid>https://peitianyu.github.io/pty_blog.github.io/system/linux/ubuntu/</guid>
+      <description>更新软件源 参考网址：Ubuntu 更换国内源_quanwei的博客-CSDN博客_ubuntu换源
+阿里源 （Ubuntu 18.04） sudo vim /etc/apt/sources.listdeb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiversedeb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiversedeb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiversedeb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiversedeb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiversedeb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiversedeb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiversedeb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiversedeb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiversedeb-src http://mirrors.</description>
+    </item>
+    
+  </channel>
+</rss>

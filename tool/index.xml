@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tools on 武装带你</title>
+    <link>https://peitianyu.github.io/pty_blog.github.io/tool/</link>
+    <description>Recent content in Tools on 武装带你</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-hant</language>
+    <copyright>This is a customized copyright.</copyright>
+    <lastBuildDate>Sat, 16 Oct 2021 16:20:39 +0800</lastBuildDate>
+    
+	<atom:link href="https://peitianyu.github.io/pty_blog.github.io/tool/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>wsl的使用</title>
+      <link>https://peitianyu.github.io/pty_blog.github.io/tool/wsl/</link>
+      <pubDate>Sat, 16 Oct 2021 16:20:39 +0800</pubDate>
+      
+      <guid>https://peitianyu.github.io/pty_blog.github.io/tool/wsl/</guid>
+      <description>wsl安装 参考网址：
+Windows 终端安装 | Microsoft Docs
+玩转Linux(1)——安装Windows亲儿子Linux系统之WSL之最全攻略之最佳体验之究极无敌舒服_衡与墨的博客-CSDN博客
+管理员身份运行Powershell
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linuxwsl --install -d Ubuntuwsl使用   进入linux系统   命令行输入wsl或者bash，进入linux系统
+  linux初始配置   添加sudo，这样就不用输密码了 修改
+%sudo ALL=(ALL:ALL) ALL# 改为%sudo ALL=(ALL:ALL) NOPASSWD:ALL  图形界面   参考网址：
+WSL2运行图像应用或图形界面_Alisebeast的博客-CSDN博客_wsl2 图形界面
+在WSL中打开与显示图片的简单方法_neetneves的博客-CSDN博客
+echo &amp;#34;export DISPLAY=localhost:0&amp;#34; &amp;gt;&amp;gt; ~/.bashrcsource ~/.bashrc测试查看
+echo $DISPLAY  更新软件源   参考网址：Ubuntu 更换国内源_quanwei的博客-CSDN博客_ubuntu换源
+  wsl命令详解      命令 含义     wsl或bash 打开默认子系统   wsl -d Ubuntu18 打开Ubuntu18子系统   wsl -l -o 可安装的有效分发的列表   wsl &amp;ndash;install -d Ubuntu 安装默认Ubuntu   wsl &amp;ndash;shutdown 关闭子系统   wsl &amp;ndash;import Ubuntu-20.</description>
+    </item>
+    
+  </channel>
+</rss>

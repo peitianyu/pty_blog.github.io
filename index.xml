@@ -6,9 +6,214 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
     <copyright>This is a customized copyright.</copyright>
-    <lastBuildDate>Fri, 15 Oct 2021 16:20:39 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 16 Oct 2021 16:20:39 +0800</lastBuildDate>
     
         <atom:link href="https://peitianyu.github.io/pty_blog.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>Ubuntu更新源</title>
+        <link>https://peitianyu.github.io/pty_blog.github.io/system/linux/ubuntu/</link>
+        <pubDate>Sat, 16 Oct 2021 16:20:39 +0800</pubDate>
+        
+        <guid>https://peitianyu.github.io/pty_blog.github.io/system/linux/ubuntu/</guid>
+        <description>武装带你 https://peitianyu.github.io/pty_blog.github.io/system/linux/ubuntu/ -&lt;h4 id=&#34;更新软件源&#34;&gt;更新软件源&lt;/h4&gt;
+&lt;p&gt;参考网址：&lt;a href=&#34;https://blog.csdn.net/qq_35451572/article/details/79516563&#34;&gt;Ubuntu 更换国内源_quanwei的博客-CSDN博客_ubuntu换源&lt;/a&gt;&lt;/p&gt;
+&lt;h5 id=&#34;阿里源-ubuntu-1804&#34;&gt;阿里源 （Ubuntu 18.04）&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo vim /etc/apt/sources.list
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo apt-get update
+sudo apt-get -f install
+sudo apt-get upgrade
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;西电源只有校内网网线使用但是不限制流量还是十分靠谱的&#34;&gt;西电源（只有校内网网线使用，但是不限制流量，还是十分靠谱的）&lt;/h5&gt;
+&lt;pre&gt;&lt;code&gt;deb http://linux.xidian.edu.cn/mirrors/ubuntu/ xenial main restricted universe multiverse
+#deb-src http://linux.xidian.edu.cn/mirrors/ubuntu/ xenial main restricted universe multiverse
+
+deb http://linux.xidian.edu.cn/mirrors/ubuntu/ xenial-security main restricted universe multiverse
+#deb-src http://linux.xidian.edu.cn/mirrors/ubuntu/ xenial-security main restricted universe multiverse
+
+deb http://linux.xidian.edu.cn/mirrors/ubuntu/ xenial-updates main restricted universe multiverse
+#deb-src http://linux.xidian.edu.cn/mirrors/ubuntu/ xenial-updates main restricted universe multiverse
+
+#deb http://linux.xidian.edu.cn/mirrors/ubuntu/ xenial-backports main restricted universe multiverse
+#deb-src http://linux.xidian.edu.cn/mirrors/ubuntu/ xenial-backports main restricted universe multiverse
+
+#deb http://linux.xidian.edu.cn/mirrors/ubuntu/ xenial-proposed main restricted universe multiverse
+#deb-src http://linux.xidian.edu.cn/mirrors/ubuntu/ xenial-proposed main restricted universe multiverse
+&lt;/code&gt;&lt;/pre&gt;&lt;h5 id=&#34;清华源&#34;&gt;清华源&lt;/h5&gt;
+&lt;pre&gt;&lt;code&gt;# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
+
+# 预发布软件源，不建议启用
+# deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
+&lt;/code&gt;&lt;/pre&gt;&lt;h5 id=&#34;网易源&#34;&gt;网易源&lt;/h5&gt;
+&lt;pre&gt;&lt;code&gt;deb http://mirrors.163.com/ubuntu/ wily main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ wily-security main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ wily-updates main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ wily-proposed main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ wily-backports main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ wily main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ wily-security main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ wily-updates main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ wily-proposed main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ wily-backports main restricted universe multiverse
+&lt;/code&gt;&lt;/pre&gt;- https://peitianyu.github.io/pty_blog.github.io/system/linux/ubuntu/ - This is a customized copyright.</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>wsl的使用</title>
+        <link>https://peitianyu.github.io/pty_blog.github.io/tool/wsl/</link>
+        <pubDate>Sat, 16 Oct 2021 16:20:39 +0800</pubDate>
+        
+        <guid>https://peitianyu.github.io/pty_blog.github.io/tool/wsl/</guid>
+        <description>武装带你 https://peitianyu.github.io/pty_blog.github.io/tool/wsl/ -&lt;h3 id=&#34;wsl安装&#34;&gt;wsl安装&lt;/h3&gt;
+&lt;p&gt;参考网址：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.microsoft.com/zh-cn/windows/terminal/get-started&#34;&gt;Windows 终端安装 | Microsoft Docs&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://hengyumo.blog.csdn.net/article/details/102544521&#34;&gt;玩转Linux(1)——安装Windows亲儿子Linux系统之WSL之最全攻略之最佳体验之究极无敌舒服_衡与墨的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;管理员身份运行Powershell&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+ wsl --install -d Ubuntu
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;wsl使用&#34;&gt;wsl使用&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;进入linux系统&#34;&gt;进入linux系统&lt;/h4&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;命令行输入&lt;code&gt;wsl&lt;/code&gt;或者&lt;code&gt;bash&lt;/code&gt;，进入linux系统&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;linux初始配置&#34;&gt;linux初始配置&lt;/h4&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;添加sudo这样就不用输密码了&#34;&gt;添加sudo，这样就不用输密码了&lt;/h5&gt;
+&lt;p&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20191014120116452.png&#34; alt=&#34;在这里插入图片描述&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20191014142719338.png&#34; alt=&#34;在这里插入图片描述&#34;&gt;&lt;/p&gt;
+&lt;p&gt;修改&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;%sudo &lt;span style=&#34;color:#00688b&#34;&gt;ALL&lt;/span&gt;=(ALL:ALL) ALL
+&lt;span style=&#34;color:#228b22&#34;&gt;# 改为&lt;/span&gt;
+%sudo &lt;span style=&#34;color:#00688b&#34;&gt;ALL&lt;/span&gt;=(ALL:ALL) NOPASSWD:ALL
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;图形界面&#34;&gt;图形界面&lt;/h4&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;参考网址：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/Alisebeast/article/details/106680267&#34;&gt;WSL2运行图像应用或图形界面_Alisebeast的博客-CSDN博客_wsl2 图形界面&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/qq_45036130/article/details/105623451&#34;&gt;在WSL中打开与显示图片的简单方法_neetneves的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#658b00&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;export DISPLAY=localhost:0&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; ~/.bashrc
+&lt;span style=&#34;color:#658b00&#34;&gt;source&lt;/span&gt; ~/.bashrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;测试查看&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#658b00&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#00688b&#34;&gt;$DISPLAY&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;更新软件源&#34;&gt;更新软件源&lt;/h4&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;参考网址：&lt;a href=&#34;https://blog.csdn.net/qq_35451572/article/details/79516563&#34;&gt;Ubuntu 更换国内源_quanwei的博客-CSDN博客_ubuntu换源&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;wsl命令详解&#34;&gt;wsl命令详解&lt;/h4&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;命令&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;含义&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;wsl或bash&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;打开默认子系统&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;wsl -d Ubuntu18&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;打开Ubuntu18子系统&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;wsl -l -o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;可安装的有效分发的列表&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;wsl &amp;ndash;install -d Ubuntu&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;安装默认Ubuntu&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;wsl &amp;ndash;shutdown&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;关闭子系统&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;wsl &amp;ndash;import Ubuntu-20.04 d:\ubuntu d:\ubuntu20.04.tar &amp;ndash;version 2&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;导入已存的操作系统&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;wsl &amp;ndash;export Ubuntu-20.04 d:\ubuntu20.04.tar&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;导出操作子系统&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;wsl -l -v&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;显示所有子系统&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;wsl -s Ubuntu-20.04&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;将分发版设置为默认值&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;bash -c &amp;ldquo;ls&amp;rdquo;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;windows命令提示符&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;wsl &amp;ndash;unregister Ubuntu-20.04&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;注销分发版&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;wsl-terminal&#34;&gt;&lt;em&gt;wsl&lt;/em&gt;-terminal&lt;/h4&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;参考网址：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/mskyaxl/wsl-terminal&#34;&gt;mskyaxl/wsl-terminal: Terminal emulator for Windows Subsystem for Linux (WSL) (github.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;最常用的依旧是&lt;code&gt;Windows Terminal&lt;/code&gt;参考网址&lt;/p&gt;
+&lt;p&gt;[Windows Terminal配置_人间世-CSDN博客](&lt;a href=&#34;https://blog.csdn.net/rjszz1314/article/details/111354738?ops_request_misc=&amp;amp;request_id=&amp;amp;biz_id=102&amp;amp;utm_term=windows&#34;&gt;https://blog.csdn.net/rjszz1314/article/details/111354738?ops_request_misc=&amp;amp;request_id=&amp;amp;biz_id=102&amp;amp;utm_term=windows&lt;/a&gt; terminal&amp;amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-4-111354738.pc_search_ecpm_flag&amp;amp;spm=1018.2226.3001.4187)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/c13232906050/article/details/90698772?ops_request_misc=%7B%22request%5Fid%22%3A%22163439638216780261990702%22%2C%22scm%22%3A%2220140713.130102334.pc%5Fall.%22%7D&amp;amp;request_id=163439638216780261990702&amp;amp;biz_id=0&amp;amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-4-90698772.pc_search_ecpm_flag&amp;amp;utm_term=windows+terminal%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85&amp;amp;spm=1018.2226.3001.4187&#34;&gt;Windows Terminal 新终端下载安装_Archon-CSDN博客_terminal 下载&lt;/a&gt;&lt;/p&gt;
+&lt;h5 id=&#34;windows-terminal安装&#34;&gt;Windows Terminal安装&lt;/h5&gt;
+&lt;p&gt;方式一：&lt;/p&gt;
+&lt;p&gt;微软商店安装&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.microsoft.com/zh-cn/p/windows-terminal/9n0dx20hk701?rtc=1&amp;amp;activetab=pivot:overviewtab&#34;&gt;购买 Windows Terminal - Microsoft Store zh-CN&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;方式二：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/c13232906050/article/details/90698772?ops_request_misc=%7B%22request%5Fid%22%3A%22163439638216780261990702%22%2C%22scm%22%3A%2220140713.130102334.pc%5Fall.%22%7D&amp;amp;request_id=163439638216780261990702&amp;amp;biz_id=0&amp;amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-4-90698772.pc_search_ecpm_flag&amp;amp;utm_term=windows+terminal%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85&amp;amp;spm=1018.2226.3001.4187&#34;&gt;Windows Terminal 新终端下载安装_Archon-CSDN博客_terminal 下载&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;方式三：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/microsoft/Terminal&#34;&gt;https://github.com/microsoft/Terminal&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;使用Visual Studio打开构建运行&lt;/p&gt;
+- https://peitianyu.github.io/pty_blog.github.io/tool/wsl/ - This is a customized copyright.</description>
+        </item>
     
     
     

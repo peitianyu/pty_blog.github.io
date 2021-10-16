@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html><head>
+<title>wsl的使用</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+
+
+
+
+
+
+
+<link type="text/css" rel="stylesheet" href="/pty_blog.github.io/vendor/css/bootstrap.min.css">
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="https://peitianyu.github.io/pty_blog.github.io/scss/journal.min.4dabc90cf94657415a747e8400223bb3c4d11654d1279feff37fd6a11089fe77.css" integrity="sha256-TavJDPlGV0FadH6EACI7s8TRFlTRJ5/v83/WoRCJ/nc=" media="screen">
+
+
+
+<link rel="stylesheet" href="https://peitianyu.github.io/pty_blog.github.io/scss/dark-mode.min.cc330561b348e87bbc3f5a915a6c95ba359296799218461f2848ad4a30d3eca4.css" integrity="sha256-zDMFYbNI6Hu8P1qRWmyVujWSlnmSGEYfKEitSjDT7KQ=" media="screen">
+
+
+<script src="/pty_blog.github.io/vendor/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Fira+Mono|Material+Icons");
+</script>
+
+
+
+
+
+
+  <script src="/pty_blog.github.io/js/toc.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    	<div id="app"><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://peitianyu.github.io/pty_blog.github.io/">
+    
+        <div class="nav-title">
+            武装带你
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/pty_blog.github.io/blog">
+                Blog
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/pty_blog.github.io/ros">
+                Slam
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/pty_blog.github.io/tool">
+                工具
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/pty_blog.github.io/program_language">
+                语言
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/pty_blog.github.io/templete">
+                模板
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/pty_blog.github.io/system">
+                系统
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/pty_blog.github.io/arithmetic">
+                算法
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	This is a customized copyright.
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#wsl%e5%ae%89%e8%a3%85" onclick="onNavClick(`#wsl安装-nav`)" id="wsl安装-nav">
+									wsl安装
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#wsl%e4%bd%bf%e7%94%a8" onclick="onNavClick(`#wsl使用-nav`)" id="wsl使用-nav">
+									wsl使用
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e8%bf%9b%e5%85%a5linux%e7%b3%bb%e7%bb%9f" onclick="onNavClick(`#进入linux系统-nav`)" id="进入linux系统-nav">
+									进入linux系统
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#linux%e5%88%9d%e5%a7%8b%e9%85%8d%e7%bd%ae" onclick="onNavClick(`#linux初始配置-nav`)" id="linux初始配置-nav">
+									linux初始配置
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%9b%be%e5%bd%a2%e7%95%8c%e9%9d%a2" onclick="onNavClick(`#图形界面-nav`)" id="图形界面-nav">
+									图形界面
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%9b%b4%e6%96%b0%e8%bd%af%e4%bb%b6%e6%ba%90" onclick="onNavClick(`#更新软件源-nav`)" id="更新软件源-nav">
+									更新软件源
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#wsl%e5%91%bd%e4%bb%a4%e8%af%a6%e8%a7%a3" onclick="onNavClick(`#wsl命令详解-nav`)" id="wsl命令详解-nav">
+									wsl命令详解
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#wsl-terminal" onclick="onNavClick(`#wsl-terminal-nav`)" id="wsl-terminal-nav">
+									wsl-terminal
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+<div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/pty_blog.github.io/blog">
+                    Blog
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/pty_blog.github.io/ros">
+                    Slam
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/pty_blog.github.io/tool">
+                    工具
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/pty_blog.github.io/program_language">
+                    语言
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/pty_blog.github.io/templete">
+                    模板
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/pty_blog.github.io/system">
+                    系统
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/pty_blog.github.io/arithmetic">
+                    算法
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#wsl%e5%ae%89%e8%a3%85" onclick="onNavClick(`#wsl安装-nav`)" id="wsl安装-nav">
+									wsl安装
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#wsl%e4%bd%bf%e7%94%a8" onclick="onNavClick(`#wsl使用-nav`)" id="wsl使用-nav">
+									wsl使用
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e8%bf%9b%e5%85%a5linux%e7%b3%bb%e7%bb%9f" onclick="onNavClick(`#进入linux系统-nav`)" id="进入linux系统-nav">
+									进入linux系统
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#linux%e5%88%9d%e5%a7%8b%e9%85%8d%e7%bd%ae" onclick="onNavClick(`#linux初始配置-nav`)" id="linux初始配置-nav">
+									linux初始配置
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%9b%be%e5%bd%a2%e7%95%8c%e9%9d%a2" onclick="onNavClick(`#图形界面-nav`)" id="图形界面-nav">
+									图形界面
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%9b%b4%e6%96%b0%e8%bd%af%e4%bb%b6%e6%ba%90" onclick="onNavClick(`#更新软件源-nav`)" id="更新软件源-nav">
+									更新软件源
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#wsl%e5%91%bd%e4%bb%a4%e8%af%a6%e8%a7%a3" onclick="onNavClick(`#wsl命令详解-nav`)" id="wsl命令详解-nav">
+									wsl命令详解
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#wsl-terminal" onclick="onNavClick(`#wsl-terminal-nav`)" id="wsl-terminal-nav">
+									wsl-terminal
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://peitianyu.github.io/pty_blog.github.io/">
+            武装带你
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://peitianyu.github.io/pty_blog.github.io/">
+        <div class="single-column-header-title">武装带你</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    wsl的使用
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2021-10-16 16:20
+                        </time>
+                        
+
+                        
+
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h3 id="wsl安装">wsl安装</h3>
+<p>参考网址：</p>
+<p><a href="https://docs.microsoft.com/zh-cn/windows/terminal/get-started">Windows 终端安装 | Microsoft Docs</a></p>
+<p><a href="https://hengyumo.blog.csdn.net/article/details/102544521">玩转Linux(1)——安装Windows亲儿子Linux系统之WSL之最全攻略之最佳体验之究极无敌舒服_衡与墨的博客-CSDN博客</a></p>
+<p>管理员身份运行Powershell</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+ wsl --install -d Ubuntu
+</code></pre></div><h3 id="wsl使用">wsl使用</h3>
+<ul>
+<li>
+<h4 id="进入linux系统">进入linux系统</h4>
+</li>
+</ul>
+<p>命令行输入<code>wsl</code>或者<code>bash</code>，进入linux系统</p>
+<ul>
+<li>
+<h4 id="linux初始配置">linux初始配置</h4>
+</li>
+</ul>
+<h5 id="添加sudo这样就不用输密码了">添加sudo，这样就不用输密码了</h5>
+<p><img src="https://img-blog.csdnimg.cn/20191014120116452.png" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191014142719338.png" alt="在这里插入图片描述"></p>
+<p>修改</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">%sudo <span style="color:#00688b">ALL</span>=(ALL:ALL) ALL
+<span style="color:#228b22"># 改为</span>
+%sudo <span style="color:#00688b">ALL</span>=(ALL:ALL) NOPASSWD:ALL
+</code></pre></div><ul>
+<li>
+<h4 id="图形界面">图形界面</h4>
+</li>
+</ul>
+<p>参考网址：</p>
+<p><a href="https://blog.csdn.net/Alisebeast/article/details/106680267">WSL2运行图像应用或图形界面_Alisebeast的博客-CSDN博客_wsl2 图形界面</a></p>
+<p><a href="https://blog.csdn.net/qq_45036130/article/details/105623451">在WSL中打开与显示图片的简单方法_neetneves的博客-CSDN博客</a></p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#658b00">echo</span> <span style="color:#cd5555">&#34;export DISPLAY=localhost:0&#34;</span> &gt;&gt; ~/.bashrc
+<span style="color:#658b00">source</span> ~/.bashrc
+</code></pre></div><p>测试查看</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#658b00">echo</span> <span style="color:#00688b">$DISPLAY</span>
+</code></pre></div><ul>
+<li>
+<h4 id="更新软件源">更新软件源</h4>
+</li>
+</ul>
+<p>参考网址：<a href="https://blog.csdn.net/qq_35451572/article/details/79516563">Ubuntu 更换国内源_quanwei的博客-CSDN博客_ubuntu换源</a></p>
+<ul>
+<li>
+<h4 id="wsl命令详解">wsl命令详解</h4>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">wsl或bash</td>
+<td align="center">打开默认子系统</td>
+</tr>
+<tr>
+<td align="center">wsl -d Ubuntu18</td>
+<td align="center">打开Ubuntu18子系统</td>
+</tr>
+<tr>
+<td align="center">wsl -l -o</td>
+<td align="center">可安装的有效分发的列表</td>
+</tr>
+<tr>
+<td align="center">wsl &ndash;install -d Ubuntu</td>
+<td align="center">安装默认Ubuntu</td>
+</tr>
+<tr>
+<td align="center">wsl &ndash;shutdown</td>
+<td align="center">关闭子系统</td>
+</tr>
+<tr>
+<td align="center">wsl &ndash;import Ubuntu-20.04 d:\ubuntu d:\ubuntu20.04.tar &ndash;version 2</td>
+<td align="center">导入已存的操作系统</td>
+</tr>
+<tr>
+<td align="center">wsl &ndash;export Ubuntu-20.04 d:\ubuntu20.04.tar</td>
+<td align="center">导出操作子系统</td>
+</tr>
+<tr>
+<td align="center">wsl -l -v</td>
+<td align="center">显示所有子系统</td>
+</tr>
+<tr>
+<td align="center">wsl -s Ubuntu-20.04</td>
+<td align="center">将分发版设置为默认值</td>
+</tr>
+<tr>
+<td align="center">bash -c &ldquo;ls&rdquo;</td>
+<td align="center">windows命令提示符</td>
+</tr>
+<tr>
+<td align="center">wsl &ndash;unregister Ubuntu-20.04</td>
+<td align="center">注销分发版</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<h4 id="wsl-terminal"><em>wsl</em>-terminal</h4>
+</li>
+</ul>
+<p>参考网址：</p>
+<p><a href="https://github.com/mskyaxl/wsl-terminal">mskyaxl/wsl-terminal: Terminal emulator for Windows Subsystem for Linux (WSL) (github.com)</a></p>
+<p>最常用的依旧是<code>Windows Terminal</code>参考网址</p>
+<p>[Windows Terminal配置_人间世-CSDN博客](<a href="https://blog.csdn.net/rjszz1314/article/details/111354738?ops_request_misc=&amp;request_id=&amp;biz_id=102&amp;utm_term=windows">https://blog.csdn.net/rjszz1314/article/details/111354738?ops_request_misc=&amp;request_id=&amp;biz_id=102&amp;utm_term=windows</a> terminal&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-4-111354738.pc_search_ecpm_flag&amp;spm=1018.2226.3001.4187)</p>
+<p><a href="https://blog.csdn.net/c13232906050/article/details/90698772?ops_request_misc=%7B%22request%5Fid%22%3A%22163439638216780261990702%22%2C%22scm%22%3A%2220140713.130102334.pc%5Fall.%22%7D&amp;request_id=163439638216780261990702&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-4-90698772.pc_search_ecpm_flag&amp;utm_term=windows+terminal%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85&amp;spm=1018.2226.3001.4187">Windows Terminal 新终端下载安装_Archon-CSDN博客_terminal 下载</a></p>
+<h5 id="windows-terminal安装">Windows Terminal安装</h5>
+<p>方式一：</p>
+<p>微软商店安装</p>
+<p><a href="https://www.microsoft.com/zh-cn/p/windows-terminal/9n0dx20hk701?rtc=1&amp;activetab=pivot:overviewtab">购买 Windows Terminal - Microsoft Store zh-CN</a></p>
+<p>方式二：</p>
+<p><a href="https://blog.csdn.net/c13232906050/article/details/90698772?ops_request_misc=%7B%22request%5Fid%22%3A%22163439638216780261990702%22%2C%22scm%22%3A%2220140713.130102334.pc%5Fall.%22%7D&amp;request_id=163439638216780261990702&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-4-90698772.pc_search_ecpm_flag&amp;utm_term=windows+terminal%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85&amp;spm=1018.2226.3001.4187">Windows Terminal 新终端下载安装_Archon-CSDN博客_terminal 下载</a></p>
+<p>方式三：</p>
+<p><a href="https://github.com/microsoft/Terminal">https://github.com/microsoft/Terminal</a></p>
+<p>使用Visual Studio打开构建运行</p>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2021-10-16</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="https://peitianyu.github.io/pty_blog.github.io/system/linux/ubuntu/">
+			下回<br>Ubuntu更新源
+                </a>
+                
+                
+                
+                <a class="older-posts" href="https://peitianyu.github.io/pty_blog.github.io/templete/cmake%E6%A8%A1%E6%9D%BF/">
+			上回<br>cmake模板
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	This is a customized copyright.
+	
+</div>
+            </div>
+    
+    <script src="/pty_blog.github.io/js/journal.js"></script>
+    </body>
+</html>
