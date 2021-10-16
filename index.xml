@@ -191,6 +191,10 @@ deb-src http://mirrors.163.com/ubuntu/ wily-backports main restricted universe m
 &lt;td align=&#34;center&#34;&gt;wsl &amp;ndash;unregister Ubuntu-20.04&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;注销分发版&lt;/td&gt;
 &lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;wslconfig /s Ubuntu-18.04&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;修改默认子系统&lt;/td&gt;
+&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;ul&gt;
