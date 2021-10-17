@@ -360,12 +360,12 @@ dos2unix  conf.sh &amp;amp;&amp;amp; ./conf.sh
     
     
         <item>
-        <title>Ros_Cmake模板</title>
-        <link>https://peitianyu.github.io/pty_blog.github.io/templete/ros_cmake%E6%A8%A1%E6%9D%BF/</link>
+        <title>ROS_Cmake模板</title>
+        <link>https://peitianyu.github.io/pty_blog.github.io/ros/ros_cmake%E6%A8%A1%E6%9D%BF/</link>
         <pubDate>Fri, 15 Oct 2021 16:20:39 +0800</pubDate>
         
-        <guid>https://peitianyu.github.io/pty_blog.github.io/templete/ros_cmake%E6%A8%A1%E6%9D%BF/</guid>
-        <description>武装带你 https://peitianyu.github.io/pty_blog.github.io/templete/ros_cmake%E6%A8%A1%E6%9D%BF/ -&lt;h3 id=&#34;简易cmakeliststxt&#34;&gt;简易CmakeLists.txt&lt;/h3&gt;
+        <guid>https://peitianyu.github.io/pty_blog.github.io/ros/ros_cmake%E6%A8%A1%E6%9D%BF/</guid>
+        <description>武装带你 https://peitianyu.github.io/pty_blog.github.io/ros/ros_cmake%E6%A8%A1%E6%9D%BF/ -&lt;h3 id=&#34;简易cmakeliststxt&#34;&gt;简易CmakeLists.txt&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cmake&#34; data-lang=&#34;cmake&#34;&gt;&lt;span style=&#34;color:#658b00&#34;&gt;cmake_minimum_required&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;VERSION&lt;/span&gt; &lt;span style=&#34;color:#cd5555&#34;&gt;2.8.3&lt;/span&gt;)&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 工程名
@@ -687,7 +687,7 @@ dos2unix  conf.sh &amp;amp;&amp;amp; ./conf.sh
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/CipherPolzz/article/details/118963390?ops_request_misc=%7B%22request%5Fid%22%3A%22163430132516780264065592%22%2C%22scm%22%3A%2220140713.130102334.pc%5Fall.%22%7D&amp;amp;request_id=163430132516780264065592&amp;amp;biz_id=0&amp;amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-6-118963390.pc_search_ecpm_flag&amp;amp;utm_term=ros%E7%9A%84CMakeLists%E8%AF%A6%E8%A7%A3&amp;amp;spm=1018.2226.3001.4187&#34;&gt;ROS下CmakeLists.txt模板_CipherPolzz的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/weixin_43877080/article/details/110953533?ops_request_misc=%7B%22request%5Fid%22%3A%22163430132516780264065592%22%2C%22scm%22%3A%2220140713.130102334.pc%5Fall.%22%7D&amp;amp;request_id=163430132516780264065592&amp;amp;biz_id=0&amp;amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-5-110953533.pc_search_ecpm_flag&amp;amp;utm_term=ros%E7%9A%84CMakeLists%E8%AF%A6%E8%A7%A3&amp;amp;spm=1018.2226.3001.4187&#34;&gt;ROS新建程序包CmakeLists和package详解_JayLee719的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/qq_32761549/article/details/104535989?ops_request_misc=%7B%22request%5Fid%22%3A%22163430132516780264065592%22%2C%22scm%22%3A%2220140713.130102334.pc%5Fall.%22%7D&amp;amp;request_id=163430132516780264065592&amp;amp;biz_id=0&amp;amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-3-104535989.pc_search_ecpm_flag&amp;amp;utm_term=ros%E7%9A%84CMakeLists%E8%AF%A6%E8%A7%A3&amp;amp;spm=1018.2226.3001.4187&#34;&gt;(46条消息) ROS中CMakeLists.txt文件 使用 讲解与总结_月照银海似蛟龙的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
-- https://peitianyu.github.io/pty_blog.github.io/templete/ros_cmake%E6%A8%A1%E6%9D%BF/ - This is a customized copyright.</description>
+- https://peitianyu.github.io/pty_blog.github.io/ros/ros_cmake%E6%A8%A1%E6%9D%BF/ - This is a customized copyright.</description>
         </item>
     
     
