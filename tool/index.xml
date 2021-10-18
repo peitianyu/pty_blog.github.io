@@ -67,15 +67,6 @@ cd test# 初始化库git init# 连接githubgit remote add origin git@github.
     </item>
     
     <item>
-      <title>vscode_github</title>
-      <link>https://peitianyu.github.io/pty_blog.github.io/tool/vscode%E5%AE%89%E8%A3%85/</link>
-      <pubDate>Sun, 17 Oct 2021 16:20:39 +0800</pubDate>
-      
-      <guid>https://peitianyu.github.io/pty_blog.github.io/tool/vscode%E5%AE%89%E8%A3%85/</guid>
-      <description>参考网址: 超详细VSCode安装教程（Windows)</description>
-    </item>
-    
-    <item>
       <title>wsl的使用</title>
       <link>https://peitianyu.github.io/pty_blog.github.io/tool/wsl/</link>
       <pubDate>Sat, 16 Oct 2021 16:20:39 +0800</pubDate>
