@@ -1,0 +1,1123 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>武装带你</title>
+    <link>https://peitianyu.github.io/pty_blog.github.io/</link>
+    <description>Recent content on 武装带你</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-hant</language>
+    <copyright>This is a customized copyright.</copyright>
+    <lastBuildDate>Mon, 18 Oct 2021 16:20:39 +0800</lastBuildDate>
+    
+        <atom:link href="https://peitianyu.github.io/pty_blog.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>make实用模板</title>
+        <link>https://peitianyu.github.io/pty_blog.github.io/templete/make%E6%A8%A1%E6%9D%BF/</link>
+        <pubDate>Fri, 15 Oct 2021 16:20:39 +0800</pubDate>
+        
+        <guid>https://peitianyu.github.io/pty_blog.github.io/templete/make%E6%A8%A1%E6%9D%BF/</guid>
+        <description>武装带你 https://peitianyu.github.io/pty_blog.github.io/templete/make%E6%A8%A1%E6%9D%BF/ -&lt;h3 id=&#34;make文件目录&#34;&gt;make文件目录&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;root@LAPTOP-49LFJ4NT:/root/make# tree
+.
+├── Makefile
+├── conf.sh
+├── main.cpp
+└── shell.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这里使用了shell脚本来实现对于make的编译，由于使用的是&lt;code&gt;wsl&lt;/code&gt;在windows下操作导致编码格式含有&lt;code&gt;\r\n&lt;/code&gt;，以此有两个shell脚本。&lt;/p&gt;
+&lt;h3 id=&#34;confsh&#34;&gt;conf.sh&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 实现对于make的编译与运行&lt;/span&gt;
+&lt;span style=&#34;color:#228b22&#34;&gt;#!/bin/bash&lt;/span&gt;
+&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;if&lt;/span&gt; [[ &lt;span style=&#34;color:#00688b&#34;&gt;$1&lt;/span&gt; == clean ]]; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;then&lt;/span&gt;
+        make clean
+&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;elif&lt;/span&gt; [[ &lt;span style=&#34;color:#00688b&#34;&gt;$1&lt;/span&gt; == all ]]; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;then&lt;/span&gt;
+        make clean &amp;amp;&amp;amp; make -j8 &amp;amp;&amp;amp; ./main
+&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;else&lt;/span&gt;
+        make -j8 &amp;amp;&amp;amp; ./main
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;shellsh&#34;&gt;shell.sh&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 实现将conf.sh的dos编码转化为unix编码，并执行&lt;/span&gt;
+&lt;span style=&#34;color:#228b22&#34;&gt;#!/bin/bash&lt;/span&gt;
+dos2unix  conf.sh &amp;amp;&amp;amp; ./conf.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;makefile&#34;&gt;Makefile&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-makefile&#34; data-lang=&#34;makefile&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 自动捕捉符合c/c++编译
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#指定编译工具
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#00688b&#34;&gt;CC&lt;/span&gt; = gcc
+&lt;span style=&#34;color:#00688b&#34;&gt;CPP&lt;/span&gt; = g++
+&lt;span style=&#34;color:#00688b&#34;&gt;LINK&lt;/span&gt; = g++
+
+&lt;span style=&#34;color:#00688b&#34;&gt;LIBS&lt;/span&gt; = -lsqlite3 -lpthread
+&lt;span style=&#34;color:#228b22&#34;&gt;#编译.so 必须添加 -fPIC 和 -shared 选项
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#00688b&#34;&gt;CCFLAGS&lt;/span&gt; = -c -g -fPIC
+&lt;span style=&#34;color:#00688b&#34;&gt;CPPFLAGS&lt;/span&gt; = -c -g -fPIC
+
+&lt;span style=&#34;color:#228b22&#34;&gt;#期望得到的执行文件或动态库.so
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#TARGET=libxx.so
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#00688b&#34;&gt;TARGET&lt;/span&gt;=main
+
+&lt;span style=&#34;color:#00688b&#34;&gt;INCLUDES&lt;/span&gt; = -I. &lt;span style=&#34;color:#228b22&#34;&gt;#-I../../&lt;/span&gt;
+
+&lt;span style=&#34;color:#00688b&#34;&gt;CPPFILES&lt;/span&gt; = &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;wildcard *.cpp &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#遍历得到当前目录及上层目录中的所有.cpp文件&lt;/span&gt;
+&lt;span style=&#34;color:#00688b&#34;&gt;CFILES&lt;/span&gt; = &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;wildcard *.c &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#遍历得到当前目录及上层目录中的所有.c文件&lt;/span&gt;
+
+&lt;span style=&#34;color:#00688b&#34;&gt;OBJFILE&lt;/span&gt; = &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;CFILES:.c=.o&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;CPPFILES:.cpp=.o&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt;
+
+&lt;span style=&#34;color:#008b45&#34;&gt;all&lt;/span&gt;:&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;&lt;span style=&#34;color:#00688b&#34;&gt;TARGET&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt;
+
+&lt;span style=&#34;color:#008b45&#34;&gt;$(TARGET)&lt;/span&gt;:&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;&lt;span style=&#34;color:#00688b&#34;&gt;OBJFILE&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color:#228b22&#34;&gt;# 编译得到 .so 文件用下面的代码
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#   $(LINK) $^ $(LIBS) -Wall -fPIC -shared -o $@
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 编译得到可执行文件用下面的代码
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;LINK&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt; $^ &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;LIBS&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt; -Wall -O2 -o &lt;span style=&#34;color:#00688b&#34;&gt;$@&lt;/span&gt;
+
+&lt;span style=&#34;color:#008b45&#34;&gt;%.o&lt;/span&gt;:%.c
+        &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;CC&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt; -o &lt;span style=&#34;color:#00688b&#34;&gt;$@&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;CCFLAGS&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt; $&amp;lt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;INCLUDES&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt;
+
+&lt;span style=&#34;color:#008b45&#34;&gt;%.o&lt;/span&gt;:%.cpp
+        &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;CPP&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt; -o &lt;span style=&#34;color:#00688b&#34;&gt;$@&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;CPPFLAGS&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt; $&amp;lt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;INCLUDES&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt;
+
+&lt;span style=&#34;color:#008b45&#34;&gt;clean&lt;/span&gt;:
+        rm -rf &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;TARGET&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt;
+        rm -rf &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;OBJFILE&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;mainc&#34;&gt;main.c&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#1e889b&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;&lt;/span&gt; 
+&lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;main&lt;/span&gt;()
+{
+    printf(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;Hello, World! &lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;&lt;/span&gt;);
+ 
+    &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#b452cd&#34;&gt;0&lt;/span&gt;;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;运行&#34;&gt;运行&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;./shell
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;- https://peitianyu.github.io/pty_blog.github.io/templete/make%E6%A8%A1%E6%9D%BF/ - This is a customized copyright.</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>ROS_Cmake模板</title>
+        <link>https://peitianyu.github.io/pty_blog.github.io/ros/ros_cmake%E6%A8%A1%E6%9D%BF/</link>
+        <pubDate>Fri, 15 Oct 2021 16:20:39 +0800</pubDate>
+        
+        <guid>https://peitianyu.github.io/pty_blog.github.io/ros/ros_cmake%E6%A8%A1%E6%9D%BF/</guid>
+        <description>武装带你 https://peitianyu.github.io/pty_blog.github.io/ros/ros_cmake%E6%A8%A1%E6%9D%BF/ -&lt;h3 id=&#34;简易cmakeliststxt&#34;&gt;简易CmakeLists.txt&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cmake&#34; data-lang=&#34;cmake&#34;&gt;&lt;span style=&#34;color:#658b00&#34;&gt;cmake_minimum_required&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;VERSION&lt;/span&gt; &lt;span style=&#34;color:#cd5555&#34;&gt;2.8.3&lt;/span&gt;)&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 工程名
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;project&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;hmi&lt;/span&gt;)&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 支持编译
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;add_compile_options&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;-std=c++11&lt;/span&gt;)&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 查找包
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;find_package&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;catkin&lt;/span&gt; &lt;span style=&#34;color:#cd5555&#34;&gt;REQUIRED&lt;/span&gt; &lt;span style=&#34;color:#cd5555&#34;&gt;COMPONENTS&lt;/span&gt;
+  &lt;span style=&#34;color:#cd5555&#34;&gt;roscpp&lt;/span&gt;
+  &lt;span style=&#34;color:#cd5555&#34;&gt;sensor_msgs&lt;/span&gt;
+  &lt;span style=&#34;color:#cd5555&#34;&gt;pcl_ros&lt;/span&gt;
+  &lt;span style=&#34;color:#cd5555&#34;&gt;perception_msgs&lt;/span&gt;
+)&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# catkin库
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;catkin_package&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;
+  &lt;span style=&#34;color:#cd5555&#34;&gt;INCLUDE_DIRS&lt;/span&gt; &lt;span style=&#34;color:#cd5555&#34;&gt;include&lt;/span&gt;
+  &lt;span style=&#34;color:#cd5555&#34;&gt;CATKIN_DEPENDS&lt;/span&gt; &lt;span style=&#34;color:#cd5555&#34;&gt;roscpp&lt;/span&gt; &lt;span style=&#34;color:#cd5555&#34;&gt;sensor_msgs&lt;/span&gt; &lt;span style=&#34;color:#cd5555&#34;&gt;pcl_ros&lt;/span&gt;
+)&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 头文件库
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;include_directories&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;
+ &lt;span style=&#34;color:#cd5555&#34;&gt;include&lt;/span&gt;
+  ${&lt;span style=&#34;color:#00688b&#34;&gt;catkin_INCLUDE_DIRS&lt;/span&gt;}&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;
+)&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 链接库文件夹
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;link_directories&lt;/span&gt;(${&lt;span style=&#34;color:#00688b&#34;&gt;PCL_LIBRARY_DIRS&lt;/span&gt;})&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 生成执行文件
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;add_executable&lt;/span&gt;(${&lt;span style=&#34;color:#00688b&#34;&gt;PROJECT_NAME&lt;/span&gt;}&lt;span style=&#34;color:#cd5555&#34;&gt;_node&lt;/span&gt; &lt;span style=&#34;color:#cd5555&#34;&gt;src/hmi_node.cpp&lt;/span&gt; &lt;span style=&#34;color:#cd5555&#34;&gt;src/hmi_core.cpp&lt;/span&gt;)&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 依赖包
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;add_dependencies&lt;/span&gt;(${&lt;span style=&#34;color:#00688b&#34;&gt;PROJECT_NAME&lt;/span&gt;}&lt;span style=&#34;color:#cd5555&#34;&gt;_node&lt;/span&gt; &lt;span style=&#34;color:#cd5555&#34;&gt;perception_msgs_generate_messages_cpp&lt;/span&gt;)&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 链接库
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;target_link_libraries&lt;/span&gt;(${&lt;span style=&#34;color:#00688b&#34;&gt;PROJECT_NAME&lt;/span&gt;}&lt;span style=&#34;color:#cd5555&#34;&gt;_node&lt;/span&gt;
+  ${&lt;span style=&#34;color:#00688b&#34;&gt;catkin_LIBRARIES&lt;/span&gt;}&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;
+  ${&lt;span style=&#34;color:#00688b&#34;&gt;PCL_LIBRARIES&lt;/span&gt;}&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;
+)&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;详细cmakeliststxt&#34;&gt;详细CmakeLists.txt&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cmake&#34; data-lang=&#34;cmake&#34;&gt;&lt;span style=&#34;color:#658b00&#34;&gt;cmake_minimum_required&lt;/span&gt;()  &lt;span style=&#34;color:#228b22&#34;&gt;#CMake的版本号
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;project&lt;/span&gt;()         &lt;span style=&#34;color:#228b22&#34;&gt;#项目名称
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;find_package&lt;/span&gt;()        &lt;span style=&#34;color:#228b22&#34;&gt;#找到编译需要的其他CMake/Catkin  package 
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;catkin_python_setup&lt;/span&gt;()   &lt;span style=&#34;color:#228b22&#34;&gt;#catkin新加宏，打开catkin的Python Module的支持
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;add_message_files&lt;/span&gt;()     &lt;span style=&#34;color:#228b22&#34;&gt;#catkin新加宏，添加自定义Message文件 
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;add_service_files&lt;/span&gt;()         &lt;span style=&#34;color:#228b22&#34;&gt;#catkin新加宏，添加自定义Service文件 
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;add_action_files&lt;/span&gt;()          &lt;span style=&#34;color:#228b22&#34;&gt;#catkin新加宏，添加自定义Action文件 
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;generate_message&lt;/span&gt;()      &lt;span style=&#34;color:#228b22&#34;&gt;#catkin新加宏，生成不同语言版本的msg/srv/action接口 
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;catkin_package&lt;/span&gt;()      &lt;span style=&#34;color:#228b22&#34;&gt;#catkin新加宏，生成当前package的cmake配置，供依赖本包的其他软件包调用 
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;add_library&lt;/span&gt;()       &lt;span style=&#34;color:#228b22&#34;&gt;#生成库 
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;add_executable&lt;/span&gt;()      &lt;span style=&#34;color:#228b22&#34;&gt;#生成可执行二进制文件
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;add_dependencies&lt;/span&gt;()      &lt;span style=&#34;color:#228b22&#34;&gt;#定义目标文件依赖于其他目标文件，确保其他目标已被构建 
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;target_link_libraries&lt;/span&gt;()   &lt;span style=&#34;color:#228b22&#34;&gt;#链接
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;catkin_add_gtest&lt;/span&gt;()      &lt;span style=&#34;color:#228b22&#34;&gt;#catkin新加宏，生成测试
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;install&lt;/span&gt;()         &lt;span style=&#34;color:#228b22&#34;&gt;#安装至本机
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;对照实例&#34;&gt;对照实例&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cmake&#34; data-lang=&#34;cmake&#34;&gt;&lt;span style=&#34;color:#658b00&#34;&gt;cmake_minimum_required&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;VERSION&lt;/span&gt; &lt;span style=&#34;color:#cd5555&#34;&gt;3.0.2&lt;/span&gt;)    &lt;span style=&#34;color:#228b22&#34;&gt;# catkin至少需要3.0.2版本以上的Cmake
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#通过project()这个函数指定包的名字，在CMake中指定后，你可在其他地方通过使用变量${PROJECT_NAME}来引用它
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;project&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;ultrasonic_data&lt;/span&gt;) &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## Compile as C++11, supported in ROS Kinetic and newer
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# add_compile_options(-std=c++11)
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## 查找编译依赖的其他CMake/Catkin包（声明依赖库）：find_package(）  
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;##find_package(catkin REQUIRED COMPONENTS xyz) 被用于找其他依赖的功能包
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;##这里指明构建这个package需要依赖的package，我们使用catkin_make的编译方式，至少需要catkin这个包。
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;find_package&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;catkin&lt;/span&gt; &lt;span style=&#34;color:#cd5555&#34;&gt;REQUIRED&lt;/span&gt; &lt;span style=&#34;color:#cd5555&#34;&gt;COMPONENTS&lt;/span&gt;
+  &lt;span style=&#34;color:#cd5555&#34;&gt;message_generation&lt;/span&gt;
+  &lt;span style=&#34;color:#cd5555&#34;&gt;roscpp&lt;/span&gt;
+  &lt;span style=&#34;color:#cd5555&#34;&gt;sensor_msgs&lt;/span&gt;
+  &lt;span style=&#34;color:#cd5555&#34;&gt;std_msgs&lt;/span&gt;
+  &lt;span style=&#34;color:#cd5555&#34;&gt;visualization_msgs&lt;/span&gt;
+  &lt;span style=&#34;color:#cd5555&#34;&gt;can_msgs&lt;/span&gt;
+)&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## 系统依赖关系是通过CMake的约定找到的
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# find_package(Boost REQUIRED COMPONENTS system)
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;##启动Python模块支持：catkin_python_package()
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;##如果功能包中提供了一些Python模块.这个宏定义可以确保包中声明的模块和全局脚本被安装
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## See http://ros.org/doc/api/catkin/html/user_guide/setup_dot_py.html
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# catkin_python_setup()
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;############################
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## 声明ROS消息、服务和动作 ##
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;############################
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## 消息/服务/操作(Message/Service/Action)生成器：add_message_files(),add_service_files(),add_action_files()
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;##当我们需要使用.msg.srv.action形式的文件时，我们需要特殊的预处理器把他们转化为系统可以识别特定编程语言（.h.cpp）。
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;##注意：这些宏必须在catkin_package() 宏前面
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;##请执行以下步骤：
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## * 在package.xml中:
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## *1.添加&amp;#34;message_generation&amp;#34;在build_depend标记中
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## *2.添加&amp;#34;message_runtime&amp;#34;在exec_depend标记中
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## * 在CMakeLists.txt中:
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## *1、在find_package(catkin REQUIRED COMPONENTS ...)添加&amp;#34;message_generation&amp;#34; 
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## *2、在catkin_package(CATKIN_DEPENDS ...)添加&amp;#34;message_runtime&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;##   根据需要取消下面“add_######_files”部分的注释
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;##   * 取消下面的generate_messages(DEPENDENCIES...注释
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;##   * add every package  to generate_messages(DEPENDENCIES ...)
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;##  在&amp;#39;msg&amp;#39; 文件夹生成消息
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;add_message_files&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;
+   &lt;span style=&#34;color:#cd5555&#34;&gt;FILES&lt;/span&gt;
+   &lt;span style=&#34;color:#cd5555&#34;&gt;Ultrasonic.msg&lt;/span&gt;
+&lt;span style=&#34;color:#228b22&#34;&gt;#   Message2.msg
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt; )&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;##在 &amp;#39;srv&amp;#39; 文件夹生成服务
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# add_service_files(
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#   FILES
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#   Service1.srv
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#   Service2.srv
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# )
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## 在 &amp;#39;action&amp;#39; 文件夹生成动作
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# add_action_files(
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#   FILES
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#   Action1.action
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#   Action2.action
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# )
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## 在此处列出的任何添加的消息和服务生成的依赖项
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;##调用消息/服务/操作生成：generate_messages()
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;generate_messages&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;
+   &lt;span style=&#34;color:#cd5555&#34;&gt;DEPENDENCIES&lt;/span&gt;
+&lt;span style=&#34;color:#228b22&#34;&gt;#   sensor_msgs
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;     &lt;span style=&#34;color:#cd5555&#34;&gt;std_msgs&lt;/span&gt;
+&lt;span style=&#34;color:#228b22&#34;&gt;#   visualization_msgs
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt; )&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;################################################
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;##声明ROS动态配置参数 ##
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;################################################
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## 声明和生成动态重新配置参数包:遵循以下步骤
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## * 在package.xml中:
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## *添加&amp;#34;dynamic_reconfigure&amp;#34;在build_depend和exec_depend标记中
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## * 在CMakeLists.txt中:
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## *在find_package(catkin REQUIRED COMPONENTS ...)添加&amp;#34;dynamic_reconfigure&amp;#34; 
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## * 取消下面 &amp;#34;generate_dynamic_reconfigure_options&amp;#34; 的注释
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## 列出要处理的每个.cfg文件
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## Generate dynamic reconfigure parameters in the &amp;#39;cfg&amp;#39; folder
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# generate_dynamic_reconfigure_options(
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#   cfg/DynReconf1.cfg
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#   cfg/DynReconf2.cfg
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# )
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;###################################
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## catkin 特定的配置 ##
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;###################################
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;##  catkin_package为包生成cmake配置文件  这是一个catkin提供的cmake宏，当我们要给构建系统指定catkin的特定的信息时就需要了
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;##  或者反过来利用他产生pkg-config和CMake文件。
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;##指定包编译信息导出：catkin_package()
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## 该函数必须在使用 add_library()或add_executable()声明任何targets之前调用。
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## INCLUDE_DIRS: 如果包包含头文件，请取消对INCLUDE_DIRS的注释
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## LIBRARIES: 此项目中创建的依赖项目需要的库LIBRARIES
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## CATKIN_DEPENDS: catkin_packages依赖的项目
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## DEPENDS:  依赖项目需要的系统依赖项
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;catkin_package&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#cd5555&#34;&gt;INCLUDE_DIRS&lt;/span&gt; &lt;span style=&#34;color:#cd5555&#34;&gt;include&lt;/span&gt;
+&lt;span style=&#34;color:#228b22&#34;&gt;#  LIBRARIES ultrasonic_data
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#cd5555&#34;&gt;CATKIN_DEPENDS&lt;/span&gt; &lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#cd5555&#34;&gt;message_runtime&lt;/span&gt;
+&lt;span style=&#34;color:#228b22&#34;&gt;#  DEPENDS system_lib
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;)&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;###########
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## Build ##
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;###########
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## include_directories用来设置头文件的相对路径
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;##include_directories的参数是通过find_package产生的*_INCLUDE_DIRS变量和其他所有额外的头文件路径
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;##这里&amp;#34;include&amp;#34;表示你的pacakge里面的include这个路径也包含在里面
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;include_directories&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;
+  &lt;span style=&#34;color:#cd5555&#34;&gt;include&lt;/span&gt;
+  ${&lt;span style=&#34;color:#00688b&#34;&gt;catkin_INCLUDE_DIRS&lt;/span&gt;}&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;
+)&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;##########################################################################
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;##添加要编译的库和可执行文件：add_library()/add_executable()/target_link_libraries()##
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;##########################################################################
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## add_library()用来指定编译产生的库。默认的catkin编译产生共享库：
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# add_library(${PROJECT_NAME}
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#   src/${PROJECT_NAME}/ultrasonic_data.cpp
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# )
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## add_dependencies用于设置依赖
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;##如果你有一个包编译.msg .srv，并且可执行文件要使用他们，那么你就需要创建一个显式的依赖项，
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## 我们定义的语言无关的消息类型，消息类型会在编译过程中产生相应的语言的代码，如果编译的可执行文件依赖这些动态生成的代码，则需要
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## 使用add_dependencies(${PROJECT_NAME}_generate_messages_cpp)
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## add_dependencies(${PROJECT_NAME} ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## add_executable用于设置需要编译的代码和生成的可执行文件
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;##第一个参数为期望生成的可执行文件名称；后面的参数为参与编译的源文件（cpp),如果需要多个代码文件，用空格区分开
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## 推荐的前缀可以确保跨包的目标名称不会冲突
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# add_executable(${PROJECT_NAME}_node src/ultrasonic_data_node.cpp)
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## 重命名C++无前缀可执行文件
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## 利用set_target_properties()函数将这个target进行重命名，在catkin中target的名字必须是唯一的
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# set_target_properties(${PROJECT_NAME}_node PROPERTIES OUTPUT_NAME node PREFIX &amp;#34;&amp;#34;)
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## 添加可执行文件的cmake目标依赖项
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## same as for the library above与上面的库相同
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;##target_link_libraries用于设置链接库
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# target_link_libraries(${PROJECT_NAME}_node
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#   ${catkin_LIBRARIES}
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# )
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;add_executable&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;ultrasonic_activate_node&lt;/span&gt;
+  &lt;span style=&#34;color:#cd5555&#34;&gt;src/ultrasonic_activate_node.cpp&lt;/span&gt;
+)&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;add_dependencies&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;ultrasonic_activate_node&lt;/span&gt; ${&lt;span style=&#34;color:#00688b&#34;&gt;${PROJECT_NAME&lt;/span&gt;}&lt;span style=&#34;color:#cd5555&#34;&gt;_EXPORTED_TARGETS}&lt;/span&gt; ${&lt;span style=&#34;color:#00688b&#34;&gt;catkin_EXPORTED_TARGETS&lt;/span&gt;})&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;target_link_libraries&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;ultrasonic_activate_node&lt;/span&gt;
+  ${&lt;span style=&#34;color:#00688b&#34;&gt;catkin_LIBRARIES&lt;/span&gt;}&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;
+)&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;add_executable&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;ultrasonic_node&lt;/span&gt;
+  &lt;span style=&#34;color:#cd5555&#34;&gt;src/ultrasonic_node.cpp&lt;/span&gt;
+  &lt;span style=&#34;color:#cd5555&#34;&gt;src/ultrasonic_filter.cpp&lt;/span&gt;
+&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;
+)&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;add_dependencies&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;ultrasonic_node&lt;/span&gt; ${&lt;span style=&#34;color:#00688b&#34;&gt;${PROJECT_NAME&lt;/span&gt;}&lt;span style=&#34;color:#cd5555&#34;&gt;_EXPORTED_TARGETS}&lt;/span&gt; ${&lt;span style=&#34;color:#00688b&#34;&gt;catkin_EXPORTED_TARGETS&lt;/span&gt;})&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;target_link_libraries&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;ultrasonic_node&lt;/span&gt;
+  ${&lt;span style=&#34;color:#00688b&#34;&gt;catkin_LIBRARIES&lt;/span&gt;}&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;
+)&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#############
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;###安装至本机 ##
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#############
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 所有安装目标都应该使用catkin目标变量
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# See http://ros.org/doc/api/catkin/html/adv_user_guide/variables.html
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;##安装Python可执行脚本
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# catkin_install_python(PROGRAMS
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#   scripts/my_python_script
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# )
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## 安装的可执行文件
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## See http://docs.ros.org/melodic/api/catkin/html/howto/format1/building_executables.html
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# install(TARGETS ${PROJECT_NAME}_node
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# )
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## 要安装的库
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;##编译完成后，目标被放入catkin工作空间下的devel目录。一般希望将目标安装到系统上，以使其他用户使用，
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;##或者安装到本地目录来测试系统级别的安装。也就是说，如果希望能够对代码进行make install，就需要明确目标结束的位置。
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;##上述过程可以使用CMake的 install()函数实现。
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;##该函数的参数有
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;##TARGETS：要安装的目标
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;##ARCHIVE DESTINATION：静态库和动态链接库DLL(Windows).lib存根
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;##LIBRARY DESTINATION：非DLL共享库和模块
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;##RUNTIME DESTINATION：可执行目标和DLL(Windows)模式共享库
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## See http://docs.ros.org/melodic/api/catkin/html/howto/format1/building_libraries.html
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# install(TARGETS ${PROJECT_NAME}
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#   RUNTIME DESTINATION ${CATKIN_GLOBAL_BIN_DESTINATION}
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# )
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## 安装头文件
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;##头文件必须安装到include目录下，这通常通过安装整个文件夹的文件来完成（可以根据文件名模式进行过滤，并排除SVN子文件夹）
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;##可以通过以下安装规则实现：
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# install(DIRECTORY include/${PROJECT_NAME}/
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#   FILES_MATCHING PATTERN &amp;#34;*.h&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#   PATTERN &amp;#34;.svn&amp;#34; EXCLUDE
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# )
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## 安装roslaunch文件或其他源
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;##其他像launchfiles的资源可以安装到 ${CATKIN_PACKAGE_SHARE_DESTINATION}
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# install(FILES
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#   # myfile1
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#   # myfile2
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# )
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#############################
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## 测试编译：catkin_add_gtest()##
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#############################
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## 基于gtest测试目标和链接库
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# catkin_add_gtest(${PROJECT_NAME}-test test/test_ultrasonic_data.cpp)
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# if(TARGET ${PROJECT_NAME}-test)
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# endif()
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;## 添加要由python osetests运行的文件夹
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# catkin_add_nosetests(test)
+&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;具体可参考网址&#34;&gt;具体可参考网址&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/yangtao420902/article/details/110873333?ops_request_misc=%7B%22request%5Fid%22%3A%22163430132516780264065592%22%2C%22scm%22%3A%2220140713.130102334.pc%5Fall.%22%7D&amp;amp;request_id=163430132516780264065592&amp;amp;biz_id=0&amp;amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-8-110873333.pc_search_ecpm_flag&amp;amp;utm_term=ros%E7%9A%84CMakeLists%E8%AF%A6%E8%A7%A3&amp;amp;spm=1018.2226.3001.4187&#34;&gt;ROS中的CMake List详解_yangtao420902的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/CipherPolzz/article/details/118963390?ops_request_misc=%7B%22request%5Fid%22%3A%22163430132516780264065592%22%2C%22scm%22%3A%2220140713.130102334.pc%5Fall.%22%7D&amp;amp;request_id=163430132516780264065592&amp;amp;biz_id=0&amp;amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-6-118963390.pc_search_ecpm_flag&amp;amp;utm_term=ros%E7%9A%84CMakeLists%E8%AF%A6%E8%A7%A3&amp;amp;spm=1018.2226.3001.4187&#34;&gt;ROS下CmakeLists.txt模板_CipherPolzz的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/weixin_43877080/article/details/110953533?ops_request_misc=%7B%22request%5Fid%22%3A%22163430132516780264065592%22%2C%22scm%22%3A%2220140713.130102334.pc%5Fall.%22%7D&amp;amp;request_id=163430132516780264065592&amp;amp;biz_id=0&amp;amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-5-110953533.pc_search_ecpm_flag&amp;amp;utm_term=ros%E7%9A%84CMakeLists%E8%AF%A6%E8%A7%A3&amp;amp;spm=1018.2226.3001.4187&#34;&gt;ROS新建程序包CmakeLists和package详解_JayLee719的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/qq_32761549/article/details/104535989?ops_request_misc=%7B%22request%5Fid%22%3A%22163430132516780264065592%22%2C%22scm%22%3A%2220140713.130102334.pc%5Fall.%22%7D&amp;amp;request_id=163430132516780264065592&amp;amp;biz_id=0&amp;amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-3-104535989.pc_search_ecpm_flag&amp;amp;utm_term=ros%E7%9A%84CMakeLists%E8%AF%A6%E8%A7%A3&amp;amp;spm=1018.2226.3001.4187&#34;&gt;(46条消息) ROS中CMakeLists.txt文件 使用 讲解与总结_月照银海似蛟龙的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
+- https://peitianyu.github.io/pty_blog.github.io/ros/ros_cmake%E6%A8%A1%E6%9D%BF/ - This is a customized copyright.</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>硬件项目案例模式</title>
+        <link>https://peitianyu.github.io/pty_blog.github.io/templete/%E9%A1%B9%E7%9B%AE%E6%A1%88%E4%BE%8B%E6%A8%A1%E5%BC%8F/</link>
+        <pubDate>Fri, 15 Oct 2021 16:20:39 +0800</pubDate>
+        
+        <guid>https://peitianyu.github.io/pty_blog.github.io/templete/%E9%A1%B9%E7%9B%AE%E6%A1%88%E4%BE%8B%E6%A8%A1%E5%BC%8F/</guid>
+        <description>武装带你 https://peitianyu.github.io/pty_blog.github.io/templete/%E9%A1%B9%E7%9B%AE%E6%A1%88%E4%BE%8B%E6%A8%A1%E5%BC%8F/ -&lt;h3 id=&#34;天穹飞控项目&#34;&gt;天穹飞控项目&lt;/h3&gt;
+&lt;p&gt;将模块细分非常细致值得嵌入式借鉴&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;SRC# tree
+.
+├── CONTROL
+│   ├── flightControl.c
+│   ├── flightControl.h
+│   ├── missionControl.c
+│   ├── missionControl.h
+│   ├── motor.c
+│   ├── motor.h
+│   ├── rc.c
+│   ├── rc.h
+│   ├── safeControl.c
+│   ├── safeControl.h
+│   ├── userControl.c
+│   ├── userControl.h
+│   ├── waypointControl.c
+│   └── waypointControl.h
+├── DRIVER
+│   ├── board.c
+│   ├── board.h
+│   ├── boardConfigBlueSkyV3.h
+│   ├── drv_adc.c
+│   ├── drv_adc.h
+│   ├── drv_can.c
+│   ├── drv_can.h
+│   ├── drv_flash.c
+│   ├── drv_flash.h
+│   ├── drv_i2c_soft.c
+│   ├── drv_i2c_soft.h
+│   ├── drv_ppm.c
+│   ├── drv_ppm.h
+│   ├── drv_pwm.c
+│   ├── drv_pwm.h
+│   ├── drv_sbus.c
+│   ├── drv_sbus.h
+│   ├── drv_spi.c
+│   ├── drv_spi.h
+│   ├── drv_usart.c
+│   ├── drv_usart.h
+│   ├── drv_usb.c
+│   └── drv_usb.h
+├── LOG
+│   ├── logger.c
+│   ├── logger.h
+│   ├── ulog.c
+│   ├── ulog.h
+│   ├── ulog_data.c
+│   └── ulog_data.h
+├── MATH
+│   ├── LevenbergMarquardt.c
+│   ├── LevenbergMarquardt.h
+│   ├── declination.c
+│   ├── declination.h
+│   ├── kalman3.c
+│   ├── kalman3.h
+│   ├── kalmanVel.c
+│   ├── kalmanVel.h
+│   ├── lowPassFilter.c
+│   ├── lowPassFilter.h
+│   ├── mathTool.c
+│   ├── mathTool.h
+│   ├── matrix3.c
+│   ├── matrix3.h
+│   ├── matrix6.c
+│   ├── matrix6.h
+│   ├── pid.c
+│   ├── pid.h
+│   ├── quaternion.c
+│   ├── quaternion.h
+│   ├── rotation.c
+│   ├── rotation.h
+│   ├── vector3.c
+│   └── vector3.h
+├── MESSAGE
+│   ├── bsklink.c
+│   ├── bsklink.h
+│   ├── bsklinkDecode.c
+│   ├── bsklinkDecode.h
+│   ├── bsklinkSend.c
+│   ├── bsklinkSend.h
+│   ├── mavlinkDecode.c
+│   ├── mavlinkDecode.h
+│   ├── mavlinkNotice.c
+│   ├── mavlinkNotice.h
+│   ├── mavlinkParam.c
+│   ├── mavlinkParam.h
+│   ├── mavlinkSend.c
+│   ├── mavlinkSend.h
+│   ├── message.c
+│   └── message.h
+├── MODULE
+│   ├── 2smpb.c
+│   ├── 2smpb.h
+│   ├── battery.c
+│   ├── battery.h
+│   ├── icm20602.c
+│   ├── icm20602.h
+│   ├── icm20689.c
+│   ├── icm20689.h
+│   ├── ist8310.c
+│   ├── ist8310.h
+│   ├── mmc3630.c
+│   ├── mmc3630.h
+│   ├── module.c
+│   ├── module.h
+│   ├── mpu6000.c
+│   ├── mpu6000.h
+│   ├── mpu6500.c
+│   ├── mpu6500.h
+│   ├── ms5611.c
+│   ├── ms5611.h
+│   ├── qmc5883.c
+│   ├── qmc5883.h
+│   ├── rgb.c
+│   ├── rgb.h
+│   ├── ublox.c
+│   └── ublox.h
+├── NAVIGATION
+│   ├── ahrs.c
+│   ├── ahrs.h
+│   ├── ahrsAux.c
+│   ├── ahrsAux.h
+│   ├── navigation.c
+│   └── navigation.h
+├── SENSOR
+│   ├── accelerometer.c
+│   ├── accelerometer.h
+│   ├── barometer.c
+│   ├── barometer.h
+│   ├── gps.c
+│   ├── gps.h
+│   ├── gyroscope.c
+│   ├── gyroscope.h
+│   ├── magnetometer.c
+│   ├── magnetometer.h
+│   ├── sensor.c
+│   └── sensor.h
+├── SYSTEM
+│   ├── faultDetect.c
+│   ├── faultDetect.h
+│   ├── flightStatus.c
+│   ├── flightStatus.h
+│   ├── parameter.c
+│   └── parameter.h
+├── TASK
+│   ├── TaskConfig.h
+│   ├── control_task.c
+│   ├── control_task.h
+│   ├── log_task.c
+│   ├── log_task.h
+│   ├── messageQueue.c
+│   ├── messageQueue.h
+│   ├── message_task.c
+│   ├── message_task.h
+│   ├── module_task.c
+│   ├── module_task.h
+│   ├── navigation_task.c
+│   ├── navigation_task.h
+│   ├── sensor_task.c
+│   └── sensor_task.h
+└── main.c
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;待添加&#34;&gt;待添加&amp;hellip;&amp;hellip;&lt;/h3&gt;
+- https://peitianyu.github.io/pty_blog.github.io/templete/%E9%A1%B9%E7%9B%AE%E6%A1%88%E4%BE%8B%E6%A8%A1%E5%BC%8F/ - This is a customized copyright.</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>编程规范</title>
+        <link>https://peitianyu.github.io/pty_blog.github.io/templete/%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/</link>
+        <pubDate>Fri, 15 Oct 2021 16:20:39 +0800</pubDate>
+        
+        <guid>https://peitianyu.github.io/pty_blog.github.io/templete/%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/</guid>
+        <description>武装带你 https://peitianyu.github.io/pty_blog.github.io/templete/%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/ -&lt;h1 id=&#34;编程规范&#34;&gt;编程规范&lt;/h1&gt;
+&lt;h3 id=&#34;规范&#34;&gt;规范&lt;/h3&gt;
+&lt;h4 id=&#34;1-原则&#34;&gt;1. 原则&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;简洁明了，提高代码可读性，读的是代码而不是注释，注释永远都是辅助的。&lt;/li&gt;
+&lt;li&gt;零告警，严谨的语法才能保障代码表达和编译器理解的是一至的。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;2-排版&#34;&gt;2. 排版&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;程序块之间、变量声明之间，用空行分隔&lt;/li&gt;
+&lt;li&gt;突出语法关键字&lt;/li&gt;
+&lt;li&gt;一行不要太长，换行增加可读性&lt;/li&gt;
+&lt;li&gt;Tab键排版&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;3-注释&#34;&gt;3. 注释&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;注释的目的是阐明意图目的，而不是翻译某行代码的动作&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;注释的原则是尽量代码自注释，代码越清晰，可读性越高&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;统一格式 &lt;em&gt;&lt;em&gt;/&lt;/em&gt; 注释内容 */&lt;/em&gt;*， *号与注释内容之间有一个空格&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;/*************************************************
+Copyright 	 //版权
+File name:	 // 文件名
+Author： 	//作者
+Version: 	 //版本号
+Description: // 用于详细说明此程序文件完成的主要功能，与其他模块
+         // 或函数的接口，输出值、取值范围、含义及参数间的控
+         // 制、顺序、独立或依赖等关系
+Others: 	// 其它内容的说明
+Log: 		// 修改日志，包括修改内容，日期，修改人等
+*************************************************/
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;/*
+*@ Description: 函数描述，描述本函数的基本功能
+* @param 1 – 参数 1.
+* @param 2 – 参数 2
+* @return – 返回值
+*/
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;4-定义&#34;&gt;4. 定义&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;命名风格&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;模块名+文件名+功能描述，之间采用短下划线分隔&lt;/li&gt;
+&lt;li&gt;功能描述部分，采用驼峰风格&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;例如，&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;SAFE_LASER_setLaserShield&lt;/span&gt;(uint8_t _EN);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;宏定义&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;define 必须大写&lt;/li&gt;
+&lt;li&gt;typedef 可以小写&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;例如，&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;#define OS_TASK_R200RXID1 		0x198 	&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;/* HEX格式 */&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;typedef&lt;/span&gt; uint32_t StackSize_t&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;；&lt;/span&gt;   		&lt;span style=&#34;color:#228b22&#34;&gt;/* 仅用于堆栈 */&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;类型定义&lt;/p&gt;
+&lt;p&gt;使用linux自带类型定义规则&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;#define uint8_t  	unsigned char
+&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;#define int8_t   	char
+&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;#define uint16_t 	unsigned short
+&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;#define int16_t  	short
+&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;#define uint32_t 	unsigned int
+&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;#define int32_t  	int
+&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;#define uint64_t 	unsigned long long
+&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;#define int64_t  	long long
+&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;&lt;/span&gt;   
+&lt;span style=&#34;color:#1e889b&#34;&gt;#define TRUE  		1
+&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;#define FALSE 		0
+&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;#define NULL  		0
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;5-变量&#34;&gt;5. 变量&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;变量通用规则
+&lt;ol&gt;
+&lt;li&gt;采用驼峰风格,首字母大写&lt;/li&gt;
+&lt;li&gt;在函数开始是全部定义，不允许在函数中间定义&lt;/li&gt;
+&lt;li&gt;变量命名必须可以表示其含义&lt;/li&gt;
+&lt;li&gt;必须初始化&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;局部变量
+&lt;ol&gt;
+&lt;li&gt;本地局部变量必须用static关键字修饰&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;全局变量
+&lt;ol&gt;
+&lt;li&gt;全局变量必须以g开头&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;函数变量
+&lt;ol&gt;
+&lt;li&gt;变量必须以_开头&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;static uint8_t SafeLaserSet = 0;
+uint8_t gSafeLaserSet = 0;
+static uint8_t _SafeLaserSet = 0;
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;6-函数&#34;&gt;6. 函数&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;函数名必须能够自注释，必要是需要增加注释写明意图&lt;/li&gt;
+&lt;li&gt;内部函数必须使用static定义，命名可以不加模块名&lt;/li&gt;
+&lt;li&gt;外部函数
+&lt;ol&gt;
+&lt;li&gt;必须在头文件中声明，&lt;/li&gt;
+&lt;li&gt;命名时必须带模块名，&lt;/li&gt;
+&lt;li&gt;必须给出带注释，并写明函数意图，参数说明，返回值&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;static uint_t SAFE_LASER_setLaseShield(uint8_t _EN);
+void SAFE_LASER_setLaseShield(uint8_t _EN);
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;7-文件&#34;&gt;7. 文件&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;头文件&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;命名规则模块名+功能，小写，例如os_task.h&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;格式如下&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;#ifndef __OS_TASK_H__
+&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;#define __OS_TASK_H__
+&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;&lt;/span&gt;      
+....&lt;span style=&#34;color:#228b22&#34;&gt;/* 开放的宏定义 */&lt;/span&gt;
+....&lt;span style=&#34;color:#228b22&#34;&gt;/* 开放的全局变量声明 */&lt;/span&gt;
+....&lt;span style=&#34;color:#228b22&#34;&gt;/* 开放的函数声明 */&lt;/span&gt;
+      
+&lt;span style=&#34;color:#1e889b&#34;&gt;#endif
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;源文件&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;命名规则模块名+功能，小写，例如os_task.c&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;格式如下，举例只为说明源文件中，各元素的顺序&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&amp;lt;- &lt;span style=&#34;color:#b452cd&#34;&gt;1&lt;/span&gt; - &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;引用头文件&lt;/span&gt; -&amp;gt;
+&lt;span style=&#34;color:#1e889b&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#1e889b&#34;&gt;&amp;#34;os_task.h&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;&lt;/span&gt;      
+&amp;lt;- &lt;span style=&#34;color:#b452cd&#34;&gt;2&lt;/span&gt; - &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;定义本文件用到的宏&lt;/span&gt; -&amp;gt;
+&lt;span style=&#34;color:#1e889b&#34;&gt;#define OS_TASK_SWITCH_INTERVAL 10 	&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;/* 单位ms */&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;typedef&lt;/span&gt; uint32_t StackSize_t &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;；&lt;/span&gt; 	 	&lt;span style=&#34;color:#228b22&#34;&gt;/* 仅用于堆栈 */&lt;/span&gt;
+&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;typedef&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;enum&lt;/span&gt;{};
+&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;typedef&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;union&lt;/span&gt;{};
+&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;typedef&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;struct&lt;/span&gt;{};
+      
+&amp;lt;- &lt;span style=&#34;color:#b452cd&#34;&gt;3&lt;/span&gt; - &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;本地变量&lt;/span&gt; -&amp;gt;
+&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;static&lt;/span&gt; StackSize_t *TopStack = &lt;span style=&#34;color:#658b00&#34;&gt;NULL&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;；&lt;/span&gt;
+      
+&amp;lt;- &lt;span style=&#34;color:#b452cd&#34;&gt;4&lt;/span&gt; - &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;开放的全局变量&lt;/span&gt; -&amp;gt;
+uint32_t gOsTaskEventBitMap = &lt;span style=&#34;color:#b452cd&#34;&gt;0&lt;/span&gt;; 
+      
+&amp;lt;- &lt;span style=&#34;color:#b452cd&#34;&gt;5&lt;/span&gt; - &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;本地函数，仅在本文件使用&lt;/span&gt; -&amp;gt;
+&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;void&lt;/span&gt; TASK_TaskSwitch(&lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;void&lt;/span&gt;)
+{
+    &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;；&lt;/span&gt;
+}
+      
+&amp;lt;- &lt;span style=&#34;color:#b452cd&#34;&gt;6&lt;/span&gt; - &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;开放的函数&lt;/span&gt; -&amp;gt;
+&lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;void&lt;/span&gt; OS_TASK_TaskDelay(uint16_t _ms)
+{
+  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;；&lt;/span&gt;   
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;8约定俗成简写&#34;&gt;8.约定俗成简写&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;addition           	add           		加
+subtraction 		sub              	减
+multiplication 		mul           		乘法
+division          	div             	除法
+answer            	ans           		响应、回答
+array               arr             	数组、集合
+average          	avg            		平均
+buffer              buf或buff   			缓冲区
+capture           	cap或capt  			捕获
+check              	chk            		检查
+count              	cnt            		计数器
+column            	col            		列
+control            	ctrl            	控制
+decode           	dec           		解码、译码
+define             	def           		定义
+delete             	del           		删除
+destination     	dst或dest 			目的
+display           	disp          		显示
+encode          	enc            		编码
+environment  		env           		环境
+error              	err             	错误
+float               flt              	浮动、浮点
+frequency      		freq           		频率
+header          	hdr            		开始、开头
+index             	idx            		索引、指示、
+image            	img           		影像、镜像
+increment      		inc            		增加、增量
+initalize         	init            	初始化
+iteration        	itr             	循环、迭代
+length           	len            		长度
+memory        		mem          		内存
+middle           	mid           		中值
+make             	mk            		制造、形成
+message       		msg          		消息
+number         		num         	 	数量、编号
+operand        		opnd        		操作数
+optimization  		opt           		最优
+operator       		optr          		操作
+packet          	pkt            		消息包
+positon         	pos           		位置
+previous       		pre或prev  			以前的
+pointer         	ptr             	指针
+record          	rcd             	记录
+receive         	recv           		收到、接收
+result           	res             	结果
+return          	ret              	返回
+source         		src              	源头
+stack           	stk              	栈
+string          	str               	字符串
+table           	tab              	表
+temporary   		tmp或temp  			临时
+total            	tot               	全部的
+time stamp  		ts                	时间戳
+value           	val              	值
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;有互斥意义的变量或者动作相反的函数应该是用互斥词组命名&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;add/remove  	begin/end 		create/destroy 		insert/delete 
+first/last 		get/release 	increment/decrement put/get 		add/delete
+lock/unlock 	open/close 		min/max 			old/new 
+start/stop 		next/previous 	source/target 		show/hide 
+send/receive 	source/destination 					copy/paste 		up/down
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;9-模块&#34;&gt;9. 模块&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;模块必须具有封装性，且对外提供尽量少的必要接口，接口必须提供详细的注释描述&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;模块的组织形式可以是文件夹形式，也可以是文件形式&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;文件都以小写命名&lt;/p&gt;
+&lt;p&gt;例如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;.
+    &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;├──&lt;/span&gt; src &lt;span style=&#34;color:#228b22&#34;&gt;/* 应用层代码 */&lt;/span&gt;
+    &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;│&lt;/span&gt;   &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;├──&lt;/span&gt; main.c &lt;span style=&#34;color:#228b22&#34;&gt;/* 应用入口 */&lt;/span&gt;
+    &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;│&lt;/span&gt;   &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;├──&lt;/span&gt; test.c
+    &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;│&lt;/span&gt;   &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;├──&lt;/span&gt; test1.c  
+    &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;├──&lt;/span&gt; include &lt;span style=&#34;color:#228b22&#34;&gt;/* 设备驱动代码 */&lt;/span&gt;
+    &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;│&lt;/span&gt;   &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;├──&lt;/span&gt; test.h
+    &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;│&lt;/span&gt;   &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;├──&lt;/span&gt; test1.h 
+    &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;├──&lt;/span&gt; debug &lt;span style=&#34;color:#228b22&#34;&gt;/* 芯片厂家提供的库代码 */&lt;/span&gt;
+    &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;│&lt;/span&gt;   &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;├──&lt;/span&gt; MakeFile
+    &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;│&lt;/span&gt;   &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;├──&lt;/span&gt; CMake
+    &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;│&lt;/span&gt;   &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;└──&lt;/span&gt; main
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+- https://peitianyu.github.io/pty_blog.github.io/templete/%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/ - This is a customized copyright.</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>ROS_安装</title>
+        <link>https://peitianyu.github.io/pty_blog.github.io/ros/ros%E5%AE%89%E8%A3%85/</link>
+        <pubDate>Tue, 12 Oct 2021 16:20:39 +0800</pubDate>
+        
+        <guid>https://peitianyu.github.io/pty_blog.github.io/ros/ros%E5%AE%89%E8%A3%85/</guid>
+        <description>武装带你 https://peitianyu.github.io/pty_blog.github.io/ros/ros%E5%AE%89%E8%A3%85/ -&lt;h3 id=&#34;安装环境&#34;&gt;安装环境&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;Ubuntu18.04
+ros-melodic-desktop-full
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;安装&#34;&gt;安装&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;vim /etc/apt/sources.list.d/ros-latest.list
+deb https://mirrors.tuna.tsinghua.edu.cn/ros/ubuntu/ bionic main
+sudo apt-key adv --keyserver &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#39;hkp://keyserver.ubuntu.com:80&amp;#39;&lt;/span&gt; --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+sudo apt update
+sudo apt-get install ros-melodic-desktop-full
+&lt;span style=&#34;color:#228b22&#34;&gt;# 初始化&lt;/span&gt;
+sudo rosdep init
+rosdep update
+sudo apt install python-rosinstall python-rosinstall-generator python-wstool build-essential
+sudo &lt;span style=&#34;color:#658b00&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;source /opt/ros/melodic/setup.bash&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; ~/.bashrc
+&lt;span style=&#34;color:#658b00&#34;&gt;source&lt;/span&gt; ~/.bashrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;一行代码安装ros包含问题处理&#34;&gt;一行代码安装ros（包含问题处理）&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;wget http://fishros.com/install -O fishros &amp;amp;&amp;amp; sudo bash fishros
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;参考视频：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/8hTrKL0N5y9i6s9ujhp0UA&#34;&gt;玩着游戏听着歌，就把ROS装好了！一行代码搞定系列！ (qq.com)&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;安装问题&#34;&gt;安装问题&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;rosdep init&lt;/code&gt;不成功&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;F35T1IRK7GMOWQDIHN_L8.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd /etc
+sudo mkdir ros
+cd ros
+sudo mkdir rosdep
+cd rosdep
+sudo mkdir source.list.d
+cd source.list.d
+sudo touch 20-default.list
+sudo vim 20-default.list
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;输入&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#os-specific listings first
+yaml https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/osx-homebrew.yaml osx
+ 
+#generic
+yaml https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/base.yaml
+yaml https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/python.yaml
+yaml https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/ruby.yaml
+gbpdistro https://raw.githubusercontent.com/ros/rosdistro/master/releases/fuerte.yaml fuerte
+ 
+#newer distributions (Groovy, Hydro, …) must not be listed anymore, they are being 
+#fetched from the rosdistro index.yaml instead
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;rosdep update&lt;/code&gt;问题&lt;/p&gt;
+&lt;p&gt;首先调大执行时间，更改 &lt;code&gt;/usr/lib/python2.7/dist-packages/rosdep2/&lt;/code&gt;下的三个文件&lt;code&gt;sources_list.py&lt;/code&gt;、&lt;code&gt;gbpdistro_support.py&lt;/code&gt;、&lt;code&gt;rep3.py&lt;/code&gt;中的&lt;code&gt;DOWNLOAD_TIMEOUT = 15.0&lt;/code&gt;值，我一般直接改成999。  终端输入：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo nano /usr/lib/python2.7/dist-packages/rosdep2/gbpdistro_support.py
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;修改&lt;code&gt;DOWNLOAD_TIMEOUT&lt;/code&gt;后，输入&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo nano /etc/hosts
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在最后一行加入&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;151.101.84.133  raw.githubusercontent.com
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;连上&lt;strong&gt;手机热点&lt;/strong&gt;，重新&lt;code&gt;rosdep update&lt;/code&gt;多次后，成功。&lt;/p&gt;
+&lt;h3 id=&#34;卸载&#34;&gt;卸载&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo apt-get autoremove --purge ros-melodic
+&lt;span style=&#34;color:#228b22&#34;&gt;# 先卸载包&lt;/span&gt;
+sudo apt-get purge ros-*
+&lt;span style=&#34;color:#228b22&#34;&gt;# 然后删除依赖，配置&lt;/span&gt;
+sudo apt-get autoremove
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;测试&#34;&gt;测试&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;mkdir -p ~/catkin_ws/src
+&lt;span style=&#34;color:#658b00&#34;&gt;cd&lt;/span&gt; ~/catkin_ws/
+catkin_make
+&lt;span style=&#34;color:#658b00&#34;&gt;source&lt;/span&gt; devel/setup.bash
+roscore
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;打开新窗口执行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;rosrun turtlesim turtlesim_node
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;出现小乌龟则安装完成。&lt;/p&gt;
+- https://peitianyu.github.io/pty_blog.github.io/ros/ros%E5%AE%89%E8%A3%85/ - This is a customized copyright.</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>HUGO_blog教程</title>
+        <link>https://peitianyu.github.io/pty_blog.github.io/blog/hugo_blog%E6%95%99%E7%A8%8B/</link>
+        <pubDate>Tue, 12 Oct 2021 10:49:31 +0800</pubDate>
+        
+        <guid>https://peitianyu.github.io/pty_blog.github.io/blog/hugo_blog%E6%95%99%E7%A8%8B/</guid>
+        <description>武装带你 https://peitianyu.github.io/pty_blog.github.io/blog/hugo_blog%E6%95%99%E7%A8%8B/ -&lt;h3 id=&#34;git安装与配置&#34;&gt;git安装与配置&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# git安装&lt;/span&gt;
+sudo apt update
+sudo apt install git 
+&lt;span style=&#34;color:#228b22&#34;&gt;#git配置&lt;/span&gt;
+git config --global user.name &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;zoey&amp;#34;&lt;/span&gt;
+git config --global user.email &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;zoey686@163.com&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#228b22&#34;&gt;#查看设置用户名与密码&lt;/span&gt;
+git config --list
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;hugo安装&#34;&gt;hugo安装&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 安装&lt;/span&gt;
+sudo apt install hugo
+&lt;span style=&#34;color:#228b22&#34;&gt;# 查看&lt;/span&gt;
+hugo --help
+hugo version
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;建立博客&#34;&gt;建立博客&lt;/h4&gt;
+&lt;p&gt;新建git文件夹用以git模板等，并在文件夹下新建myblog，用来存放博客页面&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 新建git文件夹并git初始化&lt;/span&gt;
+mkdir gitFile  
+git init
+&lt;span style=&#34;color:#228b22&#34;&gt;# 新建myblog文件夹用来存放博客页面&lt;/span&gt;
+hugo new site myblog
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;myblog下面就会有以下几个文件夹自动生成&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;文件夹名&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;作用&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;archetypes&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;文章开头形式&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;content&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;内容&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;data&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;自定义模板&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;layouts&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;网页模板文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;static&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;存储图片一些其他的资源&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;themes&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;主题&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;config.toml&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;配置文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;设置主题&#34;&gt;设置主题&lt;/h4&gt;
+&lt;p&gt;在（https://themes.gohugo.io/）中挑选主题,这里选择的是diary主题（&lt;a href=&#34;https://themes.gohugo.io/themes/hugo-theme-diary/&#34;&gt;Diary | Hugo Themes (gohugo.io)&lt;/a&gt;）&lt;/p&gt;
+&lt;p&gt;例子：（&lt;a href=&#34;https://sunua.gitee.io/simonblog/&#34;&gt;浅蓝色 (gitee.io)&lt;/a&gt;）&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 下载diary主题到themes文件夹下并重命名为diary&lt;/span&gt;
+git submodule add https://github.com/AmazingRise/hugo-theme-diary.git themes/diary
+&lt;span style=&#34;color:#228b22&#34;&gt;# 配置config.toml文件&lt;/span&gt;
+nano config.toml
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;baseURL = &amp;quot;https://peitianyu.github.io/pty_blog.github.io&amp;quot;
+DefaultContentLanguage = &amp;quot;zh&amp;quot; # Theme&#39;s display language, supports: en, fr, zh, zh-hant
+languageCode = &amp;quot;zh-hant&amp;quot;
+title = &amp;quot;武装带你&amp;quot;
+copyright = &amp;quot;This is a customized copyright.&amp;quot;
+theme = &amp;quot;diary&amp;quot;
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = &amp;quot;&amp;quot;
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = &amp;quot;perldoc&amp;quot;
+    tabWidth = 4
+
+
+enableOpenGraph = true
+enableTwitterCards = true
+title = &amp;quot;My Blog&amp;quot; 
+description = &amp;quot;My HomePage Description&amp;quot;  
+
+[taxonomies]
+   ros = &amp;quot;Ros&amp;quot;
+   blog = &amp;quot;Blog&amp;quot;
+
+[[menu.main]]
+url = &amp;quot;/blog&amp;quot;
+name = &amp;quot;Blog&amp;quot;
+weight = 1
+[[menu.main]]
+url = &amp;quot;/ros&amp;quot;
+name = &amp;quot;Ros&amp;quot;
+weight = 2
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;创建文章&#34;&gt;创建文章&lt;/h4&gt;
+&lt;p&gt;默认主目录文章在content/post下&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# 创建文章
+hugo new post/my_first_blog.md
+#创建文章在需要目录(Archive)下
+hugo new posts/my_first_blog.md
+cd content/post
+nano my_first_blog.md
+# 注意将draft参数改为false，否则跳过草稿文件，无法预览
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;---
+title: &amp;quot;my_first_blog&amp;quot;
+date: 2021-10-12T10:49:31+08:00
+draft : false
+---
+文本内容
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;本地调试&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hugo server --theme=blackburn --buildDrafts
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;其中 &amp;ndash;theme 选项可以指定主题，–buildDrafts 包括标记为草稿
+然后在浏览器里打开： &lt;a href=&#34;http://localhost:1313/&#34;&gt;http://localhost:1313&lt;/a&gt; 即可访问到你的博客&lt;/p&gt;
+&lt;h4 id=&#34;部署到github&#34;&gt;部署到github&lt;/h4&gt;
+&lt;p&gt;如果你需要部署在 GitHub Pages 上，首先在GitHub上创建一个Repository，命名为：&lt;code&gt;pty_blog.github.io&lt;/code&gt; （&lt;strong&gt;pty_blog替换为你的github用户名的小写&lt;/strong&gt;）&lt;/p&gt;
+&lt;p&gt;进入仓库，点击&lt;strong&gt;Settings&lt;/strong&gt;进入，找到&lt;strong&gt;GitHub Pages&lt;/strong&gt;并点击&lt;strong&gt;Check it out here!&lt;/strong&gt;，配置&lt;strong&gt;Source&lt;/strong&gt;并&lt;strong&gt;save&lt;/strong&gt;，会发现绿色框中显现 &lt;code&gt;Your site is published at https://peitianyu.github.io/pty_blog.github.io/&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;此处https://peitianyu.github.io/pty_blog.github.io/就是我们的网址，也是config.toml文件中设置的网址，设置hugo登陆网址&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hugo --theme=diary --buildDrafts --baseUrl=&amp;quot;https://peitianyu.github.io/pty_blog.github.io/&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：这里的 &amp;ndash;baseUrl 一定是https://（Hugo中文文档里为http://），不然你部署后的博客会没有样式！&lt;/p&gt;
+&lt;p&gt;可看到根目录下多出 /public文件夹出来，该文件夹的内容即Hugo生成的整个静态网站。然后继续在你的站点根目录执行git 命令，添加远程仓库。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#658b00&#34;&gt;cd&lt;/span&gt; public
+git init
+git remote add origin git@github.com:peitianyu/pty_blog.github.io.git
+git add -A
+git commit -m “first commit”
+git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后浏览器里访问：https://peitianyu.github.io/pty_blog.github.io/即可看到刚刚搭建的博客。&lt;/p&gt;
+&lt;p&gt;发布博客并更新：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# 新建博客markdown文件，并编辑博客内容(文件名为 **.md )
+hugo new post/newBlog.md
+# 生成静态页面
+hugo --theme=diary --buildDrafts --baseUrl=&amp;quot;https://peitianyu.github.io/pty_blog.github.io/&amp;quot;
+# 发布
+cd public
+git add .
+git commit -m &amp;quot;new blog added&amp;quot;
+git push origin master
+&lt;/code&gt;&lt;/pre&gt;- https://peitianyu.github.io/pty_blog.github.io/blog/hugo_blog%E6%95%99%E7%A8%8B/ - This is a customized copyright.</description>
+        </item>
+    
+    
+  </channel>
+</rss> 

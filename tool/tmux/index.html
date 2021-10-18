@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-<title>Systems</title>
+<title>tmux</title>
 
 
 
@@ -50,6 +50,8 @@
 
 
 
+
+  <script src="/pty_blog.github.io/js/toc.js"></script>
 
 
 
@@ -102,9 +104,11 @@
             
             
             
+                
             
             
-            <a class="a-block nav-link-item false" href="/pty_blog.github.io/tool">
+            
+            <a class="a-block nav-link-item active" href="/pty_blog.github.io/tool">
                 工具
             </a>
             
@@ -132,11 +136,9 @@
             
             
             
-                
             
             
-            
-            <a class="a-block nav-link-item active" href="/pty_blog.github.io/system">
+            <a class="a-block nav-link-item false" href="/pty_blog.github.io/system">
                 系统
             </a>
             
@@ -172,6 +174,70 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 </div><div id="extraContainer" class="extra-container">
     
     
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%8f%82%e8%80%83%e7%bd%91%e5%9d%80" onclick="onNavClick(`#参考网址-nav`)" id="参考网址-nav">
+									参考网址
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%be%bf%e6%8d%b7%e5%bf%ab%e6%8d%b7%e9%94%ae" onclick="onNavClick(`#便捷快捷键-nav`)" id="便捷快捷键-nav">
+									便捷快捷键
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+    
     <div class="pagination">
         <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
             <i class="material-icons pagination-action-icon">
@@ -184,8 +250,6 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 dark_mode
             </span>
         </a>
-        
-        
         
         
     </div>
@@ -220,9 +284,11 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 
                 
                 
+                    
                 
                 
-                <a class="a-block drawer-menu-item false" href="/pty_blog.github.io/tool">
+                
+                <a class="a-block drawer-menu-item active" href="/pty_blog.github.io/tool">
                     工具
                 </a>
                 
@@ -250,11 +316,9 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 
                 
                 
-                    
                 
                 
-                
-                <a class="a-block drawer-menu-item active" href="/pty_blog.github.io/system">
+                <a class="a-block drawer-menu-item false" href="/pty_blog.github.io/system">
                     系统
                 </a>
                 
@@ -269,6 +333,70 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 </a>
                 
             
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%8f%82%e8%80%83%e7%bd%91%e5%9d%80" onclick="onNavClick(`#参考网址-nav`)" id="参考网址-nav">
+									参考网址
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%be%bf%e6%8d%b7%e5%bf%ab%e6%8d%b7%e9%94%ae" onclick="onNavClick(`#便捷快捷键-nav`)" id="便捷快捷键-nav">
+									便捷快捷键
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
             
         </div>
     </div>
@@ -309,73 +437,137 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 <div id="streamContainer" class="stream-container">
 
     <div class="post-list-container post-list-container-shadow">
-        
-            <a class="a-block">
-                <div class="post-item-wrapper post-item-wrapper-no-hover">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title post-item-title-small year">
-                                2021
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
+        <div class="post">
             
-            <a href="/pty_blog.github.io/system/windows/windows%E8%87%AA%E5%90%AF%E5%8A%A8%E8%84%9A%E6%9C%AC/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                WIN_自启动脚本
-                            </div>
-                            <div class="post-item-meta">
-    2021-10-17
-    &emsp;
-    
-    
-    
-    &emsp;
-    
-</div>
+            
+            
 
-                        </div>
-                    </div>
-                </div>
-            </a>
-            
-            <a href="/pty_blog.github.io/system/linux/ubuntu/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                LINUX_Ubuntu更新源
-                            </div>
-                            <div class="post-item-meta">
-    2021-10-16
-    &emsp;
-    
-    
-    
-    &emsp;
-    
-</div>
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    tmux
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2021-10-17 16:20
+                        </time>
+                        
 
-                        </div>
+                        
+
+                        
+                        
                     </div>
                 </div>
-            </a>
+            </div>
             
-        
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h3 id="参考网址">参考网址</h3>
+<ul>
+<li>
+<p><a href="https://www.ruanyifeng.com/blog/2019/10/tmux.html">Tmux 使用教程 - 阮一峰的网络日志 (ruanyifeng.com)</a></p>
+</li>
+<li>
+<p><a href="https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/">A Quick and Easy Guide to tmux</a></p>
+</li>
+<li>
+<p><a href="https://danielmiessler.com/study/tmux/">Tactical tmux: The 10 Most Important Commands</a></p>
+</li>
+<li>
+<p><a href="https://linuxize.com/post/getting-started-with-tmux/">Getting started with Tmux</a></p>
+</li>
+</ul>
+<h3 id="便捷快捷键">便捷快捷键</h3>
+<p>注意前缀键<code>Ctrl+b</code>按完后松开，再按下其他键。</p>
+<table>
+<thead>
+<tr>
+<th align="center">快捷键</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Ctrl+d</td>
+<td align="center">退出</td>
+</tr>
+<tr>
+<td align="center">Ctrl+b s</td>
+<td align="center">列出所有会话</td>
+</tr>
+<tr>
+<td align="center">Ctrl+b %</td>
+<td align="center">划分左右两个窗格</td>
+</tr>
+<tr>
+<td align="center">Ctrl+b &quot;</td>
+<td align="center">划分上下两个窗格</td>
+</tr>
+<tr>
+<td align="center">Ctrl+b o</td>
+<td align="center">切换到下一个窗格</td>
+</tr>
+<tr>
+<td align="center">Ctrl+b x</td>
+<td align="center">关闭当前窗格</td>
+</tr>
+<tr>
+<td align="center">Ctrl+b c</td>
+<td align="center">创建一个新窗口</td>
+</tr>
+<tr>
+<td align="center">Ctrl+b n</td>
+<td align="center">切换到下一个窗口</td>
+</tr>
+</tbody>
+</table>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2021-10-17</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="https://peitianyu.github.io/pty_blog.github.io/tool/git/">
+			下回<br>git最基本使用
+                </a>
+                
+                
+                
+                <a class="older-posts" href="https://peitianyu.github.io/pty_blog.github.io/tool/vscode_github/">
+			上回<br>vscode_github
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
     </div>
 
 
-
                     </div>
-            </div>
-
-
-<div id="single-column-footer">
+            </div><div id="single-column-footer">
 Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
 <br>
 移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>

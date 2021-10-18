@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-<title>Systems</title>
+<title>jetson nano安装</title>
 
 
 
@@ -50,6 +50,8 @@
 
 
 
+
+  <script src="/pty_blog.github.io/js/toc.js"></script>
 
 
 
@@ -102,9 +104,11 @@
             
             
             
+                
             
             
-            <a class="a-block nav-link-item false" href="/pty_blog.github.io/tool">
+            
+            <a class="a-block nav-link-item active" href="/pty_blog.github.io/tool">
                 工具
             </a>
             
@@ -132,11 +136,9 @@
             
             
             
-                
             
             
-            
-            <a class="a-block nav-link-item active" href="/pty_blog.github.io/system">
+            <a class="a-block nav-link-item false" href="/pty_blog.github.io/system">
                 系统
             </a>
             
@@ -172,6 +174,98 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 </div><div id="extraContainer" class="extra-container">
     
     
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%8f%82%e8%80%83%e7%bd%91%e5%9d%80" onclick="onNavClick(`#参考网址-nav`)" id="参考网址-nav">
+									参考网址:
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e9%a2%84%e5%85%88%e4%b8%8b%e8%bd%bd" onclick="onNavClick(`#预先下载-nav`)" id="预先下载-nav">
+									预先下载:
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e5%ae%89%e8%a3%85%e6%ad%a5%e9%aa%a4" onclick="onNavClick(`#安装步骤-nav`)" id="安装步骤-nav">
+									安装步骤:
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+    
     <div class="pagination">
         <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
             <i class="material-icons pagination-action-icon">
@@ -184,8 +278,6 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 dark_mode
             </span>
         </a>
-        
-        
         
         
     </div>
@@ -220,9 +312,11 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 
                 
                 
+                    
                 
                 
-                <a class="a-block drawer-menu-item false" href="/pty_blog.github.io/tool">
+                
+                <a class="a-block drawer-menu-item active" href="/pty_blog.github.io/tool">
                     工具
                 </a>
                 
@@ -250,11 +344,9 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 
                 
                 
-                    
                 
                 
-                
-                <a class="a-block drawer-menu-item active" href="/pty_blog.github.io/system">
+                <a class="a-block drawer-menu-item false" href="/pty_blog.github.io/system">
                     系统
                 </a>
                 
@@ -269,6 +361,98 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 </a>
                 
             
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%8f%82%e8%80%83%e7%bd%91%e5%9d%80" onclick="onNavClick(`#参考网址-nav`)" id="参考网址-nav">
+									参考网址:
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e9%a2%84%e5%85%88%e4%b8%8b%e8%bd%bd" onclick="onNavClick(`#预先下载-nav`)" id="预先下载-nav">
+									预先下载:
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e5%ae%89%e8%a3%85%e6%ad%a5%e9%aa%a4" onclick="onNavClick(`#安装步骤-nav`)" id="安装步骤-nav">
+									安装步骤:
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
             
         </div>
     </div>
@@ -309,73 +493,91 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 <div id="streamContainer" class="stream-container">
 
     <div class="post-list-container post-list-container-shadow">
-        
-            <a class="a-block">
-                <div class="post-item-wrapper post-item-wrapper-no-hover">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title post-item-title-small year">
-                                2021
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
+        <div class="post">
             
-            <a href="/pty_blog.github.io/system/windows/windows%E8%87%AA%E5%90%AF%E5%8A%A8%E8%84%9A%E6%9C%AC/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                WIN_自启动脚本
-                            </div>
-                            <div class="post-item-meta">
-    2021-10-17
-    &emsp;
-    
-    
-    
-    &emsp;
-    
-</div>
+            
+            
 
-                        </div>
-                    </div>
-                </div>
-            </a>
-            
-            <a href="/pty_blog.github.io/system/linux/ubuntu/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                LINUX_Ubuntu更新源
-                            </div>
-                            <div class="post-item-meta">
-    2021-10-16
-    &emsp;
-    
-    
-    
-    &emsp;
-    
-</div>
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    jetson nano安装
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2021-10-18 16:20
+                        </time>
+                        
 
-                        </div>
+                        
+
+                        
+                        
                     </div>
                 </div>
-            </a>
+            </div>
             
-        
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h3 id="参考网址">参考网址:</h3>
+<p><a href="https://zhuanlan.zhihu.com/p/166464566">玩转智能硬件之Jetson Nano(一)安装篇 - 知乎 (zhihu.com)</a></p>
+<h4 id="预先下载">预先下载:</h4>
+<p><code>balenaEtcher</code></p>
+<p><a href="https://www.balena.io/etcher/">balenaEtcher - Flash OS images to SD cards &amp; USB drives</a></p>
+<p><code>系统下载</code></p>
+<p><a href="https://developer.download.nvidia.cn/embedded/L4T/r32_Release_v6.1/Jeston_Nano/jetson-nano-jp46-sd-card-image.zip?xtLGc386JIwQlfgPPGITNMMx3dC47xG6lIybgH0z9HUPzZaP7ZO2h3U3UFhcpzo7QJsYr-1cCnspcgl929SsucJH043bqSzwC_jUQGxqQuJvmNyIMcrmp8IJopYJUgh41KDf32qZNNeEUEquBj5vkUSAUH_46_UJ1VEv5d1IbYE_36EcSGByIJ1Anw">https://developer.download.nvidia.cn/embedded/L4T/r32_Release_v6.1/Jeston_Nano/jetson-nano-jp46-sd-card-image.zip?xtLGc386JIwQlfgPPGITNMMx3dC47xG6lIybgH0z9HUPzZaP7ZO2h3U3UFhcpzo7QJsYr-1cCnspcgl929SsucJH043bqSzwC_jUQGxqQuJvmNyIMcrmp8IJopYJUgh41KDf32qZNNeEUEquBj5vkUSAUH_46_UJ1VEv5d1IbYE_36EcSGByIJ1Anw</a></p>
+<p><code>sd卡格式化工具</code></p>
+<p><a href="https://www.sdcard.org/downloads/formatter/sd-memory-card-formatter-for-windows-download/">SD Memory Card Formatter for Windows Download | SD Association (sdcard.org)</a></p>
+<h3 id="安装步骤">安装步骤:</h3>
+<pre><code>1.格式化sd卡
+2.使用balenaEtcher烧录下载好的系统
+3.插上卡后做初始化设置
+</code></pre>
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2021-10-18</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts">
+			下回<br>已经到头啦。
+                </a>
+                
+                
+                
+                <a class="older-posts" href="https://peitianyu.github.io/pty_blog.github.io/tool/git/">
+			上回<br>git最基本使用
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
     </div>
 
 
-
                     </div>
-            </div>
-
-
-<div id="single-column-footer">
+            </div><div id="single-column-footer">
 Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
 <br>
 移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>

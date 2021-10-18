@@ -7,10 +7,73 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
     <copyright>This is a customized copyright.</copyright>
-    <lastBuildDate>Sat, 16 Oct 2021 16:20:39 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 18 Oct 2021 16:20:39 +0800</lastBuildDate>
     
 	<atom:link href="https://peitianyu.github.io/pty_blog.github.io/tool/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>jetson nano安装</title>
+      <link>https://peitianyu.github.io/pty_blog.github.io/tool/jetson-nano/</link>
+      <pubDate>Mon, 18 Oct 2021 16:20:39 +0800</pubDate>
+      
+      <guid>https://peitianyu.github.io/pty_blog.github.io/tool/jetson-nano/</guid>
+      <description>参考网址: 玩转智能硬件之Jetson Nano(一)安装篇 - 知乎 (zhihu.com)
+预先下载: balenaEtcher
+balenaEtcher - Flash OS images to SD cards &amp;amp; USB drives
+系统下载
+https://developer.download.nvidia.cn/embedded/L4T/r32_Release_v6.1/Jeston_Nano/jetson-nano-jp46-sd-card-image.zip?xtLGc386JIwQlfgPPGITNMMx3dC47xG6lIybgH0z9HUPzZaP7ZO2h3U3UFhcpzo7QJsYr-1cCnspcgl929SsucJH043bqSzwC_jUQGxqQuJvmNyIMcrmp8IJopYJUgh41KDf32qZNNeEUEquBj5vkUSAUH_46_UJ1VEv5d1IbYE_36EcSGByIJ1Anw
+sd卡格式化工具
+SD Memory Card Formatter for Windows Download | SD Association (sdcard.org)
+安装步骤: 1.格式化sd卡2.使用balenaEtcher烧录下载好的系统3.插上卡后做初始化设置</description>
+    </item>
+    
+    <item>
+      <title>git最基本使用</title>
+      <link>https://peitianyu.github.io/pty_blog.github.io/tool/git/</link>
+      <pubDate>Sun, 17 Oct 2021 16:20:39 +0800</pubDate>
+      
+      <guid>https://peitianyu.github.io/pty_blog.github.io/tool/git/</guid>
+      <description>推送新创建git # 进入本地文件夹cd tool# 添加需要上传文件echo &amp;#34;# tool&amp;#34; &amp;gt;&amp;gt; README.md# 初始化gitgit init# 添加需要上传文件# git add -A 上传全部git add README.md# 注释git commit -m &amp;#34;first commit&amp;#34;# 添加分支git branch -M main# 添加默认远程库git remote add origin git@github.com:peitianyu/tool.git# 推送git push -u origin main推送已存在的库 git remote add origin git@github.com:peitianyu/tool.gitgit branch -M maingit push -u origin maingit删除远程库文件 git --help # 帮助命令git pull origin master # 将远程仓库里面的项目拉下来dir # 查看有哪些文件夹git rm -r --cached yun_app # 删除yun_app文件夹git commit -m ‘删除了yun_app’ # 提交,添加操作说明git push -u origin master # 将本次更改更新到github项目上去git删除远程分支 # 快速创建分支并切换分支 (dev 分支)git checkout -b dev# 删除分支 ： 如分支名为devgit branch -d dev 会在删除前检查merge状态（其与上游分支或者与head）。git branch -D dev 它会直接删除,不检查# 删除远程分支git push origin --delete dev# 清理本地不存在的远程分支，如别人删除了dev,但是你本地查看还有，就可以执行该条命令git remote prune origingit 分支 * 查看分支：git branch* 创建分支：git branch &amp;lt;name&amp;gt;* 切换分支：git checkout &amp;lt;name&amp;gt;* 创建+切换分支：git checkout -b &amp;lt;name&amp;gt;* 合并某分支到当前分支：git merge &amp;lt;name&amp;gt;* 删除分支：git branch -d &amp;lt;name&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title>tmux</title>
+      <link>https://peitianyu.github.io/pty_blog.github.io/tool/tmux/</link>
+      <pubDate>Sun, 17 Oct 2021 16:20:39 +0800</pubDate>
+      
+      <guid>https://peitianyu.github.io/pty_blog.github.io/tool/tmux/</guid>
+      <description>参考网址   Tmux 使用教程 - 阮一峰的网络日志 (ruanyifeng.com)
+  A Quick and Easy Guide to tmux
+  Tactical tmux: The 10 Most Important Commands
+  Getting started with Tmux
+  便捷快捷键 注意前缀键Ctrl+b按完后松开，再按下其他键。
+   快捷键 含义     Ctrl+d 退出   Ctrl+b s 列出所有会话   Ctrl+b % 划分左右两个窗格   Ctrl+b &amp;quot; 划分上下两个窗格   Ctrl+b o 切换到下一个窗格   Ctrl+b x 关闭当前窗格   Ctrl+b c 创建一个新窗口   Ctrl+b n 切换到下一个窗口    </description>
+    </item>
+    
+    <item>
+      <title>vscode_github</title>
+      <link>https://peitianyu.github.io/pty_blog.github.io/tool/vscode_github/</link>
+      <pubDate>Sun, 17 Oct 2021 16:20:39 +0800</pubDate>
+      
+      <guid>https://peitianyu.github.io/pty_blog.github.io/tool/vscode_github/</guid>
+      <description>参考网址: 【VScode与GitHub】10分钟学会用Git管理自己的代码_哔哩哔哩_bilibili
+安装vscode 超详细VSCode安装教程（Windows）_Zhangguohao666的博客-CSDN博客_vscode安装教程
+安装git与使用教程 Git - Book (git-scm.com)
+不过此处不讲关于git的使用,只是利用vscode对于github进行的具体操作.
+最基本git操作 新建github库 New一个名为test,并且public的一个库,点击Create Repository
+复制ssh: git@github.com:peitianyu/test.git,待会需要使用
+cd test# 初始化库git init# 连接githubgit remote add origin git@github.com:peitianyu/pty_blog.github.io.git# 添加所有文件git add -A# 添加备注git commit -m “first commit”# 推到githubgit push -u origin master</description>
+    </item>
+    
+    <item>
+      <title>vscode_github</title>
+      <link>https://peitianyu.github.io/pty_blog.github.io/tool/vscode%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Sun, 17 Oct 2021 16:20:39 +0800</pubDate>
+      
+      <guid>https://peitianyu.github.io/pty_blog.github.io/tool/vscode%E5%AE%89%E8%A3%85/</guid>
+      <description>参考网址: 超详细VSCode安装教程（Windows)</description>
+    </item>
     
     <item>
       <title>wsl的使用</title>

@@ -19,6 +19,7 @@
       
       <guid>https://peitianyu.github.io/pty_blog.github.io/program_language/cc&#43;&#43;%E8%AF%AD%E8%A8%80/socket/</guid>
       <description>参考网址： peitianyu/TcpIpBook: TCP/IP网络编程 (github.com)
+TCP/IP网络通信之Socket编程入门_哔哩哔哩_bilibili
 套接字操作 #include&amp;lt;sys/socket.h&amp;gt;# 创建套接字int socket(int domain, int type, int protocol);//成功时返回文件描述符，失败时返回-1# 分配地址信息int bind(int sockfd, struct sockaddr* pSockAddr, socklen_t addrLen);//成功时返回0， 失败时返回-1# 设置监听int listen(int sockfd, int backlog);//成功时返回0， 失败时返回-1# 受理连接int accept(int sockfd, struct sockaddr* pSockAddr, socklen_t* pAddrLen);//成功时返回文件描述符，失败时返回-1# 请求连接int connect(in sockfd, struct sockaddr* pSockAddr, socklen_t sockLen);//成功时返回0， 失败时返回-1文件操作 # 打开文件#include&amp;lt;fcntl.h&amp;gt;int open(const char* path, int flag);//成功时返回文件描述符， 失败时返回-1# 关闭文件#include&amp;lt;unistd.</description>
     </item>
     
