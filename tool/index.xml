@@ -7,10 +7,54 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
     <copyright>This is a customized copyright.</copyright>
-    <lastBuildDate>Mon, 18 Oct 2021 16:20:39 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 19 Oct 2021 16:20:39 +0800</lastBuildDate>
     
 	<atom:link href="https://peitianyu.github.io/pty_blog.github.io/tool/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>apt</title>
+      <link>https://peitianyu.github.io/pty_blog.github.io/tool/apt/</link>
+      <pubDate>Tue, 19 Oct 2021 16:20:39 +0800</pubDate>
+      
+      <guid>https://peitianyu.github.io/pty_blog.github.io/tool/apt/</guid>
+      <description>参考网址  apt-get常用命令 - wps712 - 博客园 (cnblogs.com)  便捷快捷键 apt-get 是一个下载安装软件包的简单命令行接口。 最常用的命令是update(更新) 和install(安装)。
+命令：
+update - 重新获取软件包列表
+upgrade - 进行更新
+install - 安装新的软件包
+remove - 移除软件包
+autoremove - 自动移除全部不使用的软件包
+purge - 移除软件包和配置文件
+source - 下载源码档案
+build-dep - 为源码包配置编译依赖
+dist-upgrade - 发行版升级
+dselect-upgrade - 依照 dselect 的选择更新
+clean - 清除下载的归档文件
+autoclean - 清除旧的的已下载的归档文件
+check - 检验是否有损坏的依赖
+选项：
+-h 本帮助文件。
+-q 输出到日志 - 无进展指示
+-qq 不输出信息，错误除外
+-d 仅下载 - 不安装或解压归档文件
+-s 不实际安装。模拟执行命令</description>
+    </item>
+    
+    <item>
+      <title>ssh</title>
+      <link>https://peitianyu.github.io/pty_blog.github.io/tool/ssh/</link>
+      <pubDate>Tue, 19 Oct 2021 16:20:39 +0800</pubDate>
+      
+      <guid>https://peitianyu.github.io/pty_blog.github.io/tool/ssh/</guid>
+      <description>参考网址  SSH简介及两种远程登录的方法_德prince-CSDN博客_ssh  安装: sudo apt-get install openssh-client sudo apt-get install openssh-server # 查看启动情况ps -e | grep ssh# 启动 停止 重启sudo /etc/init.d/ssh start sudo /etc/init.d/ssh stop #server停止ssh服务 sudo /etc/init.d/ssh restart #server重启ssh服务登录 口令登录 # 基础登录ssh ldz@192.168.0.1# 调用图形界面ssh -X ldz@192.168.0.1# 如果客户机的用户名和服务器的用户名相同，登录时可以省略用户名。ssh 192.168.0.1# -p修改端口,默认22端口ssh -p 1234 ldz@192.168.0.1第一次连时需要确认连接,选yes,即可成功
+遇到问题:
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ @ WARNING: REMOT
+bug解决:
+ssh-keygen -R 192.168.0.1
+退出 Ctrl+d或者exit
+公钥登录 在本机生成密钥对 ssh-keygen -t rsa #-t表示类型选项，这里采用rsa加密算法将公钥复制到远程主机 ssh-copy-id ldz@192.</description>
+    </item>
     
     <item>
       <title>jetson nano安装</title>

@@ -13,6 +13,69 @@
     
     
         <item>
+        <title>apt</title>
+        <link>https://peitianyu.github.io/pty_blog.github.io/tool/apt/</link>
+        <pubDate>Tue, 19 Oct 2021 16:20:39 +0800</pubDate>
+        
+        <guid>https://peitianyu.github.io/pty_blog.github.io/tool/apt/</guid>
+        <description>武装带你 https://peitianyu.github.io/pty_blog.github.io/tool/apt/ -&lt;h3 id=&#34;参考网址&#34;&gt;参考网址&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/pswzone/archive/2012/04/09/2438885.html&#34;&gt;apt-get常用命令 - wps712 - 博客园 (cnblogs.com)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;便捷快捷键&#34;&gt;便捷快捷键&lt;/h3&gt;
+&lt;p&gt;apt-get 是一个下载安装软件包的简单命令行接口。 最常用的命令是update(更新) 和install(安装)。&lt;/p&gt;
+&lt;p&gt;命令：&lt;/p&gt;
+&lt;p&gt;update - 重新获取软件包列表&lt;/p&gt;
+&lt;p&gt;upgrade - 进行更新&lt;/p&gt;
+&lt;p&gt;install - 安装新的软件包&lt;/p&gt;
+&lt;p&gt;remove - 移除软件包&lt;/p&gt;
+&lt;p&gt;autoremove - 自动移除全部不使用的软件包&lt;/p&gt;
+&lt;p&gt;purge - 移除软件包和配置文件&lt;/p&gt;
+&lt;p&gt;source - 下载源码档案&lt;/p&gt;
+&lt;p&gt;build-dep - 为源码包配置编译依赖&lt;/p&gt;
+&lt;p&gt;dist-upgrade - 发行版升级&lt;/p&gt;
+&lt;p&gt;dselect-upgrade - 依照 dselect 的选择更新&lt;/p&gt;
+&lt;p&gt;clean - 清除下载的归档文件&lt;/p&gt;
+&lt;p&gt;autoclean - 清除旧的的已下载的归档文件&lt;/p&gt;
+&lt;p&gt;check - 检验是否有损坏的依赖&lt;/p&gt;
+&lt;p&gt;选项：&lt;/p&gt;
+&lt;p&gt;-h 本帮助文件。&lt;/p&gt;
+&lt;p&gt;-q 输出到日志 - 无进展指示&lt;/p&gt;
+&lt;p&gt;-qq 不输出信息，错误除外&lt;/p&gt;
+&lt;p&gt;-d 仅下载 - 不安装或解压归档文件&lt;/p&gt;
+&lt;p&gt;-s 不实际安装。模拟执行命令&lt;/p&gt;
+&lt;p&gt;-y 假定对所有的询问选是，不提示&lt;/p&gt;
+&lt;p&gt;-f 尝试修正系统依赖损坏处&lt;/p&gt;
+&lt;p&gt;-m 如果归档无法定位，尝试继续&lt;/p&gt;
+&lt;p&gt;-u 同时显示更新软件包的列表&lt;/p&gt;
+&lt;p&gt;-b 获取源码包后编译 -V 显示详细的版本号&lt;/p&gt;
+&lt;p&gt;-c=? 阅读此配置文件&lt;/p&gt;
+&lt;p&gt;-o=? 设置自定的配置选项，如 -o dir::cache=/tmp&lt;/p&gt;
+&lt;h4 id=&#34;apt-get-常用实例&#34;&gt;apt-get 常用实例&lt;/h4&gt;
+&lt;p&gt;apt-cache search &lt;strong&gt;packagename&lt;/strong&gt; 搜索包
+apt-cache show &lt;strong&gt;packagename&lt;/strong&gt; 获取包的相关信息，如说明、大小、版本等
+apt-get install &lt;strong&gt;packagename&lt;/strong&gt; 安装包
+apt-get install &lt;strong&gt;packagename&lt;/strong&gt; &amp;ndash;reinstall 重新安装包
+apt-get -f install 修复安装”-f = –fix-missing”
+apt-get remove &lt;strong&gt;packagename&lt;/strong&gt; 删除包
+apt-get remove &lt;strong&gt;packagename&lt;/strong&gt; &amp;ndash;purge 删除包，包括删除配置文件等
+apt-get update 更新源
+apt-get upgrade 更新已安装的包
+apt-get dist-upgrade 升级系统
+apt-get dselect-upgrade 使用 dselect 升级
+apt-cache depends &lt;strong&gt;packagename&lt;/strong&gt; 了解使用依赖
+apt-cache rdepends &lt;strong&gt;packagename&lt;/strong&gt; 是查看该包被哪些包依赖
+apt-get build-dep &lt;strong&gt;packagename&lt;/strong&gt; 安装相关的编译环境
+apt-get source &lt;strong&gt;packagename&lt;/strong&gt; 下载该包的源代码
+apt-get clean 清理无用的包
+apt-get autoclean 清理无用的包
+apt-get check 检查是否有损坏的依赖&lt;/p&gt;
+- https://peitianyu.github.io/pty_blog.github.io/tool/apt/ - This is a customized copyright.</description>
+        </item>
+    
+    
+    
+        <item>
         <title>gmip修rospgm图</title>
         <link>https://peitianyu.github.io/pty_blog.github.io/ros/%E4%BD%BF%E7%94%A8gmip%E4%BF%AEpgm/</link>
         <pubDate>Tue, 19 Oct 2021 16:20:39 +0800</pubDate>
@@ -31,6 +94,52 @@
 3.按住Ctrl选择颜色
 4.释放后刷刷刷
 &lt;/code&gt;&lt;/pre&gt;- https://peitianyu.github.io/pty_blog.github.io/ros/%E4%BD%BF%E7%94%A8gmip%E4%BF%AEpgm/ - This is a customized copyright.</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>ssh</title>
+        <link>https://peitianyu.github.io/pty_blog.github.io/tool/ssh/</link>
+        <pubDate>Tue, 19 Oct 2021 16:20:39 +0800</pubDate>
+        
+        <guid>https://peitianyu.github.io/pty_blog.github.io/tool/ssh/</guid>
+        <description>武装带你 https://peitianyu.github.io/pty_blog.github.io/tool/ssh/ -&lt;h3 id=&#34;参考网址&#34;&gt;参考网址&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/li528405176/article/details/82810342?ops_request_misc=%7B%22request%5Fid%22%3A%22163464883116780261940241%22%2C%22scm%22%3A%2220140713.130102334..%22%7D&amp;amp;request_id=163464883116780261940241&amp;amp;biz_id=0&amp;amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-82810342.pc_search_ecpm_flag&amp;amp;utm_term=ssh&amp;amp;spm=1018.2226.3001.4187&#34;&gt;SSH简介及两种远程登录的方法_德prince-CSDN博客_ssh&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;安装&#34;&gt;安装:&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo apt-get install openssh-client 
+sudo apt-get install openssh-server 
+&lt;span style=&#34;color:#228b22&#34;&gt;# 查看启动情况&lt;/span&gt;
+ps -e | grep ssh
+&lt;span style=&#34;color:#228b22&#34;&gt;# 启动 停止 重启&lt;/span&gt;
+sudo /etc/init.d/ssh start 
+sudo /etc/init.d/ssh stop  &lt;span style=&#34;color:#228b22&#34;&gt;#server停止ssh服务&lt;/span&gt; 
+sudo /etc/init.d/ssh restart  &lt;span style=&#34;color:#228b22&#34;&gt;#server重启ssh服务&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;登录&#34;&gt;登录&lt;/h3&gt;
+&lt;h4 id=&#34;口令登录&#34;&gt;口令登录&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 基础登录&lt;/span&gt;
+ssh ldz@192.168.0.1
+&lt;span style=&#34;color:#228b22&#34;&gt;# 调用图形界面&lt;/span&gt;
+ssh -X ldz@192.168.0.1
+&lt;span style=&#34;color:#228b22&#34;&gt;# 如果客户机的用户名和服务器的用户名相同，登录时可以省略用户名。&lt;/span&gt;
+ssh 192.168.0.1
+&lt;span style=&#34;color:#228b22&#34;&gt;# -p修改端口,默认22端口&lt;/span&gt;
+ssh -p &lt;span style=&#34;color:#b452cd&#34;&gt;1234&lt;/span&gt; ldz@192.168.0.1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;第一次连时需要确认连接,选yes,即可成功&lt;/p&gt;
+&lt;p&gt;遇到问题:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ @ WARNING: REMOT&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;bug解决:&lt;/p&gt;
+&lt;p&gt;ssh-keygen -R 192.168.0.1&lt;/p&gt;
+&lt;h4 id=&#34;退出&#34;&gt;退出&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;Ctrl+d&lt;/code&gt;或者&lt;code&gt;exit&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;公钥登录&#34;&gt;公钥登录&lt;/h4&gt;
+&lt;h5 id=&#34;在本机生成密钥对&#34;&gt;在本机生成密钥对&lt;/h5&gt;
+&lt;pre&gt;&lt;code&gt;ssh-keygen -t rsa   #-t表示类型选项，这里采用rsa加密算法
+&lt;/code&gt;&lt;/pre&gt;&lt;h5 id=&#34;将公钥复制到远程主机&#34;&gt;将公钥复制到远程主机&lt;/h5&gt;
+&lt;pre&gt;&lt;code&gt;ssh-copy-id ldz@192.168.0.1
+&lt;/code&gt;&lt;/pre&gt;- https://peitianyu.github.io/pty_blog.github.io/tool/ssh/ - This is a customized copyright.</description>
         </item>
     
     
@@ -506,201 +615,6 @@ deb http://ports.ubuntu.com/ubuntu-ports/ bionic-security multiverse
 # deb-src http://ports.ubuntu.com/ubuntu-ports/ bionic-security multiverse
 
 &lt;/code&gt;&lt;/pre&gt;- https://peitianyu.github.io/pty_blog.github.io/system/linux/ubuntu/ - This is a customized copyright.</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>wsl的使用</title>
-        <link>https://peitianyu.github.io/pty_blog.github.io/tool/wsl/</link>
-        <pubDate>Sat, 16 Oct 2021 16:20:39 +0800</pubDate>
-        
-        <guid>https://peitianyu.github.io/pty_blog.github.io/tool/wsl/</guid>
-        <description>武装带你 https://peitianyu.github.io/pty_blog.github.io/tool/wsl/ -&lt;h3 id=&#34;wsl安装&#34;&gt;wsl安装&lt;/h3&gt;
-&lt;p&gt;参考网址：&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://docs.microsoft.com/zh-cn/windows/terminal/get-started&#34;&gt;Windows 终端安装 | Microsoft Docs&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://hengyumo.blog.csdn.net/article/details/102544521&#34;&gt;玩转Linux(1)——安装Windows亲儿子Linux系统之WSL之最全攻略之最佳体验之究极无敌舒服_衡与墨的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;管理员身份运行Powershell&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
- wsl --install -d Ubuntu
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;wsl使用&#34;&gt;wsl使用&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;h4 id=&#34;进入linux系统&#34;&gt;进入linux系统&lt;/h4&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;命令行输入&lt;code&gt;wsl&lt;/code&gt;或者&lt;code&gt;bash&lt;/code&gt;，进入linux系统&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;h4 id=&#34;linux初始配置&#34;&gt;linux初始配置&lt;/h4&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h5 id=&#34;添加sudo这样就不用输密码了&#34;&gt;添加sudo，这样就不用输密码了&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20191014120116452.png&#34; alt=&#34;在这里插入图片描述&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20191014142719338.png&#34; alt=&#34;在这里插入图片描述&#34;&gt;&lt;/p&gt;
-&lt;p&gt;修改&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;%sudo &lt;span style=&#34;color:#00688b&#34;&gt;ALL&lt;/span&gt;=(ALL:ALL) ALL
-&lt;span style=&#34;color:#228b22&#34;&gt;# 改为&lt;/span&gt;
-%sudo &lt;span style=&#34;color:#00688b&#34;&gt;ALL&lt;/span&gt;=(ALL:ALL) NOPASSWD:ALL
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;
-&lt;h4 id=&#34;图形界面&#34;&gt;图形界面&lt;/h4&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;参考网址：&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/Alisebeast/article/details/106680267&#34;&gt;WSL2运行图像应用或图形界面_Alisebeast的博客-CSDN博客_wsl2 图形界面&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/qq_45036130/article/details/105623451&#34;&gt;在WSL中打开与显示图片的简单方法_neetneves的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#658b00&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;export DISPLAY=localhost:0&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; ~/.bashrc
-&lt;span style=&#34;color:#658b00&#34;&gt;source&lt;/span&gt; ~/.bashrc
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;测试查看&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#658b00&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#00688b&#34;&gt;$DISPLAY&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;
-&lt;h4 id=&#34;更新软件源&#34;&gt;更新软件源&lt;/h4&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;参考网址：&lt;a href=&#34;https://blog.csdn.net/qq_35451572/article/details/79516563&#34;&gt;Ubuntu 更换国内源_quanwei的博客-CSDN博客_ubuntu换源&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;h4 id=&#34;wsl命令详解&#34;&gt;wsl命令详解&lt;/h4&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;命令&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;含义&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;wsl或bash&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;打开默认子系统&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;wsl -d Ubuntu18&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;打开Ubuntu18子系统&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;wsl -l -o&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;可安装的有效分发的列表&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;wsl &amp;ndash;install -d Ubuntu&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;安装默认Ubuntu&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;wsl &amp;ndash;shutdown&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;关闭子系统&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;wsl &amp;ndash;import Ubuntu-20.04 d:\ubuntu d:\ubuntu20.04.tar &amp;ndash;version 2&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;导入已存的操作系统&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;wsl &amp;ndash;export Ubuntu-20.04 d:\ubuntu20.04.tar&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;导出操作子系统&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;wsl -l -v&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;显示所有子系统&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;wsl -s Ubuntu-20.04&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;将分发版设置为默认值&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;bash -c &amp;ldquo;ls&amp;rdquo;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;windows命令提示符&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;wsl &amp;ndash;unregister Ubuntu-20.04&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;注销分发版&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;wslconfig /s Ubuntu-18.04&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;修改默认子系统&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;h4 id=&#34;wsl-terminal&#34;&gt;&lt;em&gt;wsl&lt;/em&gt;-terminal&lt;/h4&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;参考网址：&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/mskyaxl/wsl-terminal&#34;&gt;mskyaxl/wsl-terminal: Terminal emulator for Windows Subsystem for Linux (WSL) (github.com)&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;最常用的依旧是&lt;code&gt;Windows Terminal&lt;/code&gt;参考网址&lt;/p&gt;
-&lt;p&gt;[Windows Terminal配置_人间世-CSDN博客](&lt;a href=&#34;https://blog.csdn.net/rjszz1314/article/details/111354738?ops_request_misc=&amp;amp;request_id=&amp;amp;biz_id=102&amp;amp;utm_term=windows&#34;&gt;https://blog.csdn.net/rjszz1314/article/details/111354738?ops_request_misc=&amp;amp;request_id=&amp;amp;biz_id=102&amp;amp;utm_term=windows&lt;/a&gt; terminal&amp;amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-4-111354738.pc_search_ecpm_flag&amp;amp;spm=1018.2226.3001.4187)&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/c13232906050/article/details/90698772?ops_request_misc=%7B%22request%5Fid%22%3A%22163439638216780261990702%22%2C%22scm%22%3A%2220140713.130102334.pc%5Fall.%22%7D&amp;amp;request_id=163439638216780261990702&amp;amp;biz_id=0&amp;amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-4-90698772.pc_search_ecpm_flag&amp;amp;utm_term=windows+terminal%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85&amp;amp;spm=1018.2226.3001.4187&#34;&gt;Windows Terminal 新终端下载安装_Archon-CSDN博客_terminal 下载&lt;/a&gt;&lt;/p&gt;
-&lt;h5 id=&#34;windows-terminal安装&#34;&gt;Windows Terminal安装&lt;/h5&gt;
-&lt;p&gt;方式一：&lt;/p&gt;
-&lt;p&gt;微软商店安装&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.microsoft.com/zh-cn/p/windows-terminal/9n0dx20hk701?rtc=1&amp;amp;activetab=pivot:overviewtab&#34;&gt;购买 Windows Terminal - Microsoft Store zh-CN&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;方式二：&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/c13232906050/article/details/90698772?ops_request_misc=%7B%22request%5Fid%22%3A%22163439638216780261990702%22%2C%22scm%22%3A%2220140713.130102334.pc%5Fall.%22%7D&amp;amp;request_id=163439638216780261990702&amp;amp;biz_id=0&amp;amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-4-90698772.pc_search_ecpm_flag&amp;amp;utm_term=windows+terminal%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85&amp;amp;spm=1018.2226.3001.4187&#34;&gt;Windows Terminal 新终端下载安装_Archon-CSDN博客_terminal 下载&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;方式三：&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/microsoft/Terminal&#34;&gt;https://github.com/microsoft/Terminal&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;使用Visual Studio打开构建运行&lt;/p&gt;
-- https://peitianyu.github.io/pty_blog.github.io/tool/wsl/ - This is a customized copyright.</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>cmake模板</title>
-        <link>https://peitianyu.github.io/pty_blog.github.io/templete/cmake%E6%A8%A1%E6%9D%BF/</link>
-        <pubDate>Fri, 15 Oct 2021 16:20:39 +0800</pubDate>
-        
-        <guid>https://peitianyu.github.io/pty_blog.github.io/templete/cmake%E6%A8%A1%E6%9D%BF/</guid>
-        <description>武装带你 https://peitianyu.github.io/pty_blog.github.io/templete/cmake%E6%A8%A1%E6%9D%BF/ -&lt;h3 id=&#34;cmake教程&#34;&gt;Cmake教程&lt;/h3&gt;
-&lt;h4 id=&#34;参考网址&#34;&gt;参考网址:&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.hahack.com/codes/cmake/&#34;&gt;CMake 入门实战 | HaHack&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;cmake文件结构&#34;&gt;Cmake文件结构&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;root@LAPTOP-49LFJ4NT:/root/cmake# tree
-.
-├── CMakeLists.txt
-├── build
-├── include
-│   └── func.h
-└── src
-    ├── func.cpp
-    ├── main.cpp
-    └── shell.sh
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;shellsh&#34;&gt;shell.sh&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 由于主要在src文件夹下工作，因此在此建一个shell脚本方便编译&lt;/span&gt;
-&lt;span style=&#34;color:#658b00&#34;&gt;cd&lt;/span&gt; .. &amp;amp;&amp;amp; &lt;span style=&#34;color:#658b00&#34;&gt;cd&lt;/span&gt; build &amp;amp;&amp;amp; cmake .. &amp;amp;&amp;amp; make -j &amp;amp;&amp;amp; ./main
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;cmakeliststxt&#34;&gt;CmakeLists.txt&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cmake&#34; data-lang=&#34;cmake&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 指定cmake版本
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;cmake_minimum_required&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;VERSION&lt;/span&gt; &lt;span style=&#34;color:#cd5555&#34;&gt;3.0&lt;/span&gt;)&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 工程名
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;project&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;main&lt;/span&gt;)&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#cmake的c++设置
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 告知當前使用的是交叉編譯方式，必須配置
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;SET&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;CMAKE_SYSTEM_NAME&lt;/span&gt; &lt;span style=&#34;color:#cd5555&#34;&gt;Linux&lt;/span&gt;)&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;SET&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;CMAKE_C_COMPILER&lt;/span&gt; &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;arm-linux-gnueabihf-gcc&amp;#34;&lt;/span&gt;)&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;SET&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;CMAKE_CXX_COMPILER&lt;/span&gt; &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;arm-linux-gnueabihf-g++&amp;#34;&lt;/span&gt;)&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 设置编译选项
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;set&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;CMAKE_CXX_FLAGS&lt;/span&gt; &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;${CMAKE_CXX_FLAGS} -O0 -Wall -pthread -std=c++11 -fPIC &amp;#34;&lt;/span&gt;)&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 添加.h文件
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;include_directories&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;include&lt;/span&gt;)&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 添加.cpp文件
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;aux_source_directory&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;src&lt;/span&gt; &lt;span style=&#34;color:#cd5555&#34;&gt;SRC_LIST&lt;/span&gt;)&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 输出调试信息
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;message&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;src :${SRC_LIST} &amp;#34;&lt;/span&gt;)&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 执行文件
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#658b00&#34;&gt;add_executable&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;main&lt;/span&gt; ${&lt;span style=&#34;color:#00688b&#34;&gt;SRC_LIST&lt;/span&gt;} )&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;运行&#34;&gt;运行&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 在src文件夹下运行shell.sh&lt;/span&gt;
-./shell
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;- https://peitianyu.github.io/pty_blog.github.io/templete/cmake%E6%A8%A1%E6%9D%BF/ - This is a customized copyright.</description>
         </item>
     
     
