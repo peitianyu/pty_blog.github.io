@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
     <copyright>This is a customized copyright.</copyright>
-    <lastBuildDate>Fri, 15 Oct 2021 16:20:39 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 19 Oct 2021 16:20:39 +0800</lastBuildDate>
     
 	<atom:link href="https://peitianyu.github.io/pty_blog.github.io/ros/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>gmip修rospgm图</title>
+      <link>https://peitianyu.github.io/pty_blog.github.io/ros/%E4%BD%BF%E7%94%A8gmip%E4%BF%AEpgm/</link>
+      <pubDate>Tue, 19 Oct 2021 16:20:39 +0800</pubDate>
+      
+      <guid>https://peitianyu.github.io/pty_blog.github.io/ros/%E4%BD%BF%E7%94%A8gmip%E4%BF%AEpgm/</guid>
+      <description>参考网址: (47条消息) ROS开发实践（十三）——ROS中SLAM地图（.pgm格式）编辑软件的安装与使用_Ehang_Maker的博客-CSDN博客
+安装: 参考网址: Gimp中文网 (baisheng999.com)
+windows安装流程: 注意选择安装路径,其他下一步即可流程: 1.选择使用笔刷工具2.设置笔刷大小,硬度为100,力度为100,线型为直线3.按住Ctrl选择颜色4.释放后刷刷刷</description>
+    </item>
     
     <item>
       <title>ROS_Cmake模板</title>

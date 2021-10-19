@@ -6,9 +6,32 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
     <copyright>This is a customized copyright.</copyright>
-    <lastBuildDate>Mon, 18 Oct 2021 16:20:39 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 19 Oct 2021 16:20:39 +0800</lastBuildDate>
     
         <atom:link href="https://peitianyu.github.io/pty_blog.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>gmip修rospgm图</title>
+        <link>https://peitianyu.github.io/pty_blog.github.io/ros/%E4%BD%BF%E7%94%A8gmip%E4%BF%AEpgm/</link>
+        <pubDate>Tue, 19 Oct 2021 16:20:39 +0800</pubDate>
+        
+        <guid>https://peitianyu.github.io/pty_blog.github.io/ros/%E4%BD%BF%E7%94%A8gmip%E4%BF%AEpgm/</guid>
+        <description>武装带你 https://peitianyu.github.io/pty_blog.github.io/ros/%E4%BD%BF%E7%94%A8gmip%E4%BF%AEpgm/ -&lt;h3 id=&#34;参考网址&#34;&gt;参考网址:&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/qq_44343584/article/details/119992961&#34;&gt;(47条消息) ROS开发实践（十三）——ROS中SLAM地图（.pgm格式）编辑软件的安装与使用_Ehang_Maker的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;安装&#34;&gt;安装:&lt;/h3&gt;
+&lt;h4 id=&#34;参考网址-1&#34;&gt;参考网址:&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;http://gimp.baisheng999.com/&#34;&gt;Gimp中文网 (baisheng999.com)&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;windows安装流程&#34;&gt;windows安装流程:&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;注意选择安装路径,其他下一步即可
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;流程&#34;&gt;流程:&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;1.选择使用笔刷工具
+2.设置笔刷大小,硬度为100,力度为100,线型为直线
+3.按住Ctrl选择颜色
+4.释放后刷刷刷
+&lt;/code&gt;&lt;/pre&gt;- https://peitianyu.github.io/pty_blog.github.io/ros/%E4%BD%BF%E7%94%A8gmip%E4%BF%AEpgm/ - This is a customized copyright.</description>
+        </item>
     
     
     
@@ -43,6 +66,20 @@
 &lt;li&gt;使用 DC 供电(默认5v 4A),使用时插上跳线帽&lt;/li&gt;
 &lt;li&gt;使用引脚供电(5v3a 无所谓跳线帽)&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h3 id=&#34;关于ros安装&#34;&gt;关于ros安装&lt;/h3&gt;
+&lt;h4 id=&#34;参考网址-2&#34;&gt;参考网址:&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://peitianyu.github.io/pty_blog.github.io/ros/ros%E5%AE%89%E8%A3%85/&#34;&gt;ROS_安装 (peitianyu.github.io)&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;其他部分按ros安装教程来即可&#34;&gt;其他部分按ros安装教程来即可&lt;/h4&gt;
+&lt;h3 id=&#34;远程连接nano&#34;&gt;远程连接nano&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;ssh.exe usrname@192.168.xxx.xxx&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;jetson-nano初始化配置&#34;&gt;jetson nano初始化配置&lt;/h3&gt;
+&lt;h4 id=&#34;网络配置&#34;&gt;网络配置&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;静态ip设置&lt;/code&gt;:&lt;a href=&#34;https://www.cnblogs.com/blueyunchao0618/p/11394640.html&#34;&gt;Ubuntu 18.04配置静态IP地址)&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;root免密登录&#34;&gt;root免密登录&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;参考网址&lt;/code&gt;:&lt;a href=&#34;https://blog.csdn.net/qq_44673299/article/details/108658078?ops_request_misc=%7B%22request%5Fid%22%3A%22163463123116780271513740%22%2C%22scm%22%3A%2220140713.130102334.pc%5Fall.%22%7D&amp;amp;request_id=163463123116780271513740&amp;amp;biz_id=0&amp;amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-2-108658078.pc_search_ecpm_flag&amp;amp;utm_term=Ubuntu18+root%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95&amp;amp;spm=1018.2226.3001.4187&#34;&gt;ubuntu设置root免密登陆&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;vscode连接jetson-nano&#34;&gt;vscode连接jetson nano&lt;/h3&gt;
+&lt;h4 id=&#34;参考网址-3&#34;&gt;参考网址:&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/sqlquan/article/details/111918019?ops_request_misc=%7B%22request%5Fid%22%3A%22163463106616780264095126%22%2C%22scm%22%3A%2220140713.130102334..%22%7D&amp;amp;request_id=163463106616780264095126&amp;amp;biz_id=0&amp;amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-111918019.pc_search_ecpm_flag&amp;amp;utm_term=vscode+ssh&amp;amp;spm=1018.2226.3001.4187&#34;&gt;vscode设置ssh进行远程编辑_Quan的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
 - https://peitianyu.github.io/pty_blog.github.io/tool/jetson-nano/ - This is a customized copyright.</description>
         </item>
     
@@ -307,6 +344,84 @@ deb-src http://mirrors.163.com/ubuntu/ wily-security main restricted universe mu
 deb-src http://mirrors.163.com/ubuntu/ wily-updates main restricted universe multiverse
 deb-src http://mirrors.163.com/ubuntu/ wily-proposed main restricted universe multiverse
 deb-src http://mirrors.163.com/ubuntu/ wily-backports main restricted universe multiverse
+&lt;/code&gt;&lt;/pre&gt;&lt;h5 id=&#34;中科大&#34;&gt;中科大&lt;/h5&gt;
+&lt;pre&gt;&lt;code&gt;##中科大源
+
+deb https://mirrors.ustc.edu.cn/ubuntu/ bionic main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic main restricted universe multiverse
+deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
+deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
+deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
+deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
+
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;树莓派更换国内源&#34;&gt;树莓派更换国内源&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 备份&lt;/span&gt;
+sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
+sudo cp /etc/apt/sources.list.d/raspi.list /etc/apt/sources.list.d/raspi.list.bak
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo nano /etc/apt/sources.list
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 添加入,Ctrl+s保存,Ctrl+X退出.&lt;/span&gt;
+deb http://mirrors.ustc.edu.cn/raspbian/raspbian/ stretch main contrib non-free rpi
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 修改系统更新源&lt;/span&gt;
+sudo nano /etc/apt/sources.list.d/raspi.list
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 加入&lt;/span&gt;
+deb http://mirrors.ustc.edu.cn/archive.raspberrypi.org/debian/ stretch main ui
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo apt-get update
+sud apt upgrade
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;ubuntu18换回原来源&#34;&gt;Ubuntu18换回原来源&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;# See http://help.ubuntu.com/community/UpgradeNotes for how to upgrade to
+# newer versions of the distribution.
+deb http://ports.ubuntu.com/ubuntu-ports/ bionic main restricted
+# deb-src http://ports.ubuntu.com/ubuntu-ports/ bionic main restricted
+
+## Major bug fix updates produced after the final release of the
+## distribution.
+deb http://ports.ubuntu.com/ubuntu-ports/ bionic-updates main restricted
+# deb-src http://ports.ubuntu.com/ubuntu-ports/ bionic-updates main restricted
+
+## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu
+## team. Also, please note that software in universe WILL NOT receive any
+## review or updates from the Ubuntu security team.
+deb http://ports.ubuntu.com/ubuntu-ports/ bionic universe
+# deb-src http://ports.ubuntu.com/ubuntu-ports/ bionic universe
+deb http://ports.ubuntu.com/ubuntu-ports/ bionic-updates universe
+# deb-src http://ports.ubuntu.com/ubuntu-ports/ bionic-updates universe
+
+## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu
+## team, and may not be under a free licence. Please satisfy yourself as to
+## your rights to use the software. Also, please note that software in
+## multiverse WILL NOT receive any review or updates from the Ubuntu
+## security team.
+deb http://ports.ubuntu.com/ubuntu-ports/ bionic multiverse
+# deb-src http://ports.ubuntu.com/ubuntu-ports/ bionic multiverse
+deb http://ports.ubuntu.com/ubuntu-ports/ bionic-updates multiverse
+# deb-src http://ports.ubuntu.com/ubuntu-ports/ bionic-updates multiverse
+
+## N.B. software from this repository may not have been tested as
+## extensively as that contained in the main release, although it includes
+## newer versions of some applications which may provide useful features.
+## Also, please note that software in backports WILL NOT receive any review
+## or updates from the Ubuntu security team.
+deb http://ports.ubuntu.com/ubuntu-ports/ bionic-backports main restricted universe multiverse
+# deb-src http://ports.ubuntu.com/ubuntu-ports/ bionic-backports main restricted universe multiverse
+
+## Uncomment the following two lines to add software from Canonical&#39;s
+## &#39;partner&#39; repository.
+## This software is not part of Ubuntu, but is offered by Canonical and the
+## respective vendors as a service to Ubuntu users.
+# deb http://archive.canonical.com/ubuntu bionic partner
+# deb-src http://archive.canonical.com/ubuntu bionic partner
+
+deb http://ports.ubuntu.com/ubuntu-ports/ bionic-security main restricted
+# deb-src http://ports.ubuntu.com/ubuntu-ports/ bionic-security main restricted
+deb http://ports.ubuntu.com/ubuntu-ports/ bionic-security universe
+# deb-src http://ports.ubuntu.com/ubuntu-ports/ bionic-security universe
+deb http://ports.ubuntu.com/ubuntu-ports/ bionic-security multiverse
+# deb-src http://ports.ubuntu.com/ubuntu-ports/ bionic-security multiverse
+
 &lt;/code&gt;&lt;/pre&gt;- https://peitianyu.github.io/pty_blog.github.io/system/linux/ubuntu/ - This is a customized copyright.</description>
         </item>
     
@@ -455,7 +570,10 @@ deb-src http://mirrors.163.com/ubuntu/ wily-backports main restricted universe m
         <pubDate>Fri, 15 Oct 2021 16:20:39 +0800</pubDate>
         
         <guid>https://peitianyu.github.io/pty_blog.github.io/templete/cmake%E6%A8%A1%E6%9D%BF/</guid>
-        <description>武装带你 https://peitianyu.github.io/pty_blog.github.io/templete/cmake%E6%A8%A1%E6%9D%BF/ -&lt;h3 id=&#34;cmake文件结构&#34;&gt;Cmake文件结构&lt;/h3&gt;
+        <description>武装带你 https://peitianyu.github.io/pty_blog.github.io/templete/cmake%E6%A8%A1%E6%9D%BF/ -&lt;h3 id=&#34;cmake教程&#34;&gt;Cmake教程&lt;/h3&gt;
+&lt;h4 id=&#34;参考网址&#34;&gt;参考网址:&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.hahack.com/codes/cmake/&#34;&gt;CMake 入门实战 | HaHack&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;cmake文件结构&#34;&gt;Cmake文件结构&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;root@LAPTOP-49LFJ4NT:/root/cmake# tree
 .
 ├── CMakeLists.txt
@@ -612,89 +730,6 @@ struct timeval
 &lt;li&gt;exceptset: 将关注”是否有异常“的文件描述符放在exceptset变量中 -timeout: 为了防止调用select函数后陷入无限阻塞状态，可以传递超时信息&lt;/li&gt;
 &lt;/ul&gt;
 - https://peitianyu.github.io/pty_blog.github.io/program_language/cc&#43;&#43;%E8%AF%AD%E8%A8%80/socket/ - This is a customized copyright.</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>make实用模板</title>
-        <link>https://peitianyu.github.io/pty_blog.github.io/templete/make%E6%A8%A1%E6%9D%BF/</link>
-        <pubDate>Fri, 15 Oct 2021 16:20:39 +0800</pubDate>
-        
-        <guid>https://peitianyu.github.io/pty_blog.github.io/templete/make%E6%A8%A1%E6%9D%BF/</guid>
-        <description>武装带你 https://peitianyu.github.io/pty_blog.github.io/templete/make%E6%A8%A1%E6%9D%BF/ -&lt;h3 id=&#34;make文件目录&#34;&gt;make文件目录&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;root@LAPTOP-49LFJ4NT:/root/make# tree
-.
-├── Makefile
-├── conf.sh
-├── main.cpp
-└── shell.sh
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这里使用了shell脚本来实现对于make的编译，由于使用的是&lt;code&gt;wsl&lt;/code&gt;在windows下操作导致编码格式含有&lt;code&gt;\r\n&lt;/code&gt;，以此有两个shell脚本。&lt;/p&gt;
-&lt;h3 id=&#34;confsh&#34;&gt;conf.sh&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 实现对于make的编译与运行&lt;/span&gt;
-&lt;span style=&#34;color:#228b22&#34;&gt;#!/bin/bash&lt;/span&gt;
-&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;if&lt;/span&gt; [[ &lt;span style=&#34;color:#00688b&#34;&gt;$1&lt;/span&gt; == clean ]]; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;then&lt;/span&gt;
-        make clean
-&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;elif&lt;/span&gt; [[ &lt;span style=&#34;color:#00688b&#34;&gt;$1&lt;/span&gt; == all ]]; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;then&lt;/span&gt;
-        make clean &amp;amp;&amp;amp; make -j8 &amp;amp;&amp;amp; ./main
-&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;else&lt;/span&gt;
-        make -j8 &amp;amp;&amp;amp; ./main
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;shellsh&#34;&gt;shell.sh&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 实现将conf.sh的dos编码转化为unix编码，并执行&lt;/span&gt;
-&lt;span style=&#34;color:#228b22&#34;&gt;#!/bin/bash&lt;/span&gt;
-dos2unix  conf.sh &amp;amp;&amp;amp; ./conf.sh
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;makefile&#34;&gt;Makefile&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-makefile&#34; data-lang=&#34;makefile&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 自动捕捉符合c/c++编译
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#指定编译工具
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#00688b&#34;&gt;CC&lt;/span&gt; = gcc
-&lt;span style=&#34;color:#00688b&#34;&gt;CPP&lt;/span&gt; = g++
-&lt;span style=&#34;color:#00688b&#34;&gt;LINK&lt;/span&gt; = g++
-
-&lt;span style=&#34;color:#00688b&#34;&gt;LIBS&lt;/span&gt; = -lsqlite3 -lpthread
-&lt;span style=&#34;color:#228b22&#34;&gt;#编译.so 必须添加 -fPIC 和 -shared 选项
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#00688b&#34;&gt;CCFLAGS&lt;/span&gt; = -c -g -fPIC
-&lt;span style=&#34;color:#00688b&#34;&gt;CPPFLAGS&lt;/span&gt; = -c -g -fPIC
-
-&lt;span style=&#34;color:#228b22&#34;&gt;#期望得到的执行文件或动态库.so
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#TARGET=libxx.so
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#00688b&#34;&gt;TARGET&lt;/span&gt;=main
-
-&lt;span style=&#34;color:#00688b&#34;&gt;INCLUDES&lt;/span&gt; = -I. &lt;span style=&#34;color:#228b22&#34;&gt;#-I../../&lt;/span&gt;
-
-&lt;span style=&#34;color:#00688b&#34;&gt;CPPFILES&lt;/span&gt; = &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;wildcard *.cpp &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#遍历得到当前目录及上层目录中的所有.cpp文件&lt;/span&gt;
-&lt;span style=&#34;color:#00688b&#34;&gt;CFILES&lt;/span&gt; = &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;wildcard *.c &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#遍历得到当前目录及上层目录中的所有.c文件&lt;/span&gt;
-
-&lt;span style=&#34;color:#00688b&#34;&gt;OBJFILE&lt;/span&gt; = &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;CFILES:.c=.o&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;CPPFILES:.cpp=.o&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt;
-
-&lt;span style=&#34;color:#008b45&#34;&gt;all&lt;/span&gt;:&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;&lt;span style=&#34;color:#00688b&#34;&gt;TARGET&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt;
-
-&lt;span style=&#34;color:#008b45&#34;&gt;$(TARGET)&lt;/span&gt;:&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;&lt;span style=&#34;color:#00688b&#34;&gt;OBJFILE&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt;
-&lt;span style=&#34;color:#228b22&#34;&gt;# 编译得到 .so 文件用下面的代码
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#   $(LINK) $^ $(LIBS) -Wall -fPIC -shared -o $@
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 编译得到可执行文件用下面的代码
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;LINK&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt; $^ &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;LIBS&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt; -Wall -O2 -o &lt;span style=&#34;color:#00688b&#34;&gt;$@&lt;/span&gt;
-
-&lt;span style=&#34;color:#008b45&#34;&gt;%.o&lt;/span&gt;:%.c
-        &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;CC&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt; -o &lt;span style=&#34;color:#00688b&#34;&gt;$@&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;CCFLAGS&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt; $&amp;lt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;INCLUDES&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt;
-
-&lt;span style=&#34;color:#008b45&#34;&gt;%.o&lt;/span&gt;:%.cpp
-        &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;CPP&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt; -o &lt;span style=&#34;color:#00688b&#34;&gt;$@&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;CPPFLAGS&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt; $&amp;lt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;INCLUDES&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt;
-
-&lt;span style=&#34;color:#008b45&#34;&gt;clean&lt;/span&gt;:
-        rm -rf &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;TARGET&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt;
-        rm -rf &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;$(&lt;/span&gt;OBJFILE&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;mainc&#34;&gt;main.c&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#1e889b&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;&lt;/span&gt; 
-&lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;main&lt;/span&gt;()
-{
-    printf(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;Hello, World! &lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;&lt;/span&gt;);
- 
-    &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#b452cd&#34;&gt;0&lt;/span&gt;;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;运行&#34;&gt;运行&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;./shell
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;- https://peitianyu.github.io/pty_blog.github.io/templete/make%E6%A8%A1%E6%9D%BF/ - This is a customized copyright.</description>
         </item>
     
     
