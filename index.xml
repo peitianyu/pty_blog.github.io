@@ -24,14 +24,26 @@
 &lt;p&gt;&lt;code&gt;balenaEtcher&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.balena.io/etcher/&#34;&gt;balenaEtcher - Flash OS images to SD cards &amp;amp; USB drives&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;系统下载&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;官方默认系统:&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://developer.download.nvidia.cn/embedded/L4T/r32_Release_v6.1/Jeston_Nano/jetson-nano-jp46-sd-card-image.zip?xtLGc386JIwQlfgPPGITNMMx3dC47xG6lIybgH0z9HUPzZaP7ZO2h3U3UFhcpzo7QJsYr-1cCnspcgl929SsucJH043bqSzwC_jUQGxqQuJvmNyIMcrmp8IJopYJUgh41KDf32qZNNeEUEquBj5vkUSAUH_46_UJ1VEv5d1IbYE_36EcSGByIJ1Anw&#34;&gt;https://developer.download.nvidia.cn/embedded/L4T/r32_Release_v6.1/Jeston_Nano/jetson-nano-jp46-sd-card-image.zip?xtLGc386JIwQlfgPPGITNMMx3dC47xG6lIybgH0z9HUPzZaP7ZO2h3U3UFhcpzo7QJsYr-1cCnspcgl929SsucJH043bqSzwC_jUQGxqQuJvmNyIMcrmp8IJopYJUgh41KDf32qZNNeEUEquBj5vkUSAUH_46_UJ1VEv5d1IbYE_36EcSGByIJ1Anw&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Ubuntu18.04:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://pan.baidu.com/share/init?surl=QXd34V5FfLcFk2XDgphoig&#34;&gt;https://pan.baidu.com/share/init?surl=QXd34V5FfLcFk2XDgphoig&lt;/a&gt; 密码 : tun3&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;sd卡格式化工具&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.sdcard.org/downloads/formatter/sd-memory-card-formatter-for-windows-download/&#34;&gt;SD Memory Card Formatter for Windows Download | SD Association (sdcard.org)&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;安装步骤&#34;&gt;安装步骤:&lt;/h3&gt;
 &lt;pre&gt;&lt;code&gt;1.格式化sd卡
 2.使用balenaEtcher烧录下载好的系统
 3.插上卡后做初始化设置
-&lt;/code&gt;&lt;/pre&gt;- https://peitianyu.github.io/pty_blog.github.io/tool/jetson-nano/ - This is a customized copyright.</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;jetson三种供电方式&#34;&gt;jetson三种供电方式:&lt;/h3&gt;
+&lt;h4 id=&#34;参考网址-1&#34;&gt;参考网址:&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/weixin_44350337/article/details/111674531?ops_request_misc=%7B%22request%5Fid%22%3A%22163456105816780262525022%22%2C%22scm%22%3A%2220140713.130102334..%22%7D&amp;amp;request_id=163456105816780262525022&amp;amp;biz_id=0&amp;amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-111674531.pc_search_ecpm_flag&amp;amp;utm_term=jetson+%E4%BE%9B%E7%94%B5&amp;amp;spm=1018.2226.3001.4187&#34;&gt;Jetson nano 的三种供电方式_Dunkle.T的博客-CSDN博客_jetson nano供电&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;分别为&#34;&gt;分别为:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;USB供电(默认5v2a 仅低功率),使用时拔去条线帽&lt;/li&gt;
+&lt;li&gt;使用 DC 供电(默认5v 4A),使用时插上跳线帽&lt;/li&gt;
+&lt;li&gt;使用引脚供电(5v3a 无所谓跳线帽)&lt;/li&gt;
+&lt;/ul&gt;
+- https://peitianyu.github.io/pty_blog.github.io/tool/jetson-nano/ - This is a customized copyright.</description>
         </item>
     
     

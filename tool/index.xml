@@ -22,10 +22,14 @@
 预先下载: balenaEtcher
 balenaEtcher - Flash OS images to SD cards &amp;amp; USB drives
 系统下载
+官方默认系统:
 https://developer.download.nvidia.cn/embedded/L4T/r32_Release_v6.1/Jeston_Nano/jetson-nano-jp46-sd-card-image.zip?xtLGc386JIwQlfgPPGITNMMx3dC47xG6lIybgH0z9HUPzZaP7ZO2h3U3UFhcpzo7QJsYr-1cCnspcgl929SsucJH043bqSzwC_jUQGxqQuJvmNyIMcrmp8IJopYJUgh41KDf32qZNNeEUEquBj5vkUSAUH_46_UJ1VEv5d1IbYE_36EcSGByIJ1Anw
+Ubuntu18.04:
+https://pan.baidu.com/share/init?surl=QXd34V5FfLcFk2XDgphoig 密码 : tun3
 sd卡格式化工具
 SD Memory Card Formatter for Windows Download | SD Association (sdcard.org)
-安装步骤: 1.格式化sd卡2.使用balenaEtcher烧录下载好的系统3.插上卡后做初始化设置</description>
+安装步骤: 1.格式化sd卡2.使用balenaEtcher烧录下载好的系统3.插上卡后做初始化设置jetson三种供电方式: 参考网址: Jetson nano 的三种供电方式_Dunkle.T的博客-CSDN博客_jetson nano供电
+分别为:  USB供电(默认5v2a 仅低功率),使用时拔去条线帽 使用 DC 供电(默认5v 4A),使用时插上跳线帽 使用引脚供电(5v3a 无所谓跳线帽)  </description>
     </item>
     
     <item>
