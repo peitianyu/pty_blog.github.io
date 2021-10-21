@@ -1,0 +1,177 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>武装带你</title>
+    <link>https://peitianyu.github.io/pty_blog.github.io/</link>
+    <description>Recent content on 武装带你</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-hant</language>
+    <copyright>This is a customized copyright.</copyright>
+    <lastBuildDate>Thu, 21 Oct 2021 16:20:39 +0800</lastBuildDate>
+    
+        <atom:link href="https://peitianyu.github.io/pty_blog.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>HUGO_blog教程</title>
+        <link>https://peitianyu.github.io/pty_blog.github.io/blog/hugo_blog%E6%95%99%E7%A8%8B/</link>
+        <pubDate>Tue, 12 Oct 2021 10:49:31 +0800</pubDate>
+        
+        <guid>https://peitianyu.github.io/pty_blog.github.io/blog/hugo_blog%E6%95%99%E7%A8%8B/</guid>
+        <description>武装带你 https://peitianyu.github.io/pty_blog.github.io/blog/hugo_blog%E6%95%99%E7%A8%8B/ -&lt;h3 id=&#34;git安装与配置&#34;&gt;git安装与配置&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# git安装&lt;/span&gt;
+sudo apt update
+sudo apt install git 
+&lt;span style=&#34;color:#228b22&#34;&gt;#git配置&lt;/span&gt;
+git config --global user.name &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;zoey&amp;#34;&lt;/span&gt;
+git config --global user.email &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;zoey686@163.com&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#228b22&#34;&gt;#查看设置用户名与密码&lt;/span&gt;
+git config --list
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;hugo安装&#34;&gt;hugo安装&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 安装&lt;/span&gt;
+sudo apt install hugo
+&lt;span style=&#34;color:#228b22&#34;&gt;# 手动安装&lt;/span&gt;
+wget https://github.com/gohugoio/hugo/releases/download/v0.54.0/hugo_0.54.0_Linux-64bit.deb
+sudo dpkg -i hugo_0.54.0_Linux-64bit.deb
+&lt;span style=&#34;color:#228b22&#34;&gt;# 查看&lt;/span&gt;
+hugo --help
+hugo version
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;建立博客&#34;&gt;建立博客&lt;/h4&gt;
+&lt;p&gt;新建git文件夹用以git模板等，并在文件夹下新建myblog，用来存放博客页面&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 新建git文件夹并git初始化&lt;/span&gt;
+mkdir gitFile  
+git init
+&lt;span style=&#34;color:#228b22&#34;&gt;# 新建myblog文件夹用来存放博客页面&lt;/span&gt;
+hugo new site myblog
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;myblog下面就会有以下几个文件夹自动生成&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;文件夹名&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;作用&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;archetypes&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;文章开头形式&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;content&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;内容&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;data&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;自定义模板&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;layouts&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;网页模板文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;static&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;存储图片一些其他的资源&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;themes&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;主题&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;config.toml&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;配置文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;设置主题&#34;&gt;设置主题&lt;/h4&gt;
+&lt;p&gt;在（https://themes.gohugo.io/）中挑选主题,这里选择的是diary主题（&lt;a href=&#34;https://themes.gohugo.io/themes/hugo-theme-diary/&#34;&gt;Diary | Hugo Themes (gohugo.io)&lt;/a&gt;）&lt;/p&gt;
+&lt;p&gt;例子：（&lt;a href=&#34;https://sunua.gitee.io/simonblog/&#34;&gt;浅蓝色 (gitee.io)&lt;/a&gt;）&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 下载diary主题到themes文件夹下并重命名为diary&lt;/span&gt;
+git submodule add https://github.com/AmazingRise/hugo-theme-diary.git themes/diary
+&lt;span style=&#34;color:#228b22&#34;&gt;# 配置config.toml文件&lt;/span&gt;
+nano config.toml
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;baseURL = &amp;quot;https://peitianyu.github.io/pty_blog.github.io&amp;quot;
+DefaultContentLanguage = &amp;quot;zh&amp;quot; # Theme&#39;s display language, supports: en, fr, zh, zh-hant
+languageCode = &amp;quot;zh-hant&amp;quot;
+title = &amp;quot;武装带你&amp;quot;
+copyright = &amp;quot;This is a customized copyright.&amp;quot;
+theme = &amp;quot;diary&amp;quot;
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = &amp;quot;&amp;quot;
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = &amp;quot;perldoc&amp;quot;
+    tabWidth = 4
+
+
+enableOpenGraph = true
+enableTwitterCards = true
+title = &amp;quot;My Blog&amp;quot; 
+description = &amp;quot;My HomePage Description&amp;quot;  
+
+[taxonomies]
+   ros = &amp;quot;Ros&amp;quot;
+   blog = &amp;quot;Blog&amp;quot;
+
+[[menu.main]]
+url = &amp;quot;/blog&amp;quot;
+name = &amp;quot;Blog&amp;quot;
+weight = 1
+[[menu.main]]
+url = &amp;quot;/ros&amp;quot;
+name = &amp;quot;Ros&amp;quot;
+weight = 2
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;创建文章&#34;&gt;创建文章&lt;/h4&gt;
+&lt;p&gt;默认主目录文章在content/post下&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# 创建文章
+hugo new post/my_first_blog.md
+#创建文章在需要目录(Archive)下
+hugo new posts/my_first_blog.md
+cd content/post
+nano my_first_blog.md
+# 注意将draft参数改为false，否则跳过草稿文件，无法预览
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;---
+title: &amp;quot;my_first_blog&amp;quot;
+date: 2021-10-12T10:49:31+08:00
+draft : false
+---
+文本内容
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;本地调试&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hugo server --theme=blackburn --buildDrafts
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;其中 &amp;ndash;theme 选项可以指定主题，–buildDrafts 包括标记为草稿
+然后在浏览器里打开： &lt;a href=&#34;http://localhost:1313/&#34;&gt;http://localhost:1313&lt;/a&gt; 即可访问到你的博客&lt;/p&gt;
+&lt;h4 id=&#34;部署到github&#34;&gt;部署到github&lt;/h4&gt;
+&lt;p&gt;如果你需要部署在 GitHub Pages 上，首先在GitHub上创建一个Repository，命名为：&lt;code&gt;pty_blog.github.io&lt;/code&gt; （&lt;strong&gt;pty_blog替换为你的github用户名的小写&lt;/strong&gt;）&lt;/p&gt;
+&lt;p&gt;进入仓库，点击&lt;strong&gt;Settings&lt;/strong&gt;进入，找到&lt;strong&gt;GitHub Pages&lt;/strong&gt;并点击&lt;strong&gt;Check it out here!&lt;/strong&gt;，配置&lt;strong&gt;Source&lt;/strong&gt;并&lt;strong&gt;save&lt;/strong&gt;，会发现绿色框中显现 &lt;code&gt;Your site is published at https://peitianyu.github.io/pty_blog.github.io/&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;此处https://peitianyu.github.io/pty_blog.github.io/就是我们的网址，也是config.toml文件中设置的网址，设置hugo登陆网址&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hugo --theme=diary --buildDrafts --baseUrl=&amp;quot;https://peitianyu.github.io/pty_blog.github.io/&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：这里的 &amp;ndash;baseUrl 一定是https://（Hugo中文文档里为http://），不然你部署后的博客会没有样式！&lt;/p&gt;
+&lt;p&gt;可看到根目录下多出 /public文件夹出来，该文件夹的内容即Hugo生成的整个静态网站。然后继续在你的站点根目录执行git 命令，添加远程仓库。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#658b00&#34;&gt;cd&lt;/span&gt; public
+git init
+git remote add origin git@github.com:peitianyu/pty_blog.github.io.git
+git add -A
+git commit -m “first commit”
+git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后浏览器里访问：https://peitianyu.github.io/pty_blog.github.io/即可看到刚刚搭建的博客。&lt;/p&gt;
+&lt;p&gt;发布博客并更新：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# 新建博客markdown文件，并编辑博客内容(文件名为 **.md )
+hugo new post/newBlog.md
+# 生成静态页面
+hugo --theme=diary --buildDrafts --baseUrl=&amp;quot;https://peitianyu.github.io/pty_blog.github.io/&amp;quot;
+# 发布
+cd public
+git add .
+git commit -m &amp;quot;new blog added&amp;quot;
+git push origin master
+&lt;/code&gt;&lt;/pre&gt;- https://peitianyu.github.io/pty_blog.github.io/blog/hugo_blog%E6%95%99%E7%A8%8B/ - This is a customized copyright.</description>
+        </item>
+    
+    
+  </channel>
+</rss> 

@@ -223,6 +223,56 @@ ssh -p &lt;span style=&#34;color:#b452cd&#34;&gt;1234&lt;/span&gt; ldz@192.168.0
     
     
         <item>
+        <title>关于我</title>
+        <link>https://peitianyu.github.io/pty_blog.github.io/about/about/</link>
+        <pubDate>Tue, 19 Oct 2021 16:20:39 +0800</pubDate>
+        
+        <guid>https://peitianyu.github.io/pty_blog.github.io/about/about/</guid>
+        <description>武装带你 https://peitianyu.github.io/pty_blog.github.io/about/about/ -&lt;h2 id=&#34;我的技能&#34;&gt;我的技能&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;编程语言ccpython&#34;&gt;编程语言:C,C++,Python&lt;/h4&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;硬件pcb嵌入式linux&#34;&gt;硬件:PCB,嵌入式,Linux&lt;/h4&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;建模cadsw&#34;&gt;建模:CAD,SW&lt;/h4&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;生活中的自己&#34;&gt;生活中的自己&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;喜欢看展看书&#34;&gt;喜欢看展,看书&lt;/h4&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;喜欢自己捣鼓些东西&#34;&gt;喜欢自己捣鼓些东西&lt;/h4&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;会打乒乓球台球&#34;&gt;会打乒乓球,台球&lt;/h4&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;喜欢思考对世界充满好奇&#34;&gt;喜欢思考,对世界充满好奇&lt;/h4&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;一些连接&#34;&gt;一些连接&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;我的博客pty_bloghttpspeitianyugithubiopty_bloggithubio&#34;&gt;我的博客:&lt;a href=&#34;https://peitianyu.github.io/pty_blog.github.io&#34;&gt;pty_blog&lt;/a&gt;&lt;/h4&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;githubpeitianyuhttpsgithubcompeitianyu&#34;&gt;Github:&lt;a href=&#34;https://github.com/peitianyu&#34;&gt;peitianyu&lt;/a&gt;&lt;/h4&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;emailpeitianyu18peitianyu18gmailcom&#34;&gt;Email:&lt;a href=&#34;peitianyu18@gmail.com&#34;&gt;peitianyu18&lt;/a&gt;&lt;/h4&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+- https://peitianyu.github.io/pty_blog.github.io/about/about/ - This is a customized copyright.</description>
+        </item>
+    
+    
+    
+        <item>
         <title>jetson nano安装</title>
         <link>https://peitianyu.github.io/pty_blog.github.io/tool/jetson-nano/</link>
         <pubDate>Mon, 18 Oct 2021 16:20:39 +0800</pubDate>
@@ -520,30 +570,6 @@ git commit -m “first commit”
 &lt;span style=&#34;color:#228b22&#34;&gt;# 推到github&lt;/span&gt;
 git push -u origin master
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;- https://peitianyu.github.io/pty_blog.github.io/tool/vscode_github/ - This is a customized copyright.</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>WIN_自启动脚本</title>
-        <link>https://peitianyu.github.io/pty_blog.github.io/system/windows/windows%E8%87%AA%E5%90%AF%E5%8A%A8%E8%84%9A%E6%9C%AC/</link>
-        <pubDate>Sun, 17 Oct 2021 16:20:39 +0800</pubDate>
-        
-        <guid>https://peitianyu.github.io/pty_blog.github.io/system/windows/windows%E8%87%AA%E5%90%AF%E5%8A%A8%E8%84%9A%E6%9C%AC/</guid>
-        <description>武装带你 https://peitianyu.github.io/pty_blog.github.io/system/windows/windows%E8%87%AA%E5%90%AF%E5%8A%A8%E8%84%9A%E6%9C%AC/ -&lt;h3 id=&#34;记事本写入脚本&#34;&gt;记事本写入脚本&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#658b00&#34;&gt;time&lt;/span&gt;  /t  &amp;gt;&amp;gt;c:&lt;span style=&#34;color:#cd5555&#34;&gt;\t&lt;/span&gt;est&lt;span style=&#34;color:#cd5555&#34;&gt;\l&lt;/span&gt;og1.log
-
-&lt;span style=&#34;color:#658b00&#34;&gt;echo&lt;/span&gt;  %username%  &amp;gt;&amp;gt;c:&lt;span style=&#34;color:#cd5555&#34;&gt;\t&lt;/span&gt;est&lt;span style=&#34;color:#cd5555&#34;&gt;\l&lt;/span&gt;og1.log
-
-&lt;span style=&#34;color:#658b00&#34;&gt;echo&lt;/span&gt;  %computername%  &amp;gt;&amp;gt;c:&lt;span style=&#34;color:#cd5555&#34;&gt;\t&lt;/span&gt;est&lt;span style=&#34;color:#cd5555&#34;&gt;\l&lt;/span&gt;og1.log
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;另存为&lt;code&gt;start.bat&lt;/code&gt;，无人见类型为所有类型&lt;/p&gt;
-&lt;h3 id=&#34;配置系统&#34;&gt;配置系统&lt;/h3&gt;
-&lt;p&gt;点击&lt;code&gt;运行&lt;/code&gt;，输入&lt;code&gt;gpedit.msc&lt;/code&gt;,具体操作如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20190304120752202.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzYyNTU3Nw==,size_16,color_FFFFFF,t_70&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;重启电脑&#34;&gt;重启电脑&lt;/h3&gt;
-&lt;p&gt;可以发现，脚本运行了&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20190304120752279.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzYyNTU3Nw==,size_16,color_FFFFFF,t_70&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
-- https://peitianyu.github.io/pty_blog.github.io/system/windows/windows%E8%87%AA%E5%90%AF%E5%8A%A8%E8%84%9A%E6%9C%AC/ - This is a customized copyright.</description>
         </item>
     
     
