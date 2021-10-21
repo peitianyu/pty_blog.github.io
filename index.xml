@@ -6,9 +6,87 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
     <copyright>This is a customized copyright.</copyright>
-    <lastBuildDate>Tue, 19 Oct 2021 16:20:39 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 21 Oct 2021 16:20:39 +0800</lastBuildDate>
     
         <atom:link href="https://peitianyu.github.io/pty_blog.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>用过的几款远程终端</title>
+        <link>https://peitianyu.github.io/pty_blog.github.io/tool/terminal/</link>
+        <pubDate>Thu, 21 Oct 2021 16:20:39 +0800</pubDate>
+        
+        <guid>https://peitianyu.github.io/pty_blog.github.io/tool/terminal/</guid>
+        <description>武装带你 https://peitianyu.github.io/pty_blog.github.io/tool/terminal/ -&lt;h3 id=&#34;终端&#34;&gt;终端&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;Powershell&lt;/code&gt;,&lt;code&gt;Windows terminal&lt;/code&gt;,&lt;code&gt;wsl-terminal&lt;/code&gt;,&lt;code&gt;fluent terminal&lt;/code&gt;,&lt;code&gt;xshell&lt;/code&gt;,&lt;code&gt;Mobaxterm&lt;/code&gt;,&lt;code&gt;putty&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;powershell&#34;&gt;Powershell&lt;/h3&gt;
+&lt;p&gt;最基础的远程终端,只需要通过ssh指令连接远程终端即可.如,&lt;code&gt;ssh.exe pty@192.168.30.100&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;windows-terminal&#34;&gt;Windows terminal&lt;/h3&gt;
+&lt;p&gt;同样可以用指令打开,同时也可以配置,打开wsl,ssh都比较方便,点击即用.但有些丑.当然也可以配置网上教程挺多,再次不做过多介绍.&lt;/p&gt;
+&lt;h4 id=&#34;安装&#34;&gt;安装:&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# powershell输入&lt;/span&gt;
+winget install --id=Microsoft.WindowsTerminal -e
+&lt;span style=&#34;color:#228b22&#34;&gt;# 通过Chocolatey&lt;/span&gt;
+choco upgrade microsoft-windows-terminal
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;右键打开windows-terimnal未测试&#34;&gt;右键打开windows terimnal(未测试)&lt;/h4&gt;
+&lt;p&gt;保存为&lt;code&gt;install.bat&lt;/code&gt;文件打开&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT&lt;span style=&#34;color:#cd5555&#34;&gt;\D&lt;/span&gt;irectory&lt;span style=&#34;color:#cd5555&#34;&gt;\B&lt;/span&gt;ackground&lt;span style=&#34;color:#cd5555&#34;&gt;\s&lt;/span&gt;hell&lt;span style=&#34;color:#cd5555&#34;&gt;\W&lt;/span&gt;indows Terminal]
+; 右键菜单中显示的名称
+@=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;Windows Terminal&amp;#34;&lt;/span&gt;
+; 右键菜单中显示的图标
+&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;Icon&amp;#34;&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;C:\\Toolkits\\Icons\\App\\WindowsTerminal.ico&amp;#34;&lt;/span&gt;
+; 仅支持在按住Shift+右键的时候才显示
+&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;Extended&amp;#34;&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+; 
+&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;NoWorkingDirectory&amp;#34;&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+; 在菜单中显示或隐藏
+&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;ShowBasedOnVelocityId&amp;#34;&lt;/span&gt;=dword:00639bc8
+
+
+[HKEY_CLASSES_ROOT&lt;span style=&#34;color:#cd5555&#34;&gt;\D&lt;/span&gt;irectory&lt;span style=&#34;color:#cd5555&#34;&gt;\B&lt;/span&gt;ackground&lt;span style=&#34;color:#cd5555&#34;&gt;\s&lt;/span&gt;hell&lt;span style=&#34;color:#cd5555&#34;&gt;\W&lt;/span&gt;indows Terminal&lt;span style=&#34;color:#cd5555&#34;&gt;\C&lt;/span&gt;ommand]
+@=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;C:\\Users\\xyz\\AppData\\Local\\Microsoft\\WindowsApps\\wt.exe -d \&amp;#34;%V\&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;fluent-terminal&#34;&gt;fluent terminal&lt;/h3&gt;
+&lt;p&gt;好看但没有&lt;code&gt;windows terminal&lt;/code&gt;那么方便,不过可以设置快捷键,也还行.&lt;/p&gt;
+&lt;h4 id=&#34;安装-1&#34;&gt;安装&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;choco install fluent-terminal
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 下载zip文件解压安装&lt;/span&gt;
+https://github.com/felixse/FluentTerminal/releases
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;下载完毕后解压，选择 &lt;code&gt;Install.ps1&lt;/code&gt; 文件，右键使用 powershell 运行。&lt;/p&gt;
+&lt;h4 id=&#34;右键打开&#34;&gt;右键打开&lt;/h4&gt;
+&lt;p&gt;保存为&lt;code&gt;install.bat&lt;/code&gt;文件打开&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;reg add &amp;quot;HKCU\Software\Classes\Directory\shell\Open Fluent Terminal here\command&amp;quot; /d &amp;quot;\&amp;quot;%LOCALAPPDATA%\Microsoft\WindowsApps\flute.exe\&amp;quot; new \&amp;quot;%%1\&amp;quot;&amp;quot; /f
+
+reg add &amp;quot;HKCU\Software\Classes\Directory\Background\shell\Open Fluent Terminal here\command&amp;quot; /d &amp;quot;\&amp;quot;%LOCALAPPDATA%\Microsoft\WindowsApps\flute.exe\&amp;quot; new \&amp;quot;%%V\&amp;quot;&amp;quot; /f
+
+reg add &amp;quot;HKCU\Software\Classes\LibraryFolder\Background\shell\Open Fluent Terminal here\command&amp;quot; /d &amp;quot;\&amp;quot;%LOCALAPPDATA%\Microsoft\WindowsApps\flute.exe\&amp;quot; new \&amp;quot;%%V\&amp;quot;&amp;quot; /f
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;右键关闭&#34;&gt;右键关闭&lt;/h4&gt;
+&lt;p&gt;保存为&lt;code&gt;Uninstall.bat&lt;/code&gt;文件打开&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;reg delete &amp;quot;HKCU\Software\Classes\Directory\shell\Open Fluent Terminal here&amp;quot; /f
+
+reg delete &amp;quot;HKCU\Software\Classes\Directory\Background\shell\Open Fluent Terminal here&amp;quot; /f
+reg delete &amp;quot;HKCU\Software\Classes\LibraryFolder\Background\shell\Open Fluent Terminal here&amp;quot; /f
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;wsl-terminal&#34;&gt;wsl-terminal&lt;/h3&gt;
+&lt;p&gt;加u个人使用而言,如果多个wsl,则没那么舒爽.当然也可以像powershell那样&lt;code&gt;wsl -d Ubuntu&lt;/code&gt;这样切换版本&lt;/p&gt;
+&lt;h4 id=&#34;参考网址&#34;&gt;参考网址:&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/ly50247/article/details/80131656?ops_request_misc=%7B%22request%5Fid%22%3A%22163481452216780366511110%22%2C%22scm%22%3A%2220140713.130102334..%22%7D&amp;amp;request_id=163481452216780366511110&amp;amp;biz_id=0&amp;amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~baidu_landing_v2~default-2-80131656.pc_search_ecpm_flag&amp;amp;utm_term=open-wsl&amp;amp;spm=1018.2226.3001.4187&#34;&gt;使用 wsl-terminal 更好地体验 Win 10 WSL 终端环境&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;写的比较详细就不具体赘述了&lt;/p&gt;
+&lt;h3 id=&#34;putty&#34;&gt;putty&lt;/h3&gt;
+&lt;p&gt;是一款集合ssh,串口的远程软件,但每次都需要开启后配置参数,对于懒人不友好.&lt;/p&gt;
+&lt;h4 id=&#34;参考网址-1&#34;&gt;参考网址:&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/weixin_40705360/article/details/104008419?ops_request_misc=%7B%22request%5Fid%22%3A%22163481518116780366579230%22%2C%22scm%22%3A%2220140713.130102334..%22%7D&amp;amp;request_id=163481518116780366579230&amp;amp;biz_id=0&amp;amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-1-104008419.pc_search_ecpm_flag&amp;amp;utm_term=putty%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B&amp;amp;spm=1018.2226.3001.4187&#34;&gt;putty使用教程(总结)&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;xshell&#34;&gt;xshell&lt;/h3&gt;
+&lt;p&gt;具有putty相似的功能,同时还有&lt;strong&gt;stfp&lt;/strong&gt;文件传输,只需点击即可使用.但对于需要调试gui程序而言,需要购买正式版,嗯&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;大佬随意.&lt;/p&gt;
+&lt;h4 id=&#34;参考网址-2&#34;&gt;参考网址:&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/hxy1625309592/article/details/110356421?ops_request_misc=%7B%22request%5Fid%22%3A%22163481523916780269886657%22%2C%22scm%22%3A%2220140713.130102334..%22%7D&amp;amp;request_id=163481523916780269886657&amp;amp;biz_id=0&amp;amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-2-110356421.pc_search_ecpm_flag&amp;amp;utm_term=xhsell&amp;amp;spm=1018.2226.3001.4187&#34;&gt;Xshell使用基础教程_&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;mobaxterm&#34;&gt;Mobaxterm&lt;/h3&gt;
+&lt;p&gt;集百家之长于一身,因此使用起来没那么方便,但使用后非常舒爽.值得一提的是,远程文件是可以根据终端实时更新的,同时&lt;strong&gt;支持拖拽文件,新建文件,文件夹,本地编辑文件&lt;/strong&gt;,这就很爽了.&lt;/p&gt;
+&lt;h4 id=&#34;参考网址-3&#34;&gt;参考网址:&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/qq_28721869/article/details/114652520?ops_request_misc=%7B%22request%5Fid%22%3A%22163481551616780269883117%22%2C%22scm%22%3A%2220140713.130102334..%22%7D&amp;amp;request_id=163481551616780269883117&amp;amp;biz_id=0&amp;amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-114652520.pc_search_ecpm_flag&amp;amp;utm_term=Mobaxterm&amp;amp;spm=1018.2226.3001.4187&#34;&gt;全能终端神器mobaxterm入坑指南&lt;/a&gt;&lt;/p&gt;
+- https://peitianyu.github.io/pty_blog.github.io/tool/terminal/ - This is a customized copyright.</description>
+        </item>
     
     
     
@@ -179,6 +257,7 @@ ssh -p &lt;span style=&#34;color:#b452cd&#34;&gt;1234&lt;/span&gt; ldz@192.168.0
 &lt;h4 id=&#34;参考网址-2&#34;&gt;参考网址:&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://peitianyu.github.io/pty_blog.github.io/ros/ros%E5%AE%89%E8%A3%85/&#34;&gt;ROS_安装 (peitianyu.github.io)&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;其他部分按ros安装教程来即可&#34;&gt;其他部分按ros安装教程来即可&lt;/h4&gt;
+&lt;p&gt;比较实用的方案是先按照我的步骤安装ros,之后再通过&lt;code&gt;fishros一行代码&lt;/code&gt;解决rosdep问题&lt;/p&gt;
 &lt;h3 id=&#34;远程连接nano&#34;&gt;远程连接nano&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;ssh.exe usrname@192.168.xxx.xxx&lt;/code&gt;&lt;/p&gt;
 &lt;h3 id=&#34;jetson-nano初始化配置&#34;&gt;jetson nano初始化配置&lt;/h3&gt;
@@ -465,156 +544,6 @@ git push -u origin master
 &lt;p&gt;可以发现，脚本运行了&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20190304120752279.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzYyNTU3Nw==,size_16,color_FFFFFF,t_70&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
 - https://peitianyu.github.io/pty_blog.github.io/system/windows/windows%E8%87%AA%E5%90%AF%E5%8A%A8%E8%84%9A%E6%9C%AC/ - This is a customized copyright.</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>LINUX_Ubuntu更新源</title>
-        <link>https://peitianyu.github.io/pty_blog.github.io/system/linux/ubuntu/</link>
-        <pubDate>Sat, 16 Oct 2021 16:20:39 +0800</pubDate>
-        
-        <guid>https://peitianyu.github.io/pty_blog.github.io/system/linux/ubuntu/</guid>
-        <description>武装带你 https://peitianyu.github.io/pty_blog.github.io/system/linux/ubuntu/ -&lt;h4 id=&#34;更新软件源&#34;&gt;更新软件源&lt;/h4&gt;
-&lt;p&gt;参考网址：&lt;a href=&#34;https://blog.csdn.net/qq_35451572/article/details/79516563&#34;&gt;Ubuntu 更换国内源_quanwei的博客-CSDN博客_ubuntu换源&lt;/a&gt;&lt;/p&gt;
-&lt;h5 id=&#34;阿里源-ubuntu-1804&#34;&gt;阿里源 （Ubuntu 18.04）&lt;/h5&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo vim /etc/apt/sources.list
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
-
-deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
-
-deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
-
-deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
-
-deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo apt-get update
-sudo apt-get -f install
-sudo apt-get upgrade
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;西电源只有校内网网线使用但是不限制流量还是十分靠谱的&#34;&gt;西电源（只有校内网网线使用，但是不限制流量，还是十分靠谱的）&lt;/h5&gt;
-&lt;pre&gt;&lt;code&gt;deb http://linux.xidian.edu.cn/mirrors/ubuntu/ xenial main restricted universe multiverse
-#deb-src http://linux.xidian.edu.cn/mirrors/ubuntu/ xenial main restricted universe multiverse
-
-deb http://linux.xidian.edu.cn/mirrors/ubuntu/ xenial-security main restricted universe multiverse
-#deb-src http://linux.xidian.edu.cn/mirrors/ubuntu/ xenial-security main restricted universe multiverse
-
-deb http://linux.xidian.edu.cn/mirrors/ubuntu/ xenial-updates main restricted universe multiverse
-#deb-src http://linux.xidian.edu.cn/mirrors/ubuntu/ xenial-updates main restricted universe multiverse
-
-#deb http://linux.xidian.edu.cn/mirrors/ubuntu/ xenial-backports main restricted universe multiverse
-#deb-src http://linux.xidian.edu.cn/mirrors/ubuntu/ xenial-backports main restricted universe multiverse
-
-#deb http://linux.xidian.edu.cn/mirrors/ubuntu/ xenial-proposed main restricted universe multiverse
-#deb-src http://linux.xidian.edu.cn/mirrors/ubuntu/ xenial-proposed main restricted universe multiverse
-&lt;/code&gt;&lt;/pre&gt;&lt;h5 id=&#34;清华源&#34;&gt;清华源&lt;/h5&gt;
-&lt;pre&gt;&lt;code&gt;# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
-deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe multiverse
-# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe multiverse
-deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
-# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
-deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
-# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
-deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
-# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
-
-# 预发布软件源，不建议启用
-# deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
-# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
-&lt;/code&gt;&lt;/pre&gt;&lt;h5 id=&#34;网易源&#34;&gt;网易源&lt;/h5&gt;
-&lt;pre&gt;&lt;code&gt;deb http://mirrors.163.com/ubuntu/ wily main restricted universe multiverse
-deb http://mirrors.163.com/ubuntu/ wily-security main restricted universe multiverse
-deb http://mirrors.163.com/ubuntu/ wily-updates main restricted universe multiverse
-deb http://mirrors.163.com/ubuntu/ wily-proposed main restricted universe multiverse
-deb http://mirrors.163.com/ubuntu/ wily-backports main restricted universe multiverse
-deb-src http://mirrors.163.com/ubuntu/ wily main restricted universe multiverse
-deb-src http://mirrors.163.com/ubuntu/ wily-security main restricted universe multiverse
-deb-src http://mirrors.163.com/ubuntu/ wily-updates main restricted universe multiverse
-deb-src http://mirrors.163.com/ubuntu/ wily-proposed main restricted universe multiverse
-deb-src http://mirrors.163.com/ubuntu/ wily-backports main restricted universe multiverse
-&lt;/code&gt;&lt;/pre&gt;&lt;h5 id=&#34;中科大&#34;&gt;中科大&lt;/h5&gt;
-&lt;pre&gt;&lt;code&gt;##中科大源
-
-deb https://mirrors.ustc.edu.cn/ubuntu/ bionic main restricted universe multiverse
-deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic main restricted universe multiverse
-deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
-deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
-deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
-deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
-deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
-deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
-deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
-deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
-
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;树莓派更换国内源&#34;&gt;树莓派更换国内源&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 备份&lt;/span&gt;
-sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
-sudo cp /etc/apt/sources.list.d/raspi.list /etc/apt/sources.list.d/raspi.list.bak
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo nano /etc/apt/sources.list
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 添加入,Ctrl+s保存,Ctrl+X退出.&lt;/span&gt;
-deb http://mirrors.ustc.edu.cn/raspbian/raspbian/ stretch main contrib non-free rpi
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 修改系统更新源&lt;/span&gt;
-sudo nano /etc/apt/sources.list.d/raspi.list
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 加入&lt;/span&gt;
-deb http://mirrors.ustc.edu.cn/archive.raspberrypi.org/debian/ stretch main ui
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo apt-get update
-sud apt upgrade
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;ubuntu18换回原来源&#34;&gt;Ubuntu18换回原来源&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;# See http://help.ubuntu.com/community/UpgradeNotes for how to upgrade to
-# newer versions of the distribution.
-deb http://ports.ubuntu.com/ubuntu-ports/ bionic main restricted
-# deb-src http://ports.ubuntu.com/ubuntu-ports/ bionic main restricted
-
-## Major bug fix updates produced after the final release of the
-## distribution.
-deb http://ports.ubuntu.com/ubuntu-ports/ bionic-updates main restricted
-# deb-src http://ports.ubuntu.com/ubuntu-ports/ bionic-updates main restricted
-
-## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu
-## team. Also, please note that software in universe WILL NOT receive any
-## review or updates from the Ubuntu security team.
-deb http://ports.ubuntu.com/ubuntu-ports/ bionic universe
-# deb-src http://ports.ubuntu.com/ubuntu-ports/ bionic universe
-deb http://ports.ubuntu.com/ubuntu-ports/ bionic-updates universe
-# deb-src http://ports.ubuntu.com/ubuntu-ports/ bionic-updates universe
-
-## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu
-## team, and may not be under a free licence. Please satisfy yourself as to
-## your rights to use the software. Also, please note that software in
-## multiverse WILL NOT receive any review or updates from the Ubuntu
-## security team.
-deb http://ports.ubuntu.com/ubuntu-ports/ bionic multiverse
-# deb-src http://ports.ubuntu.com/ubuntu-ports/ bionic multiverse
-deb http://ports.ubuntu.com/ubuntu-ports/ bionic-updates multiverse
-# deb-src http://ports.ubuntu.com/ubuntu-ports/ bionic-updates multiverse
-
-## N.B. software from this repository may not have been tested as
-## extensively as that contained in the main release, although it includes
-## newer versions of some applications which may provide useful features.
-## Also, please note that software in backports WILL NOT receive any review
-## or updates from the Ubuntu security team.
-deb http://ports.ubuntu.com/ubuntu-ports/ bionic-backports main restricted universe multiverse
-# deb-src http://ports.ubuntu.com/ubuntu-ports/ bionic-backports main restricted universe multiverse
-
-## Uncomment the following two lines to add software from Canonical&#39;s
-## &#39;partner&#39; repository.
-## This software is not part of Ubuntu, but is offered by Canonical and the
-## respective vendors as a service to Ubuntu users.
-# deb http://archive.canonical.com/ubuntu bionic partner
-# deb-src http://archive.canonical.com/ubuntu bionic partner
-
-deb http://ports.ubuntu.com/ubuntu-ports/ bionic-security main restricted
-# deb-src http://ports.ubuntu.com/ubuntu-ports/ bionic-security main restricted
-deb http://ports.ubuntu.com/ubuntu-ports/ bionic-security universe
-# deb-src http://ports.ubuntu.com/ubuntu-ports/ bionic-security universe
-deb http://ports.ubuntu.com/ubuntu-ports/ bionic-security multiverse
-# deb-src http://ports.ubuntu.com/ubuntu-ports/ bionic-security multiverse
-
-&lt;/code&gt;&lt;/pre&gt;- https://peitianyu.github.io/pty_blog.github.io/system/linux/ubuntu/ - This is a customized copyright.</description>
         </item>
     
     

@@ -7,10 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
     <copyright>This is a customized copyright.</copyright>
-    <lastBuildDate>Tue, 19 Oct 2021 16:20:39 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 21 Oct 2021 16:20:39 +0800</lastBuildDate>
     
 	<atom:link href="https://peitianyu.github.io/pty_blog.github.io/tool/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>用过的几款远程终端</title>
+      <link>https://peitianyu.github.io/pty_blog.github.io/tool/terminal/</link>
+      <pubDate>Thu, 21 Oct 2021 16:20:39 +0800</pubDate>
+      
+      <guid>https://peitianyu.github.io/pty_blog.github.io/tool/terminal/</guid>
+      <description>终端 Powershell,Windows terminal,wsl-terminal,fluent terminal,xshell,Mobaxterm,putty
+Powershell 最基础的远程终端,只需要通过ssh指令连接远程终端即可.如,ssh.exe pty@192.168.30.100
+Windows terminal 同样可以用指令打开,同时也可以配置,打开wsl,ssh都比较方便,点击即用.但有些丑.当然也可以配置网上教程挺多,再次不做过多介绍.
+安装: # powershell输入winget install --id=Microsoft.WindowsTerminal -e# 通过Chocolateychoco upgrade microsoft-windows-terminal右键打开windows terimnal(未测试) 保存为install.bat文件打开
+Windows Registry Editor Version 5.00[HKEY_CLASSES_ROOT\Directory\Background\shell\Windows Terminal]; 右键菜单中显示的名称@=&amp;#34;Windows Terminal&amp;#34;; 右键菜单中显示的图标&amp;#34;Icon&amp;#34;=&amp;#34;C:\\Toolkits\\Icons\\App\\WindowsTerminal.ico&amp;#34;; 仅支持在按住Shift+右键的时候才显示&amp;#34;Extended&amp;#34;=&amp;#34;&amp;#34;; &amp;#34;NoWorkingDirectory&amp;#34;=&amp;#34;&amp;#34;; 在菜单中显示或隐藏&amp;#34;ShowBasedOnVelocityId&amp;#34;=dword:00639bc8[HKEY_CLASSES_ROOT\Directory\Background\shell\Windows Terminal\Command]@=&amp;#34;C:\\Users\\xyz\\AppData\\Local\\Microsoft\\WindowsApps\\wt.exe -d \&amp;#34;%V\&amp;#34;&amp;#34;fluent terminal 好看但没有windows terminal那么方便,不过可以设置快捷键,也还行.
+安装 choco install fluent-terminal# 下载zip文件解压安装https://github.com/felixse/FluentTerminal/releases下载完毕后解压，选择 Install.ps1 文件，右键使用 powershell 运行。
+右键打开 保存为install.bat文件打开</description>
+    </item>
     
     <item>
       <title>apt</title>
@@ -74,7 +89,8 @@ sd卡格式化工具
 SD Memory Card Formatter for Windows Download | SD Association (sdcard.org)
 安装步骤: 1.格式化sd卡2.使用balenaEtcher烧录下载好的系统3.插上卡后做初始化设置jetson三种供电方式: 参考网址: Jetson nano 的三种供电方式_Dunkle.T的博客-CSDN博客_jetson nano供电
 分别为:  USB供电(默认5v2a 仅低功率),使用时拔去条线帽 使用 DC 供电(默认5v 4A),使用时插上跳线帽 使用引脚供电(5v3a 无所谓跳线帽)  关于ros安装 参考网址: ROS_安装 (peitianyu.github.io)
-其他部分按ros安装教程来即可 远程连接nano ssh.exe usrname@192.168.xxx.xxx
+其他部分按ros安装教程来即可 比较实用的方案是先按照我的步骤安装ros,之后再通过fishros一行代码解决rosdep问题
+远程连接nano ssh.exe usrname@192.168.xxx.xxx
 jetson nano初始化配置 网络配置 静态ip设置:Ubuntu 18.</description>
     </item>
     

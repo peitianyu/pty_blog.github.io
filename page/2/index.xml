@@ -6,9 +6,159 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
     <copyright>This is a customized copyright.</copyright>
-    <lastBuildDate>Tue, 19 Oct 2021 16:20:39 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 21 Oct 2021 16:20:39 +0800</lastBuildDate>
     
         <atom:link href="https://peitianyu.github.io/pty_blog.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>LINUX_Ubuntu更新源</title>
+        <link>https://peitianyu.github.io/pty_blog.github.io/system/linux/ubuntu/</link>
+        <pubDate>Sat, 16 Oct 2021 16:20:39 +0800</pubDate>
+        
+        <guid>https://peitianyu.github.io/pty_blog.github.io/system/linux/ubuntu/</guid>
+        <description>武装带你 https://peitianyu.github.io/pty_blog.github.io/system/linux/ubuntu/ -&lt;h4 id=&#34;更新软件源&#34;&gt;更新软件源&lt;/h4&gt;
+&lt;p&gt;参考网址：&lt;a href=&#34;https://blog.csdn.net/qq_35451572/article/details/79516563&#34;&gt;Ubuntu 更换国内源_quanwei的博客-CSDN博客_ubuntu换源&lt;/a&gt;&lt;/p&gt;
+&lt;h5 id=&#34;阿里源-ubuntu-1804&#34;&gt;阿里源 （Ubuntu 18.04）&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo vim /etc/apt/sources.list
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo apt-get update
+sudo apt-get -f install
+sudo apt-get upgrade
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;西电源只有校内网网线使用但是不限制流量还是十分靠谱的&#34;&gt;西电源（只有校内网网线使用，但是不限制流量，还是十分靠谱的）&lt;/h5&gt;
+&lt;pre&gt;&lt;code&gt;deb http://linux.xidian.edu.cn/mirrors/ubuntu/ xenial main restricted universe multiverse
+#deb-src http://linux.xidian.edu.cn/mirrors/ubuntu/ xenial main restricted universe multiverse
+
+deb http://linux.xidian.edu.cn/mirrors/ubuntu/ xenial-security main restricted universe multiverse
+#deb-src http://linux.xidian.edu.cn/mirrors/ubuntu/ xenial-security main restricted universe multiverse
+
+deb http://linux.xidian.edu.cn/mirrors/ubuntu/ xenial-updates main restricted universe multiverse
+#deb-src http://linux.xidian.edu.cn/mirrors/ubuntu/ xenial-updates main restricted universe multiverse
+
+#deb http://linux.xidian.edu.cn/mirrors/ubuntu/ xenial-backports main restricted universe multiverse
+#deb-src http://linux.xidian.edu.cn/mirrors/ubuntu/ xenial-backports main restricted universe multiverse
+
+#deb http://linux.xidian.edu.cn/mirrors/ubuntu/ xenial-proposed main restricted universe multiverse
+#deb-src http://linux.xidian.edu.cn/mirrors/ubuntu/ xenial-proposed main restricted universe multiverse
+&lt;/code&gt;&lt;/pre&gt;&lt;h5 id=&#34;清华源&#34;&gt;清华源&lt;/h5&gt;
+&lt;pre&gt;&lt;code&gt;# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
+
+# 预发布软件源，不建议启用
+# deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
+&lt;/code&gt;&lt;/pre&gt;&lt;h5 id=&#34;网易源&#34;&gt;网易源&lt;/h5&gt;
+&lt;pre&gt;&lt;code&gt;deb http://mirrors.163.com/ubuntu/ wily main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ wily-security main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ wily-updates main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ wily-proposed main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ wily-backports main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ wily main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ wily-security main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ wily-updates main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ wily-proposed main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ wily-backports main restricted universe multiverse
+&lt;/code&gt;&lt;/pre&gt;&lt;h5 id=&#34;中科大&#34;&gt;中科大&lt;/h5&gt;
+&lt;pre&gt;&lt;code&gt;##中科大源
+
+deb https://mirrors.ustc.edu.cn/ubuntu/ bionic main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic main restricted universe multiverse
+deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
+deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
+deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
+deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
+
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;树莓派更换国内源&#34;&gt;树莓派更换国内源&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 备份&lt;/span&gt;
+sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
+sudo cp /etc/apt/sources.list.d/raspi.list /etc/apt/sources.list.d/raspi.list.bak
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo nano /etc/apt/sources.list
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 添加入,Ctrl+s保存,Ctrl+X退出.&lt;/span&gt;
+deb http://mirrors.ustc.edu.cn/raspbian/raspbian/ stretch main contrib non-free rpi
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 修改系统更新源&lt;/span&gt;
+sudo nano /etc/apt/sources.list.d/raspi.list
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 加入&lt;/span&gt;
+deb http://mirrors.ustc.edu.cn/archive.raspberrypi.org/debian/ stretch main ui
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo apt-get update
+sud apt upgrade
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;ubuntu18换回原来源&#34;&gt;Ubuntu18换回原来源&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;# See http://help.ubuntu.com/community/UpgradeNotes for how to upgrade to
+# newer versions of the distribution.
+deb http://ports.ubuntu.com/ubuntu-ports/ bionic main restricted
+# deb-src http://ports.ubuntu.com/ubuntu-ports/ bionic main restricted
+
+## Major bug fix updates produced after the final release of the
+## distribution.
+deb http://ports.ubuntu.com/ubuntu-ports/ bionic-updates main restricted
+# deb-src http://ports.ubuntu.com/ubuntu-ports/ bionic-updates main restricted
+
+## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu
+## team. Also, please note that software in universe WILL NOT receive any
+## review or updates from the Ubuntu security team.
+deb http://ports.ubuntu.com/ubuntu-ports/ bionic universe
+# deb-src http://ports.ubuntu.com/ubuntu-ports/ bionic universe
+deb http://ports.ubuntu.com/ubuntu-ports/ bionic-updates universe
+# deb-src http://ports.ubuntu.com/ubuntu-ports/ bionic-updates universe
+
+## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu
+## team, and may not be under a free licence. Please satisfy yourself as to
+## your rights to use the software. Also, please note that software in
+## multiverse WILL NOT receive any review or updates from the Ubuntu
+## security team.
+deb http://ports.ubuntu.com/ubuntu-ports/ bionic multiverse
+# deb-src http://ports.ubuntu.com/ubuntu-ports/ bionic multiverse
+deb http://ports.ubuntu.com/ubuntu-ports/ bionic-updates multiverse
+# deb-src http://ports.ubuntu.com/ubuntu-ports/ bionic-updates multiverse
+
+## N.B. software from this repository may not have been tested as
+## extensively as that contained in the main release, although it includes
+## newer versions of some applications which may provide useful features.
+## Also, please note that software in backports WILL NOT receive any review
+## or updates from the Ubuntu security team.
+deb http://ports.ubuntu.com/ubuntu-ports/ bionic-backports main restricted universe multiverse
+# deb-src http://ports.ubuntu.com/ubuntu-ports/ bionic-backports main restricted universe multiverse
+
+## Uncomment the following two lines to add software from Canonical&#39;s
+## &#39;partner&#39; repository.
+## This software is not part of Ubuntu, but is offered by Canonical and the
+## respective vendors as a service to Ubuntu users.
+# deb http://archive.canonical.com/ubuntu bionic partner
+# deb-src http://archive.canonical.com/ubuntu bionic partner
+
+deb http://ports.ubuntu.com/ubuntu-ports/ bionic-security main restricted
+# deb-src http://ports.ubuntu.com/ubuntu-ports/ bionic-security main restricted
+deb http://ports.ubuntu.com/ubuntu-ports/ bionic-security universe
+# deb-src http://ports.ubuntu.com/ubuntu-ports/ bionic-security universe
+deb http://ports.ubuntu.com/ubuntu-ports/ bionic-security multiverse
+# deb-src http://ports.ubuntu.com/ubuntu-ports/ bionic-security multiverse
+
+&lt;/code&gt;&lt;/pre&gt;- https://peitianyu.github.io/pty_blog.github.io/system/linux/ubuntu/ - This is a customized copyright.</description>
+        </item>
     
     
     
@@ -1286,6 +1436,9 @@ git config --list
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;hugo安装&#34;&gt;hugo安装&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 安装&lt;/span&gt;
 sudo apt install hugo
+&lt;span style=&#34;color:#228b22&#34;&gt;# 手动安装&lt;/span&gt;
+wget https://github.com/gohugoio/hugo/releases/download/v0.54.0/hugo_0.54.0_Linux-64bit.deb
+sudo dpkg -i hugo_0.54.0_Linux-64bit.deb
 &lt;span style=&#34;color:#228b22&#34;&gt;# 查看&lt;/span&gt;
 hugo --help
 hugo version
