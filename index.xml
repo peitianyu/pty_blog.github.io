@@ -280,6 +280,7 @@ ssh -p &lt;span style=&#34;color:#b452cd&#34;&gt;1234&lt;/span&gt; ldz@192.168.0
         <guid>https://peitianyu.github.io/pty_blog.github.io/tool/jetson-nano/</guid>
         <description>武装带你 https://peitianyu.github.io/pty_blog.github.io/tool/jetson-nano/ -&lt;h3 id=&#34;参考网址&#34;&gt;参考网址:&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/166464566&#34;&gt;玩转智能硬件之Jetson Nano(一)安装篇 - 知乎 (zhihu.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/Ay_yzx/article/details/113779544&#34;&gt;Jetson Nano-配置环境_Ay_yzx的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;预先下载&#34;&gt;预先下载:&lt;/h4&gt;
 &lt;p&gt;&lt;code&gt;balenaEtcher&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.balena.io/etcher/&#34;&gt;balenaEtcher - Flash OS images to SD cards &amp;amp; USB drives&lt;/a&gt;&lt;/p&gt;
@@ -303,7 +304,10 @@ ssh -p &lt;span style=&#34;color:#b452cd&#34;&gt;1234&lt;/span&gt; ldz@192.168.0
 &lt;li&gt;使用 DC 供电(默认5v 4A),使用时插上跳线帽&lt;/li&gt;
 &lt;li&gt;使用引脚供电(5v3a 无所谓跳线帽)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;关于ros安装&#34;&gt;关于ros安装&lt;/h3&gt;
+&lt;h4 id=&#34;查看cuda配置&#34;&gt;查看cuda配置&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo pip3 install jetson-stats
+sudo jtop
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;关于ros安装&#34;&gt;关于ros安装&lt;/h3&gt;
 &lt;h4 id=&#34;参考网址-2&#34;&gt;参考网址:&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://peitianyu.github.io/pty_blog.github.io/ros/ros%E5%AE%89%E8%A3%85/&#34;&gt;ROS_安装 (peitianyu.github.io)&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;其他部分按ros安装教程来即可&#34;&gt;其他部分按ros安装教程来即可&lt;/h4&gt;
