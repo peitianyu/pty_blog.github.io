@@ -13,6 +13,42 @@
     
     
         <item>
+        <title>vscode_github</title>
+        <link>https://peitianyu.github.io/pty_blog.github.io/tool/vscode_github/</link>
+        <pubDate>Sun, 17 Oct 2021 16:20:39 +0800</pubDate>
+        
+        <guid>https://peitianyu.github.io/pty_blog.github.io/tool/vscode_github/</guid>
+        <description>武装带你 https://peitianyu.github.io/pty_blog.github.io/tool/vscode_github/ -&lt;h3 id=&#34;参考网址&#34;&gt;参考网址:&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV1dK411p7RF?from=search&amp;amp;seid=11336080740563688755&amp;amp;spm_id_from=333.337.0.0&#34;&gt;【VScode与GitHub】10分钟学会用Git管理自己的代码_哔哩哔哩_bilibili&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;安装vscode&#34;&gt;安装vscode&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/Zhangguohao666/article/details/105665412?ops_request_misc=%7B%22request%5Fid%22%3A%22163446616616780357285651%22%2C%22scm%22%3A%2220140713.130102334..%22%7D&amp;amp;request_id=163446616616780357285651&amp;amp;biz_id=0&amp;amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-2-105665412.pc_search_ecpm_flag&amp;amp;utm_term=vscode&amp;amp;spm=1018.2226.3001.4187&#34;&gt;超详细VSCode安装教程（Windows）_Zhangguohao666的博客-CSDN博客_vscode安装教程&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;安装git与使用教程&#34;&gt;安装git与使用教程&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://git-scm.com/book/zh/v2&#34;&gt;Git - Book (git-scm.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;不过此处不讲关于git的使用,只是利用vscode对于github进行的具体操作.&lt;/p&gt;
+&lt;h3 id=&#34;最基本git操作&#34;&gt;最基本git操作&lt;/h3&gt;
+&lt;h4 id=&#34;新建github库&#34;&gt;新建github库&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;New&lt;/code&gt;一个名为&lt;code&gt;test&lt;/code&gt;,并且&lt;code&gt;public&lt;/code&gt;的一个库,点击&lt;code&gt;Create Repository&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;image-20211017203129080.png&#34; alt=&#34;image-20211017203129080&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;image-20211017203248723.png&#34; alt=&#34;image-20211017203248723&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;复制ssh: &lt;code&gt;git@github.com:peitianyu/test.git&lt;/code&gt;,待会需要使用&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#658b00&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;test&lt;/span&gt;
+&lt;span style=&#34;color:#228b22&#34;&gt;# 初始化库&lt;/span&gt;
+git init
+&lt;span style=&#34;color:#228b22&#34;&gt;# 连接github&lt;/span&gt;
+git remote add origin git@github.com:peitianyu/pty_blog.github.io.git
+&lt;span style=&#34;color:#228b22&#34;&gt;# 添加所有文件&lt;/span&gt;
+git add -A
+&lt;span style=&#34;color:#228b22&#34;&gt;# 添加备注&lt;/span&gt;
+git commit -m “first commit”
+&lt;span style=&#34;color:#228b22&#34;&gt;# 推到github&lt;/span&gt;
+git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;- https://peitianyu.github.io/pty_blog.github.io/tool/vscode_github/ - This is a customized copyright.</description>
+        </item>
+    
+    
+    
+        <item>
         <title>WIN_自启动脚本</title>
         <link>https://peitianyu.github.io/pty_blog.github.io/system/windows/windows%E8%87%AA%E5%90%AF%E5%8A%A8%E8%84%9A%E6%9C%AC/</link>
         <pubDate>Sun, 17 Oct 2021 16:20:39 +0800</pubDate>
@@ -1361,83 +1397,6 @@ send/receive 	source/destination 					copy/paste 		up/down
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ol&gt;
 - https://peitianyu.github.io/pty_blog.github.io/templete/%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/ - This is a customized copyright.</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>ROS_安装</title>
-        <link>https://peitianyu.github.io/pty_blog.github.io/ros/ros%E5%AE%89%E8%A3%85/</link>
-        <pubDate>Tue, 12 Oct 2021 16:20:39 +0800</pubDate>
-        
-        <guid>https://peitianyu.github.io/pty_blog.github.io/ros/ros%E5%AE%89%E8%A3%85/</guid>
-        <description>武装带你 https://peitianyu.github.io/pty_blog.github.io/ros/ros%E5%AE%89%E8%A3%85/ -&lt;h3 id=&#34;安装环境&#34;&gt;安装环境&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;Ubuntu18.04
-ros-melodic-desktop-full
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;安装&#34;&gt;安装&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;vim /etc/apt/sources.list.d/ros-latest.list
-deb https://mirrors.tuna.tsinghua.edu.cn/ros/ubuntu/ bionic main
-sudo apt-key adv --keyserver &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#39;hkp://keyserver.ubuntu.com:80&amp;#39;&lt;/span&gt; --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
-sudo apt update
-sudo apt-get install ros-melodic-desktop-full
-&lt;span style=&#34;color:#228b22&#34;&gt;# 初始化&lt;/span&gt;
-sudo rosdep init
-rosdep update
-sudo apt install python-rosinstall python-rosinstall-generator python-wstool build-essential
-sudo &lt;span style=&#34;color:#658b00&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;source /opt/ros/melodic/setup.bash&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; ~/.bashrc
-&lt;span style=&#34;color:#658b00&#34;&gt;source&lt;/span&gt; ~/.bashrc
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;一行代码安装ros包含问题处理&#34;&gt;一行代码安装ros（包含问题处理）&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;wget http://fishros.com/install -O fishros &amp;amp;&amp;amp; sudo bash fishros
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;参考视频：&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/8hTrKL0N5y9i6s9ujhp0UA&#34;&gt;玩着游戏听着歌，就把ROS装好了！一行代码搞定系列！ (qq.com)&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;安装问题&#34;&gt;安装问题&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;rosdep init&lt;/code&gt;不成功&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;F35T1IRK7GMOWQDIHN_L8.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;cd /etc
-sudo mkdir ros
-cd ros
-sudo mkdir rosdep
-cd rosdep
-sudo mkdir source.list.d
-cd source.list.d
-sudo touch 20-default.list
-sudo vim 20-default.list
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;输入&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#os-specific listings first
-yaml https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/osx-homebrew.yaml osx
- 
-#generic
-yaml https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/base.yaml
-yaml https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/python.yaml
-yaml https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/ruby.yaml
-gbpdistro https://raw.githubusercontent.com/ros/rosdistro/master/releases/fuerte.yaml fuerte
- 
-#newer distributions (Groovy, Hydro, …) must not be listed anymore, they are being 
-#fetched from the rosdistro index.yaml instead
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;rosdep update&lt;/code&gt;问题&lt;/p&gt;
-&lt;p&gt;首先调大执行时间，更改 &lt;code&gt;/usr/lib/python2.7/dist-packages/rosdep2/&lt;/code&gt;下的三个文件&lt;code&gt;sources_list.py&lt;/code&gt;、&lt;code&gt;gbpdistro_support.py&lt;/code&gt;、&lt;code&gt;rep3.py&lt;/code&gt;中的&lt;code&gt;DOWNLOAD_TIMEOUT = 15.0&lt;/code&gt;值，我一般直接改成999。  终端输入：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo nano /usr/lib/python2.7/dist-packages/rosdep2/gbpdistro_support.py
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;修改&lt;code&gt;DOWNLOAD_TIMEOUT&lt;/code&gt;后，输入&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo nano /etc/hosts
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在最后一行加入&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;151.101.84.133  raw.githubusercontent.com
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;连上&lt;strong&gt;手机热点&lt;/strong&gt;，重新&lt;code&gt;rosdep update&lt;/code&gt;多次后，成功。&lt;/p&gt;
-&lt;h3 id=&#34;卸载&#34;&gt;卸载&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo apt-get autoremove --purge ros-melodic
-&lt;span style=&#34;color:#228b22&#34;&gt;# 先卸载包&lt;/span&gt;
-sudo apt-get purge ros-*
-&lt;span style=&#34;color:#228b22&#34;&gt;# 然后删除依赖，配置&lt;/span&gt;
-sudo apt-get autoremove
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;测试&#34;&gt;测试&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;mkdir -p ~/catkin_ws/src
-&lt;span style=&#34;color:#658b00&#34;&gt;cd&lt;/span&gt; ~/catkin_ws/
-catkin_make
-&lt;span style=&#34;color:#658b00&#34;&gt;source&lt;/span&gt; devel/setup.bash
-roscore
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;打开新窗口执行&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;rosrun turtlesim turtlesim_node
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;出现小乌龟则安装完成。&lt;/p&gt;
-- https://peitianyu.github.io/pty_blog.github.io/ros/ros%E5%AE%89%E8%A3%85/ - This is a customized copyright.</description>
         </item>
     
     

@@ -154,7 +154,7 @@ apt-get check 检查是否有损坏的依赖&lt;/p&gt;
     
     
         <item>
-        <title>gmip修rospgm图</title>
+        <title>gmip修ros pgm图</title>
         <link>https://peitianyu.github.io/pty_blog.github.io/ros/%E4%BD%BF%E7%94%A8gmip%E4%BF%AEpgm/</link>
         <pubDate>Tue, 19 Oct 2021 16:20:39 +0800</pubDate>
         
@@ -172,6 +172,27 @@ apt-get check 检查是否有损坏的依赖&lt;/p&gt;
 3.按住Ctrl选择颜色
 4.释放后刷刷刷
 &lt;/code&gt;&lt;/pre&gt;- https://peitianyu.github.io/pty_blog.github.io/ros/%E4%BD%BF%E7%94%A8gmip%E4%BF%AEpgm/ - This is a customized copyright.</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>ros错误集</title>
+        <link>https://peitianyu.github.io/pty_blog.github.io/ros/ros_%E9%94%99%E8%AF%AF%E9%9B%86/</link>
+        <pubDate>Tue, 19 Oct 2021 16:20:39 +0800</pubDate>
+        
+        <guid>https://peitianyu.github.io/pty_blog.github.io/ros/ros_%E9%94%99%E8%AF%AF%E9%9B%86/</guid>
+        <description>武装带你 https://peitianyu.github.io/pty_blog.github.io/ros/ros_%E9%94%99%E8%AF%AF%E9%9B%86/ -&lt;h2 id=&#34;cv_bridge解决办法&#34;&gt;“cv_bridge“解决办法&lt;/h2&gt;
+&lt;h3 id=&#34;出现问题&#34;&gt;出现问题:&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;CMake Error at /opt/ros/kinetic/share/catkin/cmake/catkinConfig.cmake:83 (find_package):
+Could not find a package configuration file provided by “cv_bridge” with
+any of the following names:
+
+cv_bridgeConfig.cmake
+cv_bridge-config.cmake
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;解决办法&#34;&gt;解决办法:&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.it610.com/article/1282152021410988032.htm&#34;&gt;CMake Error ：Could not find a package configuration file provided by “cv_bridge“解决办法&lt;/a&gt;&lt;/p&gt;
+- https://peitianyu.github.io/pty_blog.github.io/ros/ros_%E9%94%99%E8%AF%AF%E9%9B%86/ - This is a customized copyright.</description>
         </item>
     
     
@@ -538,42 +559,6 @@ git remote prune origin
 &lt;/tbody&gt;
 &lt;/table&gt;
 - https://peitianyu.github.io/pty_blog.github.io/tool/tmux/ - This is a customized copyright.</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>vscode_github</title>
-        <link>https://peitianyu.github.io/pty_blog.github.io/tool/vscode_github/</link>
-        <pubDate>Sun, 17 Oct 2021 16:20:39 +0800</pubDate>
-        
-        <guid>https://peitianyu.github.io/pty_blog.github.io/tool/vscode_github/</guid>
-        <description>武装带你 https://peitianyu.github.io/pty_blog.github.io/tool/vscode_github/ -&lt;h3 id=&#34;参考网址&#34;&gt;参考网址:&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV1dK411p7RF?from=search&amp;amp;seid=11336080740563688755&amp;amp;spm_id_from=333.337.0.0&#34;&gt;【VScode与GitHub】10分钟学会用Git管理自己的代码_哔哩哔哩_bilibili&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&#34;安装vscode&#34;&gt;安装vscode&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/Zhangguohao666/article/details/105665412?ops_request_misc=%7B%22request%5Fid%22%3A%22163446616616780357285651%22%2C%22scm%22%3A%2220140713.130102334..%22%7D&amp;amp;request_id=163446616616780357285651&amp;amp;biz_id=0&amp;amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-2-105665412.pc_search_ecpm_flag&amp;amp;utm_term=vscode&amp;amp;spm=1018.2226.3001.4187&#34;&gt;超详细VSCode安装教程（Windows）_Zhangguohao666的博客-CSDN博客_vscode安装教程&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&#34;安装git与使用教程&#34;&gt;安装git与使用教程&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&#34;https://git-scm.com/book/zh/v2&#34;&gt;Git - Book (git-scm.com)&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;不过此处不讲关于git的使用,只是利用vscode对于github进行的具体操作.&lt;/p&gt;
-&lt;h3 id=&#34;最基本git操作&#34;&gt;最基本git操作&lt;/h3&gt;
-&lt;h4 id=&#34;新建github库&#34;&gt;新建github库&lt;/h4&gt;
-&lt;p&gt;&lt;code&gt;New&lt;/code&gt;一个名为&lt;code&gt;test&lt;/code&gt;,并且&lt;code&gt;public&lt;/code&gt;的一个库,点击&lt;code&gt;Create Repository&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;image-20211017203129080.png&#34; alt=&#34;image-20211017203129080&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;image-20211017203248723.png&#34; alt=&#34;image-20211017203248723&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;复制ssh: &lt;code&gt;git@github.com:peitianyu/test.git&lt;/code&gt;,待会需要使用&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#658b00&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color:#658b00&#34;&gt;test&lt;/span&gt;
-&lt;span style=&#34;color:#228b22&#34;&gt;# 初始化库&lt;/span&gt;
-git init
-&lt;span style=&#34;color:#228b22&#34;&gt;# 连接github&lt;/span&gt;
-git remote add origin git@github.com:peitianyu/pty_blog.github.io.git
-&lt;span style=&#34;color:#228b22&#34;&gt;# 添加所有文件&lt;/span&gt;
-git add -A
-&lt;span style=&#34;color:#228b22&#34;&gt;# 添加备注&lt;/span&gt;
-git commit -m “first commit”
-&lt;span style=&#34;color:#228b22&#34;&gt;# 推到github&lt;/span&gt;
-git push -u origin master
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;- https://peitianyu.github.io/pty_blog.github.io/tool/vscode_github/ - This is a customized copyright.</description>
         </item>
     
     

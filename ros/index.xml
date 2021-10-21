@@ -13,7 +13,7 @@
     
     
     <item>
-      <title>gmip修rospgm图</title>
+      <title>gmip修ros pgm图</title>
       <link>https://peitianyu.github.io/pty_blog.github.io/ros/%E4%BD%BF%E7%94%A8gmip%E4%BF%AEpgm/</link>
       <pubDate>Tue, 19 Oct 2021 16:20:39 +0800</pubDate>
       
@@ -21,6 +21,15 @@
       <description>参考网址: (47条消息) ROS开发实践（十三）——ROS中SLAM地图（.pgm格式）编辑软件的安装与使用_Ehang_Maker的博客-CSDN博客
 安装: 参考网址: Gimp中文网 (baisheng999.com)
 windows安装流程: 注意选择安装路径,其他下一步即可流程: 1.选择使用笔刷工具2.设置笔刷大小,硬度为100,力度为100,线型为直线3.按住Ctrl选择颜色4.释放后刷刷刷</description>
+    </item>
+    
+    <item>
+      <title>ros错误集</title>
+      <link>https://peitianyu.github.io/pty_blog.github.io/ros/ros_%E9%94%99%E8%AF%AF%E9%9B%86/</link>
+      <pubDate>Tue, 19 Oct 2021 16:20:39 +0800</pubDate>
+      
+      <guid>https://peitianyu.github.io/pty_blog.github.io/ros/ros_%E9%94%99%E8%AF%AF%E9%9B%86/</guid>
+      <description>“cv_bridge“解决办法 出现问题: CMake Error at /opt/ros/kinetic/share/catkin/cmake/catkinConfig.cmake:83 (find_package):Could not find a package configuration file provided by “cv_bridge” withany of the following names:cv_bridgeConfig.cmakecv_bridge-config.cmake解决办法: CMake Error ：Could not find a package configuration file provided by “cv_bridge“解决办法</description>
     </item>
     
     <item>
