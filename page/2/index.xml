@@ -266,6 +266,8 @@ deb http://ports.ubuntu.com/ubuntu-ports/ bionic-security multiverse
 &lt;span style=&#34;color:#658b00&#34;&gt;source&lt;/span&gt; ~/.bashrc
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;测试查看&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#658b00&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#00688b&#34;&gt;$DISPLAY&lt;/span&gt;
+&lt;span style=&#34;color:#228b22&#34;&gt;# 或者&lt;/span&gt;
+xclock
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;
 &lt;h4 id=&#34;更新软件源&#34;&gt;更新软件源&lt;/h4&gt;
