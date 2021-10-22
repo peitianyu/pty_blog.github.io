@@ -294,6 +294,18 @@ ssh -p &lt;span style=&#34;color:#b452cd&#34;&gt;1234&lt;/span&gt; ldz@192.168.0
     
     
         <item>
+        <title>目录</title>
+        <link>https://peitianyu.github.io/pty_blog.github.io/about/%E7%9B%AE%E5%BD%95/</link>
+        <pubDate>Tue, 19 Oct 2021 16:20:39 +0800</pubDate>
+        
+        <guid>https://peitianyu.github.io/pty_blog.github.io/about/%E7%9B%AE%E5%BD%95/</guid>
+        <description>武装带你 https://peitianyu.github.io/pty_blog.github.io/about/%E7%9B%AE%E5%BD%95/ -&lt;h2 id=&#34;我的技能&#34;&gt;我的技能&lt;/h2&gt;
+- https://peitianyu.github.io/pty_blog.github.io/about/%E7%9B%AE%E5%BD%95/ - This is a customized copyright.</description>
+        </item>
+    
+    
+    
+        <item>
         <title>jetson nano安装</title>
         <link>https://peitianyu.github.io/pty_blog.github.io/tool/jetson-nano/</link>
         <pubDate>Mon, 18 Oct 2021 16:20:39 +0800</pubDate>
@@ -489,76 +501,6 @@ git remote prune origin
 &lt;/tbody&gt;
 &lt;/table&gt;
 - https://peitianyu.github.io/pty_blog.github.io/tool/nano/ - This is a customized copyright.</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>tmux</title>
-        <link>https://peitianyu.github.io/pty_blog.github.io/tool/tmux/</link>
-        <pubDate>Sun, 17 Oct 2021 16:20:39 +0800</pubDate>
-        
-        <guid>https://peitianyu.github.io/pty_blog.github.io/tool/tmux/</guid>
-        <description>武装带你 https://peitianyu.github.io/pty_blog.github.io/tool/tmux/ -&lt;h3 id=&#34;参考网址&#34;&gt;参考网址&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.ruanyifeng.com/blog/2019/10/tmux.html&#34;&gt;Tmux 使用教程 - 阮一峰的网络日志 (ruanyifeng.com)&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/&#34;&gt;A Quick and Easy Guide to tmux&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://danielmiessler.com/study/tmux/&#34;&gt;Tactical tmux: The 10 Most Important Commands&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://linuxize.com/post/getting-started-with-tmux/&#34;&gt;Getting started with Tmux&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;便捷快捷键&#34;&gt;便捷快捷键&lt;/h3&gt;
-&lt;p&gt;注意前缀键&lt;code&gt;Ctrl+b&lt;/code&gt;按完后松开，再按下其他键。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;快捷键&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;含义&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;Ctrl+d&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;退出&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;Ctrl+b s&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;列出所有会话&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;Ctrl+b %&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;划分左右两个窗格&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;Ctrl+b &amp;quot;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;划分上下两个窗格&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;Ctrl+b o&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;切换到下一个窗格&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;Ctrl+b x&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;关闭当前窗格&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;Ctrl+b c&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;创建一个新窗口&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;Ctrl+b n&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;切换到下一个窗口&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-- https://peitianyu.github.io/pty_blog.github.io/tool/tmux/ - This is a customized copyright.</description>
         </item>
     
     

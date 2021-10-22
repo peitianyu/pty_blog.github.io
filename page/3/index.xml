@@ -13,6 +13,287 @@
     
     
         <item>
+        <title>编程规范</title>
+        <link>https://peitianyu.github.io/pty_blog.github.io/templete/%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/</link>
+        <pubDate>Fri, 15 Oct 2021 16:20:39 +0800</pubDate>
+        
+        <guid>https://peitianyu.github.io/pty_blog.github.io/templete/%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/</guid>
+        <description>武装带你 https://peitianyu.github.io/pty_blog.github.io/templete/%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/ -&lt;h1 id=&#34;编程规范&#34;&gt;编程规范&lt;/h1&gt;
+&lt;h3 id=&#34;规范&#34;&gt;规范&lt;/h3&gt;
+&lt;h4 id=&#34;1-原则&#34;&gt;1. 原则&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;简洁明了，提高代码可读性，读的是代码而不是注释，注释永远都是辅助的。&lt;/li&gt;
+&lt;li&gt;零告警，严谨的语法才能保障代码表达和编译器理解的是一至的。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;2-排版&#34;&gt;2. 排版&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;程序块之间、变量声明之间，用空行分隔&lt;/li&gt;
+&lt;li&gt;突出语法关键字&lt;/li&gt;
+&lt;li&gt;一行不要太长，换行增加可读性&lt;/li&gt;
+&lt;li&gt;Tab键排版&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;3-注释&#34;&gt;3. 注释&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;注释的目的是阐明意图目的，而不是翻译某行代码的动作&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;注释的原则是尽量代码自注释，代码越清晰，可读性越高&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;统一格式 &lt;em&gt;&lt;em&gt;/&lt;/em&gt; 注释内容 */&lt;/em&gt;*， *号与注释内容之间有一个空格&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;/*************************************************
+Copyright 	 //版权
+File name:	 // 文件名
+Author： 	//作者
+Version: 	 //版本号
+Description: // 用于详细说明此程序文件完成的主要功能，与其他模块
+         // 或函数的接口，输出值、取值范围、含义及参数间的控
+         // 制、顺序、独立或依赖等关系
+Others: 	// 其它内容的说明
+Log: 		// 修改日志，包括修改内容，日期，修改人等
+*************************************************/
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;/*
+*@ Description: 函数描述，描述本函数的基本功能
+* @param 1 – 参数 1.
+* @param 2 – 参数 2
+* @return – 返回值
+*/
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;4-定义&#34;&gt;4. 定义&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;命名风格&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;模块名+文件名+功能描述，之间采用短下划线分隔&lt;/li&gt;
+&lt;li&gt;功能描述部分，采用驼峰风格&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;例如，&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;SAFE_LASER_setLaserShield&lt;/span&gt;(uint8_t _EN);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;宏定义&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;define 必须大写&lt;/li&gt;
+&lt;li&gt;typedef 可以小写&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;例如，&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;#define OS_TASK_R200RXID1 		0x198 	&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;/* HEX格式 */&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;typedef&lt;/span&gt; uint32_t StackSize_t&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;；&lt;/span&gt;   		&lt;span style=&#34;color:#228b22&#34;&gt;/* 仅用于堆栈 */&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;类型定义&lt;/p&gt;
+&lt;p&gt;使用linux自带类型定义规则&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;#define uint8_t  	unsigned char
+&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;#define int8_t   	char
+&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;#define uint16_t 	unsigned short
+&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;#define int16_t  	short
+&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;#define uint32_t 	unsigned int
+&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;#define int32_t  	int
+&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;#define uint64_t 	unsigned long long
+&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;#define int64_t  	long long
+&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;&lt;/span&gt;   
+&lt;span style=&#34;color:#1e889b&#34;&gt;#define TRUE  		1
+&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;#define FALSE 		0
+&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;#define NULL  		0
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;5-变量&#34;&gt;5. 变量&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;变量通用规则
+&lt;ol&gt;
+&lt;li&gt;采用驼峰风格,首字母大写&lt;/li&gt;
+&lt;li&gt;在函数开始是全部定义，不允许在函数中间定义&lt;/li&gt;
+&lt;li&gt;变量命名必须可以表示其含义&lt;/li&gt;
+&lt;li&gt;必须初始化&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;局部变量
+&lt;ol&gt;
+&lt;li&gt;本地局部变量必须用static关键字修饰&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;全局变量
+&lt;ol&gt;
+&lt;li&gt;全局变量必须以g开头&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;函数变量
+&lt;ol&gt;
+&lt;li&gt;变量必须以_开头&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;static uint8_t SafeLaserSet = 0;
+uint8_t gSafeLaserSet = 0;
+static uint8_t _SafeLaserSet = 0;
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;6-函数&#34;&gt;6. 函数&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;函数名必须能够自注释，必要是需要增加注释写明意图&lt;/li&gt;
+&lt;li&gt;内部函数必须使用static定义，命名可以不加模块名&lt;/li&gt;
+&lt;li&gt;外部函数
+&lt;ol&gt;
+&lt;li&gt;必须在头文件中声明，&lt;/li&gt;
+&lt;li&gt;命名时必须带模块名，&lt;/li&gt;
+&lt;li&gt;必须给出带注释，并写明函数意图，参数说明，返回值&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;static uint_t SAFE_LASER_setLaseShield(uint8_t _EN);
+void SAFE_LASER_setLaseShield(uint8_t _EN);
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;7-文件&#34;&gt;7. 文件&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;头文件&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;命名规则模块名+功能，小写，例如os_task.h&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;格式如下&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;#ifndef __OS_TASK_H__
+&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;#define __OS_TASK_H__
+&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;&lt;/span&gt;      
+....&lt;span style=&#34;color:#228b22&#34;&gt;/* 开放的宏定义 */&lt;/span&gt;
+....&lt;span style=&#34;color:#228b22&#34;&gt;/* 开放的全局变量声明 */&lt;/span&gt;
+....&lt;span style=&#34;color:#228b22&#34;&gt;/* 开放的函数声明 */&lt;/span&gt;
+      
+&lt;span style=&#34;color:#1e889b&#34;&gt;#endif
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;源文件&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;命名规则模块名+功能，小写，例如os_task.c&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;格式如下，举例只为说明源文件中，各元素的顺序&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&amp;lt;- &lt;span style=&#34;color:#b452cd&#34;&gt;1&lt;/span&gt; - &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;引用头文件&lt;/span&gt; -&amp;gt;
+&lt;span style=&#34;color:#1e889b&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#1e889b&#34;&gt;&amp;#34;os_task.h&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;&lt;/span&gt;      
+&amp;lt;- &lt;span style=&#34;color:#b452cd&#34;&gt;2&lt;/span&gt; - &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;定义本文件用到的宏&lt;/span&gt; -&amp;gt;
+&lt;span style=&#34;color:#1e889b&#34;&gt;#define OS_TASK_SWITCH_INTERVAL 10 	&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;/* 单位ms */&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;typedef&lt;/span&gt; uint32_t StackSize_t &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;；&lt;/span&gt; 	 	&lt;span style=&#34;color:#228b22&#34;&gt;/* 仅用于堆栈 */&lt;/span&gt;
+&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;typedef&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;enum&lt;/span&gt;{};
+&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;typedef&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;union&lt;/span&gt;{};
+&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;typedef&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;struct&lt;/span&gt;{};
+      
+&amp;lt;- &lt;span style=&#34;color:#b452cd&#34;&gt;3&lt;/span&gt; - &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;本地变量&lt;/span&gt; -&amp;gt;
+&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;static&lt;/span&gt; StackSize_t *TopStack = &lt;span style=&#34;color:#658b00&#34;&gt;NULL&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;；&lt;/span&gt;
+      
+&amp;lt;- &lt;span style=&#34;color:#b452cd&#34;&gt;4&lt;/span&gt; - &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;开放的全局变量&lt;/span&gt; -&amp;gt;
+uint32_t gOsTaskEventBitMap = &lt;span style=&#34;color:#b452cd&#34;&gt;0&lt;/span&gt;; 
+      
+&amp;lt;- &lt;span style=&#34;color:#b452cd&#34;&gt;5&lt;/span&gt; - &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;本地函数，仅在本文件使用&lt;/span&gt; -&amp;gt;
+&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;void&lt;/span&gt; TASK_TaskSwitch(&lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;void&lt;/span&gt;)
+{
+    &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;；&lt;/span&gt;
+}
+      
+&amp;lt;- &lt;span style=&#34;color:#b452cd&#34;&gt;6&lt;/span&gt; - &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;开放的函数&lt;/span&gt; -&amp;gt;
+&lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;void&lt;/span&gt; OS_TASK_TaskDelay(uint16_t _ms)
+{
+  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;；&lt;/span&gt;   
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;8约定俗成简写&#34;&gt;8.约定俗成简写&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;addition           	add           		加
+subtraction 		sub              	减
+multiplication 		mul           		乘法
+division          	div             	除法
+answer            	ans           		响应、回答
+array               arr             	数组、集合
+average          	avg            		平均
+buffer              buf或buff   			缓冲区
+capture           	cap或capt  			捕获
+check              	chk            		检查
+count              	cnt            		计数器
+column            	col            		列
+control            	ctrl            	控制
+decode           	dec           		解码、译码
+define             	def           		定义
+delete             	del           		删除
+destination     	dst或dest 			目的
+display           	disp          		显示
+encode          	enc            		编码
+environment  		env           		环境
+error              	err             	错误
+float               flt              	浮动、浮点
+frequency      		freq           		频率
+header          	hdr            		开始、开头
+index             	idx            		索引、指示、
+image            	img           		影像、镜像
+increment      		inc            		增加、增量
+initalize         	init            	初始化
+iteration        	itr             	循环、迭代
+length           	len            		长度
+memory        		mem          		内存
+middle           	mid           		中值
+make             	mk            		制造、形成
+message       		msg          		消息
+number         		num         	 	数量、编号
+operand        		opnd        		操作数
+optimization  		opt           		最优
+operator       		optr          		操作
+packet          	pkt            		消息包
+positon         	pos           		位置
+previous       		pre或prev  			以前的
+pointer         	ptr             	指针
+record          	rcd             	记录
+receive         	recv           		收到、接收
+result           	res             	结果
+return          	ret              	返回
+source         		src              	源头
+stack           	stk              	栈
+string          	str               	字符串
+table           	tab              	表
+temporary   		tmp或temp  			临时
+total            	tot               	全部的
+time stamp  		ts                	时间戳
+value           	val              	值
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;有互斥意义的变量或者动作相反的函数应该是用互斥词组命名&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;add/remove  	begin/end 		create/destroy 		insert/delete 
+first/last 		get/release 	increment/decrement put/get 		add/delete
+lock/unlock 	open/close 		min/max 			old/new 
+start/stop 		next/previous 	source/target 		show/hide 
+send/receive 	source/destination 					copy/paste 		up/down
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;9-模块&#34;&gt;9. 模块&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;模块必须具有封装性，且对外提供尽量少的必要接口，接口必须提供详细的注释描述&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;模块的组织形式可以是文件夹形式，也可以是文件形式&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;文件都以小写命名&lt;/p&gt;
+&lt;p&gt;例如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;.
+    &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;├──&lt;/span&gt; src &lt;span style=&#34;color:#228b22&#34;&gt;/* 应用层代码 */&lt;/span&gt;
+    &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;│&lt;/span&gt;   &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;├──&lt;/span&gt; main.c &lt;span style=&#34;color:#228b22&#34;&gt;/* 应用入口 */&lt;/span&gt;
+    &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;│&lt;/span&gt;   &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;├──&lt;/span&gt; test.c
+    &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;│&lt;/span&gt;   &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;├──&lt;/span&gt; test1.c  
+    &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;├──&lt;/span&gt; include &lt;span style=&#34;color:#228b22&#34;&gt;/* 设备驱动代码 */&lt;/span&gt;
+    &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;│&lt;/span&gt;   &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;├──&lt;/span&gt; test.h
+    &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;│&lt;/span&gt;   &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;├──&lt;/span&gt; test1.h 
+    &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;├──&lt;/span&gt; debug &lt;span style=&#34;color:#228b22&#34;&gt;/* 芯片厂家提供的库代码 */&lt;/span&gt;
+    &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;│&lt;/span&gt;   &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;├──&lt;/span&gt; MakeFile
+    &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;│&lt;/span&gt;   &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;├──&lt;/span&gt; CMake
+    &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;│&lt;/span&gt;   &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;└──&lt;/span&gt; main
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+- https://peitianyu.github.io/pty_blog.github.io/templete/%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/ - This is a customized copyright.</description>
+        </item>
+    
+    
+    
+        <item>
         <title>ROS_安装</title>
         <link>https://peitianyu.github.io/pty_blog.github.io/ros/ros%E5%AE%89%E8%A3%85/</link>
         <pubDate>Tue, 12 Oct 2021 16:20:39 +0800</pubDate>
