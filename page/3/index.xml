@@ -372,11 +372,11 @@ roscore
     
         <item>
         <title>HUGO_blog教程</title>
-        <link>https://peitianyu.github.io/pty_blog.github.io/blog/hugo_blog%E6%95%99%E7%A8%8B/</link>
+        <link>https://peitianyu.github.io/pty_blog.github.io/templete/hugo_blog%E6%95%99%E7%A8%8B/</link>
         <pubDate>Tue, 12 Oct 2021 10:49:31 +0800</pubDate>
         
-        <guid>https://peitianyu.github.io/pty_blog.github.io/blog/hugo_blog%E6%95%99%E7%A8%8B/</guid>
-        <description>武装带你 https://peitianyu.github.io/pty_blog.github.io/blog/hugo_blog%E6%95%99%E7%A8%8B/ -&lt;h3 id=&#34;git安装与配置&#34;&gt;git安装与配置&lt;/h3&gt;
+        <guid>https://peitianyu.github.io/pty_blog.github.io/templete/hugo_blog%E6%95%99%E7%A8%8B/</guid>
+        <description>武装带你 https://peitianyu.github.io/pty_blog.github.io/templete/hugo_blog%E6%95%99%E7%A8%8B/ -&lt;h3 id=&#34;git安装与配置&#34;&gt;git安装与配置&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# git安装&lt;/span&gt;
 sudo apt update
 sudo apt install git 
@@ -527,7 +527,7 @@ cd public
 git add .
 git commit -m &amp;quot;new blog added&amp;quot;
 git push origin master
-&lt;/code&gt;&lt;/pre&gt;- https://peitianyu.github.io/pty_blog.github.io/blog/hugo_blog%E6%95%99%E7%A8%8B/ - This is a customized copyright.</description>
+&lt;/code&gt;&lt;/pre&gt;- https://peitianyu.github.io/pty_blog.github.io/templete/hugo_blog%E6%95%99%E7%A8%8B/ - This is a customized copyright.</description>
         </item>
     
     

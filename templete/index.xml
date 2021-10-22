@@ -54,5 +54,16 @@ SRC# tree.├── CONTROL│ ├── flightControl.c│ ├── flig
 /*************************************************Copyright //版权File name:	// 文件名Author： //作者Version: //版本号Description: // 用于详细说明此程序文件完成的主要功能，与其他模块// 或函数的接口，输出值、取值范围、含义及参数间的控// 制、顺序、独立或依赖等关系Others: // 其它内容的说明Log: // 修改日志，包括修改内容，日期，修改人等*************************************************//**@ Description: 函数描述，描述本函数的基本功能* @param 1 – 参数 1.* @param 2 – 参数 2* @return – 返回值*/  4.</description>
     </item>
     
+    <item>
+      <title>HUGO_blog教程</title>
+      <link>https://peitianyu.github.io/pty_blog.github.io/templete/hugo_blog%E6%95%99%E7%A8%8B/</link>
+      <pubDate>Tue, 12 Oct 2021 10:49:31 +0800</pubDate>
+      
+      <guid>https://peitianyu.github.io/pty_blog.github.io/templete/hugo_blog%E6%95%99%E7%A8%8B/</guid>
+      <description>git安装与配置 # git安装sudo apt updatesudo apt install git #git配置git config --global user.name &amp;#34;zoey&amp;#34;git config --global user.email &amp;#34;zoey686@163.com&amp;#34;#查看设置用户名与密码git config --listhugo安装 # 安装sudo apt install hugo# 手动安装wget https://github.com/gohugoio/hugo/releases/download/v0.54.0/hugo_0.54.0_Linux-64bit.debsudo dpkg -i hugo_0.54.0_Linux-64bit.deb# 查看hugo --helphugo version建立博客 新建git文件夹用以git模板等，并在文件夹下新建myblog，用来存放博客页面
+# 新建git文件夹并git初始化mkdir gitFile git init# 新建myblog文件夹用来存放博客页面hugo new site myblogmyblog下面就会有以下几个文件夹自动生成
+   文件夹名 作用     archetypes 文章开头形式   content 内容   data 自定义模板   layouts 网页模板文件   static 存储图片一些其他的资源   themes 主题   config.</description>
+    </item>
+    
   </channel>
 </rss>
